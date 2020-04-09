@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "daybook": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "daybook"
+    }
+  },
+  "defaultProject": "daybook",
+  "cli": {
+    "analytics": "983fa083-ae8f-4be6-9e88-4936e4284a26"
+  }
 }
