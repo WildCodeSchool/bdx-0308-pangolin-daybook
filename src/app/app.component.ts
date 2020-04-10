@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'dbk-root',
   templateUrl: './app.component.html',
@@ -7,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'daybook';
+  val2 = 30;
+  data: any;
+  rangeDates: Date[];
 }
+

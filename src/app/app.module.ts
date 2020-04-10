@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AccordionModule} from 'primeng/accordion';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {ButtonModule} from 'primeng/button';
+import { FormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SliderModule} from 'primeng/slider';
+import {CalendarModule} from 'primeng/calendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +17,7 @@ import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.compo
 import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
+
 
 
 @NgModule({
@@ -27,9 +33,15 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     AccordionModule,
-    NgxChartsModule
+    NgxChartsModule,
+    ButtonModule,
+    SliderModule,
+    CalendarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
