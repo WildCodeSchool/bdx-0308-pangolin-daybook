@@ -29,7 +29,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     ValidDaybookComponent,
     EndDaybookComponent,
     NavbarComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     NgxChartsModule,
     ButtonModule,
     SliderModule,
-    CalendarModule,
+    CalendarModule
 
   ],
   providers: [],
