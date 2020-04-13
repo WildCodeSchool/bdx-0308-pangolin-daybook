@@ -17,6 +17,7 @@ import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.compo
 import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
+import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
 
 
 
@@ -30,6 +31,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     EndDaybookComponent,
     NavbarComponent,
     FooterComponent,
+    DiagramComponent,
   ],
   imports: [
     BrowserModule,
