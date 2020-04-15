@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'dbk-navbar',
@@ -11,11 +12,20 @@ export class NavbarComponent implements OnInit {
   @Input() daybookNeeded: boolean;
   @Input() userImgNeeded: boolean;
 
+  items: MenuItem[];
+
+  styleTest: [{'background-color': 'red'}];
+
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.homePage);
-
+    this.items = [{
+      label: 'Menu du Pangolin',
+      items: [
+          {label: 'Mon Dashboard', routerLink: ['']},
+          {label: 'Se déconnecter'}
+      ]
+  }];
   }
 
 }

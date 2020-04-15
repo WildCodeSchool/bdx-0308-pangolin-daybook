@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+h1 {
+  margin-right: 20px;
+}
+
 .navbar-container {
   height: 150px;
   background-color: #FA9E9D;
@@ -25,6 +29,12 @@ html, body {
   width: 100%;
 }
 
+.title-navbar-home img{
+  height: 120px;
+  width: 120px;
+  margin-left: 25px;
+}
+
 .title-navbar-other {
   display: flex;
   align-items: center;
@@ -33,6 +43,11 @@ html, body {
   height: 150px;
   width: 50%;
   margin-left: 100px;
+}
+
+.title-navbar-other img{
+  height: 100px;
+  width: 100px;
 }
 
 .navbar-info {
@@ -45,11 +60,24 @@ html, body {
 .navbar-info h2{
   color : #FFFFFF;
   font-size: 30px;
+  margin-right: 50px;
+}
+
+.navbar-info h2 a {
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-info  img{
   height: 100px;
   width: 100px;
-  margin-left: 50px;
+  cursor: pointer;
   margin-right: 50px;
 }
+
+:host ::ng-deep .ui-menu .ui-menuitem-text {
+  text-decoration: none;
+  font-size: 25px;
+  background-color: red;
+}
+

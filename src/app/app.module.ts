@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SliderModule} from 'primeng/slider';
 import {CalendarModule} from 'primeng/calendar';
+import {MenuModule} from 'primeng/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,8 +41,8 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     NgxChartsModule,
     ButtonModule,
     SliderModule,
-    CalendarModule
-
+    CalendarModule,
+    MenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
