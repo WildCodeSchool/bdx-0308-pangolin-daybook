@@ -136,7 +136,7 @@ export class DiagramComponent implements OnInit {
       ]
     },
     {
-      name: 'Samedie',
+      name: 'Samedi',
       series: [
         {
           name: 'Primordiales',
@@ -157,7 +157,7 @@ export class DiagramComponent implements OnInit {
       ]
     },
     {
-      name: 'Dimanches',
+      name: 'Dimanche',
       series: [
         {
           name: 'Primordiales',
@@ -193,7 +193,7 @@ export class DiagramComponent implements OnInit {
   showXAxisLabel = true;
   xAxisLabel = '';
   showYAxisLabel = true;
-  yAxisLabel = 'Tâches';
+  yAxisLabel = 'Nb de tâches';
   animations = true;
 
   constructor() {
