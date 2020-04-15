@@ -7,24 +7,29 @@ import { Task } from 'src/app/Models/task';
   styleUrls: ['./create-daybook.component.scss']
 })
 export class CreateDaybookComponent implements OnInit {
-
   theme: string;
-  importance = '2';
-  tasks: Task[] = [];
+  priority = '2';
+  importance = [];
+   tasks: Task[] = [];
   description: string;
 
   constructor() {
+    this.importance = [
+      {label : 'primordiale', value : '3'},
+      {label : 'important', value : '2'},
+      {label : 'facu', value : '1'},
+    ];
   }
 
   ngOnInit(): void {
   }
 
   addTask() {
-
-    const newTask = new Task(this.description, parseInt(this.importance, 10));
+    const newTask = new Task(this.description, parseInt(this.priority, 10));
+    console.log(this.priority);
     this.tasks.push(newTask);
     this.description = '';
-    this.importance = '2' ;
+    this.priority = '2' ;
   }
 
 }

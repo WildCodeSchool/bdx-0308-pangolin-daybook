@@ -1,6 +1,6 @@
 
 <div class="desk">
-  <form>
+
     <h3 class="theme">Thème du jour</h3>
 
     <input type="text" name="theme" pInputText [(ngModel)]="theme">
@@ -11,22 +11,19 @@
         <input type="text" name="task" pInputText label="questName" [(ngModel)]="description">
 
         <h3>Importance</h3>
-        <select [(ngModel)]="importance" name="importance">
-          <option class="firstOption" value=3>Primordiale</option>
-          <option value=2>Importante</option>
-          <option class="thirdOption" value=1>Facultative</option>
-        </select>
+        <p-dropdown [options]="importance" [(ngModel)]="priority" placeholder="Select a City"  [showClear]="true"></p-dropdown>
 
         <button pButton type="button" class="ui-button-rounded" label="Ajouter" (click)="addTask()"></button>
     </div>
-  </form>
+
   <div class="notes">
     <h3>{{theme}}</h3>
     <ul>
       <li *ngFor="let task of tasks">{{task.title}}
         <span *ngIf="(task.importance === 3)">primordiale</span>
         <span *ngIf="(task.importance === 2)">importante</span>
-        <span *ngIf="(task.importance === 1)">facultative</span></li>
+        <span *ngIf="(task.importance === 1)">facultative</span>
+      </li>
     </ul>
   </div>
 </div>
