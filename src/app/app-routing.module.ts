@@ -6,7 +6,9 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
 
 
 const routes: Routes = [
-  {path: '', component: FooterComponent}
+  {path: '', component: HomeComponent},
+  {path: 'test', component: DashboardComponent}
+
 ];
 
 @NgModule({

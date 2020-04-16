@@ -1,0 +1,22 @@
+<div class ="navbar-container">
+  <div class ="navbar-content">
+      <div *ngIf ="homePage === true" class="title-navbar-home">
+        <h1>Le journal d'un Pangolin</h1>
+        <img class= "notebook" src="assets/notebook.png">
+        <img class= "pangolin" src="assets/pangolin.png">
+      </div>
+      <div *ngIf ="homePage === false" class ="title-navbar-other">
+        <h1>Le journal d'un Pangolin</h1>
+        <img src="assets/notebook.png">
+        <img src="assets/pangolin.png">
+      </div>
+    <div *ngIf = "daybookNeeded === true" class= "navbar-info">
+      <div>
+        <h2><a routerLink ="">Mon daybook</a></h2>
+      </div>
+      <p-menu styleClass="navbar-menu" #menu [popup]="true" [model]="items"></p-menu>
+      <img type="button" (click)="menu.toggle($event)" *ngIf = "userImgNeeded === true"  src="assets/user-profile.png">
+    </div>
+  </div>
+</div>
+
