@@ -34,7 +34,7 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     EndDaybookComponent,
     NavbarComponent,
     FooterComponent,
-    DiagramComponent,
+    DiagramComponent
   ],
   imports: [
     BrowserModule,
