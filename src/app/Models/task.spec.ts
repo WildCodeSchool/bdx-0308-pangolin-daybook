@@ -10,5 +10,6 @@ describe('test method checkedTask', () => {
   it('should return true', () => {
     const task = new Task('test', 3).checkedTask();
 
+    expect(new Task('lol', 2)).toBeTruthy();
   });
 });
