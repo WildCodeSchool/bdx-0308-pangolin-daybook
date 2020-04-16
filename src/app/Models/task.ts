@@ -1,6 +1,6 @@
 export class Task {
 
-  taskId: string;
+  id: string;
   taskChecked = false;
   constructor(public title: string,  public importance: number) {}
 
