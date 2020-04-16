@@ -14,8 +14,6 @@ export class NavbarComponent implements OnInit {
 
   items: MenuItem[];
 
-  styleTest: [{'background-color': 'red'}];
-
   constructor() { }
 
   ngOnInit(): void {
