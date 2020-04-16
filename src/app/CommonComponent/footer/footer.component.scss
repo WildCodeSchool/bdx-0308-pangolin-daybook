@@ -7,10 +7,6 @@
   color: white;
 }
 
-small {
-  margin-left: 15px;
-}
-
 hr {
   width: 100%;
 }
@@ -21,6 +17,16 @@ hr {
   justify-content: center;
   height: 75px;
   width: 100%;
+
+}
+
+.footer-content a {
+  color: white;
+  font-size: 21px;
+}
+
+.footer-content p {
+  font-size: 21px;
 }
 
 .fa {
@@ -28,7 +34,6 @@ hr {
   font-size: 25px;
   width: 45px;
   text-align: center;
-  text-decoration: none;
   margin: 5px 2px;
   border-radius: 50%;
   margin-left: 15px;
@@ -52,10 +57,8 @@ hr {
   width: 100%;
 }
 
-
-.footer-legal-mention img {
-  height: 15px;
-  width: 15px;
-  margin-left: 5px;
-  margin-right: 5px;
+.footer-legal-mention p {
+  font-size: 21px;
 }
+
+
