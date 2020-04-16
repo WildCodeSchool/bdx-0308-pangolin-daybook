@@ -51,4 +51,21 @@ describe('DiagramComponent', () => {
   it('should create PieGrid ', () => {
     expect(piegrid).toBeTruthy();
   });
-});
+  it ('should display GridPieChart component', () => {
+    expect(de.nativeElement.querySelector('ngx-charts-pie-grid')).toBeTruthy();
+  });
+  it(`Shouldn't display StackedBar component`, () => {
+    expect(de.nativeElement.querySelector('ngx-charts-bar-vertical-stacked')).toBeNull();
+  });
+  it ('Should display StackedBar component when the selector value is equal to stackedBar', () => {
+    component.diagramStyle = 'stackedBar';
+    fixture.detectChanges();
+    expect(de.nativeElement.querySelector('ngx-charts-bar-vertical-stacked')).toBeTruthy();
+      });
+  it ('Should not display GridPie component when the selector value is equal to stackedBar', () => {
+        component.diagramStyle = 'stackedBar';
+        fixture.detectChanges();
+        expect(de.nativeElement.querySelector('ngx-charts-pie-grid')).toBeNull();
+          });
+    });
+
