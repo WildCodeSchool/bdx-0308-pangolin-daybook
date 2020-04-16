@@ -2,6 +2,6 @@ import { Task } from './task';
 
 describe('Task', () => {
   it('should create an instance', () => {
-    expect(new Task()).toBeTruthy();
+    expect(new Task('lol', 2)).toBeTruthy();
   });
 });

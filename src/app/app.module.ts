@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SliderModule} from 'primeng/slider';
 import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.compo
 import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
+import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
 
 
 
@@ -30,6 +32,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     EndDaybookComponent,
     NavbarComponent,
     FooterComponent,
+    DiagramComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
     ButtonModule,
     SliderModule,
     CalendarModule,
+    DropdownModule
 
   ],
   providers: [],
