@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'dbk-navbar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Input() homePage: boolean;
+  @Input() daybookNeeded: boolean;
+  @Input() userImgNeeded: boolean;
+
+  items: MenuItem[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.items = [{
+      label: 'Menu du Pangolin',
+      items: [
+          {label: 'Mon Dashboard', routerLink: ['']},
+          {label: 'Se déconnecter'}
+      ]
+  }];
+
   }
 
 }

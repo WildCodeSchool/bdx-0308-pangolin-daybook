@@ -1,25 +1,2 @@
-<h1>NgPrime Test</h1>
-<div class="test">
-  <p-button icon="pi pi-check" label="Click"></p-button>
-  <br>
-  <br>
-  <br>
+<router-outlet></router-outlet>
 
-  <button pButton type="button" label="Primary" class="ui-button-raised"></button>
-  <br>
-  <br>
-  <br>
-  <button pButton type="button" label="Success" class="ui-button-rounded ui-button-success"></button>
-  <br>
-  <br>
-  <h3>Input: {{val2}}</h3>
-  <input type="text" pInputText [(ngModel)]="val2" style="width:14em" />
-  <p-slider [(ngModel)]="val2" [style]="{'width':'14em'}"></p-slider>
-  <br>
-  <br>
-  <div class="ui-g-12 ui-md-4">
-    <h3>Calendar</h3>
-    <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
-  </div>
-
-</div>
