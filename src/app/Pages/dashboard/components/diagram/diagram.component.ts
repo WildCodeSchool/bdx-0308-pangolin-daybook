@@ -1,10 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Daybook } from 'src/app/Models/daybook';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @Component({
   selector: 'dbk-diagram',
   templateUrl: './diagram.component.html',
-  styleUrls: ['./diagram.component.scss']
+  styleUrls: ['./diagram.component.scss'],
+
 })
 export class DiagramComponent implements OnInit {
   @Input() weekDaybookList: Daybook[];
@@ -195,9 +198,13 @@ export class DiagramComponent implements OnInit {
   showYAxisLabel = true;
   yAxisLabel = 'Nb de tâches';
   animations = true;
+  diagramlist = [];
 
   constructor() {
-
+this.diagramlist = [
+  {label: 'GridPie', value: 'gridpie'},
+  {label: 'Stackedbar', value: 'stackedBar'},
+];
   }
 
 

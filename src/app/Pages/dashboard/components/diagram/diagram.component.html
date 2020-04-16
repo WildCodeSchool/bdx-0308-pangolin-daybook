@@ -1,29 +1,28 @@
-<p>diagram works!</p>
-<br>
-<label for="power">Choisis un diagramme : </label>
-<select [(ngModel)]="diagramStyle" name="diagram style">
-  <option value="gridpie"> Grid Pie</option>
-  <option value="stackedBar"> Stacked Bars</option>
-  </select>
-<ngx-charts-pie-grid *ngIf="diagramStyle === 'gridpie'"
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="single"
-  (select)="onSelect($event)">
-</ngx-charts-pie-grid>
-<br>
-<ngx-charts-bar-vertical-stacked *ngIf="diagramStyle === 'stackedBar'"
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="multi"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [xAxisLabel]="xAxisLabel"
-  [yAxisLabel]="yAxisLabel"
-  [animations]="animations"
-  (select)="onSelect($event)">
-</ngx-charts-bar-vertical-stacked>
+<div class="container">
+  <h2>Diagramme</h2>
+  <p-dropdown [options]="diagramlist" [(ngModel)]="diagramStyle" placeholder="Choisis un diagramme"  [showClear]="true"></p-dropdown>
+
+  <ngx-charts-pie-grid *ngIf="diagramStyle === 'gridpie'"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    (select)="onSelect($event)">
+  </ngx-charts-pie-grid>
+  <br>
+  <ngx-charts-bar-vertical-stacked *ngIf="diagramStyle === 'stackedBar'"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="multi"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [animations]="animations"
+    (select)="onSelect($event)">
+  </ngx-charts-bar-vertical-stacked>
+</div>
+

@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SliderModule} from 'primeng/slider';
 import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     ButtonModule,
     SliderModule,
     CalendarModule,
+    DropdownModule
 
   ],
   providers: [],
