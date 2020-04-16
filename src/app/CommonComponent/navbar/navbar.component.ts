@@ -24,6 +24,7 @@ export class NavbarComponent implements OnInit {
           {label: 'Se déconnecter'}
       ]
   }];
+
   }
 
 }
