@@ -14,7 +14,7 @@
       <div>
         <h2><a routerLink ="">Mon daybook</a></h2>
       </div>
-      <p-menu styleClass="navbar-menu" [style]="{'color':'white'}" #menu [popup]="true" [model]="items"></p-menu>
+      <p-menu styleClass="navbar-menu" [style]="{'width':'225px', 'background-color': 'white'}" #menu [popup]="true" [model]="items"></p-menu>
       <img type="button" (click)="menu.toggle($event)" *ngIf = "userImgNeeded === true"  src="assets/user-profile.png">
     </div>
   </div>

@@ -75,9 +75,12 @@ h1 {
   margin-right: 50px;
 }
 
-:host ::ng-deep .ui-menu .ui-menuitem-text {
-  text-decoration: none;
-  font-size: 25px;
-  background-color: red;
+:host ::ng-deep .ui-menuitem {
+  background-color: white;
+}
+
+
+:host ::ng-deep .ui-menu {
+  font-size: 20px;
 }
 
