@@ -7,7 +7,7 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'test', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardComponent}
 
 ];
 
