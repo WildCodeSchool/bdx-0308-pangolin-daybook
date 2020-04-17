@@ -3,14 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
+import { CreateDaybookComponent } from './Pages/create-daybook/create-daybook.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent}
-
-];
-
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'daybook', component: CreateDaybookComponent},
+  {path: '**', component: HomeComponent}
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
