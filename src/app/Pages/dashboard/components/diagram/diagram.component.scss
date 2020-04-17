@@ -4,6 +4,7 @@
 p-dropdown {
   display: inline-block;
   margin-left: 25%;
+  color: #F9A5A5
 }
 h2 {
   display: inline-block;
@@ -12,3 +13,10 @@ h2 {
   margin-left:25%;
 text-decoration: underline;
 }
+:host ::ng-deep.ui-dropdown-label {
+  color: #F9A5A5;
+}
+:host ::ng-deep.ui-dropdown-panel{
+  background-color: white;
+}
+
