@@ -9,7 +9,8 @@ import { CreateDaybookComponent } from './Pages/create-daybook/create-daybook.co
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'daybook', component: CreateDaybookComponent}
+  {path: 'daybook', component: CreateDaybookComponent},
+  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({
