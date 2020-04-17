@@ -17,7 +17,7 @@ export class CreateDaybookComponent implements OnInit {
     this.importance = [
       {label : 'primordiale', value : '3'},
       {label : 'important', value : '2'},
-      {label : 'facu', value : '1'},
+      {label : 'facultative', value : '1'},
     ];
   }
 
