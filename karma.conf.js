@@ -28,10 +28,10 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
-    customLaunchers : {
-      ChromeHeadlessPuppeteer: {
+    customLaunchers: {
+      ChromeHeadlessPuppeteer:{
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox','--disable-gpu']
+        flags: ['--no-sandbox', '--disable-gpu']
       }
     }
   });
