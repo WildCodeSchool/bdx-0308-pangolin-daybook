@@ -187,7 +187,7 @@ export class DiagramComponent implements OnInit {
 
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#FDB393', '#E39384', '#E384AE', '#FA9E9D']
   };
   showXAxis = true;
   showYAxis = true;
