@@ -4,6 +4,10 @@ import { TasksFilterForDiagram } from './tasks-filter-for-diagram';
 
 export class Daybook {
   tasklist: Task[];
+  date: Date;
+  validate = false;
+  finised = false;
+  theme: string;
   constructor() {}
  getNbTasksByImportance() {
    const primordiale = new TasksFilterForDiagram('Primordiales',
