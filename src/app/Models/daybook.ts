@@ -9,7 +9,7 @@ export class Daybook {
   finised = false;
   theme: string;
   constructor() {}
- getNbTasksByImportance() {
+ getNbTasksByImportance(): TasksFilterForDiagram [] {
    const primordiale = new TasksFilterForDiagram('Primordiales',
    this.tasklist.filter(task => task.taskChecked === true && task.importance === 3).length);
    const importante =  new TasksFilterForDiagram('Importantes',
@@ -19,7 +19,7 @@ export class Daybook {
    const nonFinie =  new TasksFilterForDiagram('Non finies', this.tasklist.filter(task => task.taskChecked === false).length);
    return [primordiale, importante, facultatives, nonFinie];
  }
- getTasksByImportance() {
+ getTasksByImportance(): TasksByImportance[] {
   const primordiales = new TasksByImportance('Primodiales', this.tasklist.filter(task => task.importance === 3));
   const importantes =  new TasksByImportance('Importantes', this.tasklist.filter(task => task.importance === 2));
   const facultatives = new TasksByImportance('Facultatives', this.tasklist.filter(task => task.importance === 1));
