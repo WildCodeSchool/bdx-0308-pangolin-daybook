@@ -23,4 +23,8 @@ export class DaybookService {
   edit(daybook, id): Observable<Daybook> {
     return this.http.put<Daybook>(this.url + id, daybook);
   }
+
+  delete(id): Observable<Daybook> {
+    return this.http.delete<Daybook>(this.url + id);
+  }
 }
