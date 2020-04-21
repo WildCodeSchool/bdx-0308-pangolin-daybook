@@ -1,0 +1,47 @@
+:host ::ng-deep .ui-carousel {
+  height: 100%;
+}
+
+p-header h3 {
+  font-size: 30px;
+}
+
+.task-card {
+  height: 100%;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task-card h3 {
+  font-size: 20px;
+}
+
+.task-primordiale {
+  margin-top: 10px;
+  background-color: blue;
+}
+
+.task-importante {
+  margin-top: 10px;
+  background-color: red;
+}
+
+.task-facultative {
+  margin-top: 10px;
+  background-color: yellow;
+}
+
+:host ::ng-deep .ui-carousel-container{
+  height: 350px;
+}
+
+:host ::ng-deep .ui-carousel-dot-item {
+  background-color:#FA9E9D;
+  margin-right: 5px;
+}
+
+:host ::ng-deep .ui-carousel-dot-icon {
+  background-color: #FA9E9D;
+}
