@@ -1,0 +1,31 @@
+<p-carousel [value]="logBookArray" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+  <p-header>
+      <h3>Historique</h3>
+  </p-header>
+  <ng-template let-logbook pTemplate="item">
+    <div class="task-card">
+      <div *ngFor= "let task of logbook">
+        <h3>{{task.theme}}</h3>
+      </div>
+      <div class="task-primordiale">
+        <h3>Primordiales</h3>
+          <div *ngFor= "let task of logbook">
+            <p>{{task.primordiale}}</p>
+          </div>
+      </div>
+      <div class="task-importante">
+        <h3>Importantes</h3>
+          <div *ngFor= "let task of logbook">
+            <p>{{task.importante}}</p>
+          </div>
+      </div>
+      <div class="task-facultative">
+        <h3>Facultatives</h3>
+          <div *ngFor= "let task of logbook">
+            <p>{{task.facultative}}</p>
+          </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>
+
