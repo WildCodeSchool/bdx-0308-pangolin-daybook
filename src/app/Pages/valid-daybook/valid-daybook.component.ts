@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'dbk-valid-daybook',
   templateUrl: './valid-daybook.component.html',
