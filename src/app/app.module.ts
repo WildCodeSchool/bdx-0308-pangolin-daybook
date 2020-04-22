@@ -11,6 +11,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { HttpClientModule } from '@angular/common/http';
+import {CarouselModule} from 'primeng/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
 import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
+import { HistoriqueComponent } from './Pages/dashboard/components/historique/historique.component';
 
 
 
@@ -35,7 +37,8 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     EndDaybookComponent,
     NavbarComponent,
     FooterComponent,
-    DiagramComponent
+    DiagramComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,9 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     InputTextModule,
     CalendarModule,
     DropdownModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule
+
 
   ],
   providers: [],
