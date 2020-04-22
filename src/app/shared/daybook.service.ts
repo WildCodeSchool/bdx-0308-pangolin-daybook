@@ -12,8 +12,8 @@ export class DaybookService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Daybook> {
-    return this.http.get<Daybook>(this.url);
+  getAll(): Observable<Daybook[]> {
+    return this.http.get<Daybook[]>(this.url);
   }
 
   post(daybook: Daybook): Observable<Daybook> {
