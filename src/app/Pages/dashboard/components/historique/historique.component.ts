@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
 
-
 @Component({
   selector: 'dbk-historique',
   templateUrl: './historique.component.html',
