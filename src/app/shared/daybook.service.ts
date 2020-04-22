@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Daybook } from '../Models/daybook';
 
 @Injectable({
@@ -13,7 +14,8 @@ export class DaybookService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Daybook[]> {
-    return this.http.get<Daybook[]>(this.url);
+
+    return this.http.get<Daybook[]>(this.url).pipe(map((dayBooksFromServer) => dayBooksFromServer.map((daybook) => new Daybook(daybook))));
   }
 
   post(daybook: Daybook): Observable<Daybook> {
