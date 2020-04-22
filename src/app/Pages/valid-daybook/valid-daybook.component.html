@@ -3,29 +3,31 @@
 <div class="background">
   <div class="tasksList">
     <div class="sticker primordiales">
-      <h2>Quêtes primordiales</h2>
+      <h2>Quêtes {{dayBookSorted[0].name}}</h2>
     <ol>
-      <li>
+      <li *ngFor="let task of dayBookSorted[0].tasks">
         <img src="../../../assets/pangolinIcon.png">
-        Toto
+        {{task.title}}
+      </li>
+    </ol></div>
 
-      </li>
-    </ol></div>
     <div class="sticker importantes">
-      <h2>Quêtes importantes</h2>
+      <h2>Quêtes {{dayBookSorted[1].name}} </h2>
     <ol>
-      <li><img src="../../../assets/pangolinIcon.png">
-        Tutu
+      <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="../../../assets/pangolinIcon.png">
+        {{task.title}}
       </li>
     </ol></div>
+
     <div class="sticker facultatives">
-      <h2>Quêtes facultatives</h2>
+      <h2>Quêtes {{dayBookSorted[2].name}}</h2>
     <ol>
-      <li>
+      <li *ngFor="let task of dayBookSorted[2].tasks">
         <img src="../../../assets/pangolinIcon.png">
-        Tata
+        {{task.title}}
       </li>
     </ol></div>
+
   </div>
 </div>
 
