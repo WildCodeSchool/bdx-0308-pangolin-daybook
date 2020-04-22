@@ -1,0 +1,59 @@
+.background{
+  background-image: url(../../../assets/validpage/bcgvalidpage.png);
+  size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tasksList{
+  margin: auto;
+  width: 1000px;
+  height: 900px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sticker{
+  padding: 1%;
+  color: #ffffff;
+  font-size: 1.5em;
+  overflow: auto;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: 300px;
+  transform: rotate(-20deg);
+  border-radius: 16px;
+}
+h2{
+  text-align: center;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  padding: 3%;
+}
+.sticker li{
+  color: #6b5c52;
+  text-align: center;
+  padding: 1%;
+  list-style: none;
+}
+
+.sticker li img{
+  vertical-align: middle;
+}
+
+.primordiales{
+  background-image: url(../../../assets/validpage/bluesticker.png);
+
+}
+
+.importantes{
+  background-image: url(../../../assets/validpage/pinksticker.png);
+
+}
+
+.facultatives{
+  background-image: url(../../../assets/validpage/yellowsticker.png);
+
+}
