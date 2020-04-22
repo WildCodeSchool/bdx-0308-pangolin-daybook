@@ -1,29 +1,28 @@
-<p-carousel [value]="daybookArray" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+<p-carousel [value]="daybookFiltre" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
   <p-header>
-    <button (click)="test()">Click</button>
       <h3>Historique</h3>
   </p-header>
-  <ng-template let-daybook pTemplate="item">
+  <ng-template let-importanceDaybook pTemplate="item">
     <div class="task-card">
-      <div *ngFor= "let task of daybook">
-        <h3>{{task.theme}}</h3>
+      <div *ngFor="let theme of importanceDaybook">
+        <h3></h3>
       </div>
       <div class="task-primordiale">
         <h3>Primordiales</h3>
-          <div *ngFor= "let task of daybook">
-            <p>{{task.primordiale}}</p>
+          <div>
+            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
           </div>
       </div>
       <div class="task-importante">
         <h3>Importantes</h3>
-          <div *ngFor= "let task of daybook">
-            <p>{{task.importante}}</p>
+          <div>
+            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
           </div>
       </div>
       <div class="task-facultative">
         <h3>Facultatives</h3>
-          <div *ngFor= "let task of daybook">
-            <p>{{task.facultative}}</p>
+          <div>
+            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
           </div>
       </div>
     </div>
