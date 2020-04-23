@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { HomeComponent } from './Pages/home/home.component';
-import { FooterComponent } from './CommonComponent/footer/footer.component';
 import { CreateDaybookComponent } from './Pages/create-daybook/create-daybook.component';
 import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.component';
 
