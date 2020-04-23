@@ -1,7 +1,7 @@
 <dbk-navbar [homePage]="false" [daybookNeeded]="true" [userImgNeeded]="true"></dbk-navbar>
 <div class="background">
-<div class="desk">
-  <form  ngNativeValidate (ngSubmit)="addTask()">
+  <div class="desk">
+    <form *ngIf="showEdit === false" ngNativeValidate (ngSubmit)="addTask()">
       <h3 class="theme">Thème du jour</h3>
         <input required type="text" name="theme" class="theme" pInputText [(ngModel)]="daybook.theme">
 
@@ -13,19 +13,34 @@
           <p-dropdown required="true" [options]="importance" name="importance" [(ngModel)]="task.importance" placeholder="Quelle importance?"  [showClear]="true"></p-dropdown>
             <button pButton type="submit" class="ui-button-rounded" label="Ajouter"></button>
       </div>
-  </form>
+    </form>
+    <form *ngIf="showEdit === true" ngNativeValidate (ngSubmit)="editTask()">
+
+      <div class="taskdef">
+        <h3>Quête</h3>
+          <input type="text" name="task" pInputText label="questName" required [(ngModel)]="task.title">
+
+        <h3>Importance</h3>
+          <p-dropdown required="true" [options]="importance" name="importance" [(ngModel)]="task.importance" placeholder="Quelle importance?"  [showClear]="true"></p-dropdown>
+            <button pButton type="submit" class="ui-button-rounded" label="Editer"></button>
+      </div>
+    </form>
+
+
 
   <div class="notes">
     <h3>{{daybook.theme}}</h3>
     <ul>
-      <li *ngFor="let task of daybook.taskList"><img src="../../../assets/pangolinIcon.png"> {{task.title}}
-        <span *ngIf="(task.importance === 3)">primordiale</span>
-        <span *ngIf="(task.importance === 2)">importante</span>
-        <span *ngIf="(task.importance === 1)">facultative</span>
+      <li *ngFor="let task of daybook.taskList, let i = index"><img src="../../../assets/pangolinIcon.png"> {{task.title}}
+        <span class="importance" *ngIf="(task.importance === 3)">primordiale</span>
+        <span class="importance" *ngIf="(task.importance === 2)">importante</span>
+        <span class="importance" *ngIf="(task.importance === 1)">facultative</span>
+        <img src="assets/editlogo.png" alt="edit" id="iconedit" (click)="showEditForm(task,i)">
+        <img src="assets/removeicon.svg" alt="remove" id="icondelete" (click)="deleteTask(task,i)">
       </li>
     </ul>
   </div>
-  <button pButton type="submit" (click)="addDaybook()" class="ui-button-rounded send" label="Envoyer ce Journal!"></button>
+    <button pButton type="submit" (click)="addDaybook()" class="ui-button-rounded send"label="Envoyer ce Journal!"></button>
+  </div>
 </div>
-</div>
-  <dbk-footer></dbk-footer>
+<dbk-footer></dbk-footer>
