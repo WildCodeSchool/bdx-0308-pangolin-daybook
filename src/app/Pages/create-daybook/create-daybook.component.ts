@@ -3,6 +3,8 @@ import { Task } from 'src/app/Models/task';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { Daybook } from 'src/app/Models/daybook';
 import { TaskService } from 'src/app/shared/task.service';
+import { Router } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'dbk-create-daybook',
@@ -18,7 +20,9 @@ export class CreateDaybookComponent implements OnInit {
   index: number;
   taskID: number;
 
-  constructor(private daybookService: DaybookService, private taskService: TaskService) {
+
+  constructor(private daybookService: DaybookService, private taskService: TaskService, private route: Router,
+              private confirmationService: ConfirmationService) {
     this.importance = [
       { label: 'primordiale', value: 3 },
       { label: 'important', value: 2 },
@@ -60,9 +64,16 @@ export class CreateDaybookComponent implements OnInit {
     this.daybookService.edit(newDaybook , newDaybook.id).subscribe((edited) => this.daybook = edited);
     this.task.title = '';
   }
+  confirm() {
+    this.confirmationService.confirm({
+      message: 'Si vous confirmez votre Journal vous ne pourrez plus ajouter ou modifier les tâches !',
+      accept: () => {
+         // this.daybook.validated = true;
+    // this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = e );
+    this.route.navigateByUrl('/valid');
+      }
+  });
 
-  addDaybook() {
-    const newDaybook = new Daybook(this.daybook);
-    this.daybookService.post(newDaybook).subscribe();
+
   }
 }
