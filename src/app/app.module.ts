@@ -10,6 +10,7 @@ import { SliderModule } from 'primeng/slider';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import {CarouselModule} from 'primeng/carousel';
 
@@ -41,6 +42,7 @@ import { HistoriqueComponent } from './Pages/dashboard/components/historique/his
     HistoriqueComponent
   ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

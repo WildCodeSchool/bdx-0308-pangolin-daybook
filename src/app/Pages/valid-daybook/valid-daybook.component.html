@@ -1,0 +1,34 @@
+<dbk-navbar [homePage]="false" [daybookNeeded]="true" [userImgNeeded]="true"></dbk-navbar>
+
+<div class="background">
+  <div class="tasksList">
+    <div class="sticker primordiales">
+      <h2>Quêtes {{dayBookSorted[0].name}}</h2>
+    <ol>
+      <li *ngFor="let task of dayBookSorted[0].tasks">
+        <img src="../../../assets/pangolinIcon.png">
+        {{task.title}}
+      </li>
+    </ol></div>
+
+    <div class="sticker importantes">
+      <h2>Quêtes {{dayBookSorted[1].name}} </h2>
+    <ol>
+      <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="../../../assets/pangolinIcon.png">
+        {{task.title}}
+      </li>
+    </ol></div>
+
+    <div class="sticker facultatives">
+      <h2>Quêtes {{dayBookSorted[2].name}}</h2>
+    <ol>
+      <li *ngFor="let task of dayBookSorted[2].tasks">
+        <img src="../../../assets/pangolinIcon.png">
+        {{task.title}}
+      </li>
+    </ol></div>
+
+  </div>
+</div>
+
+<dbk-footer></dbk-footer>
