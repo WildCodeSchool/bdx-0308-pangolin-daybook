@@ -13,6 +13,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import {CarouselModule} from 'primeng/carousel';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,11 +59,12 @@ import { HistoriqueComponent } from './Pages/dashboard/components/historique/his
     CalendarModule,
     DropdownModule,
     HttpClientModule,
-    CarouselModule
-
+    CarouselModule,
+    ConfirmDialogModule,
+    CheckboxModule
 
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

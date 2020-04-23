@@ -11,13 +11,6 @@ export class ValidDaybookComponent implements OnInit {
   constructor(private daybookService: DaybookService) { }
 
   ngOnInit(): void {
-    this.daybookService.getAll().subscribe(
-      (daybooks) => this.dayBookSorted = daybooks.find(
-        (daybook) => daybook.id === 1).getTasksByImportance());
-
-    const test = () => console.log(this.dayBookSorted);
-
-    setTimeout(test, 3000);
-
+    this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookSorted = daybook.getTasksByImportance());
   }
 }
