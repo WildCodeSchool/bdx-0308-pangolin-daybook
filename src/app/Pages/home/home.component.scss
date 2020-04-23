@@ -1,0 +1,83 @@
+.home-content {
+  height: 900px;
+  background-image: url("../../../assets/test2-fond-home-page.jpg");
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.home-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.home-text p {
+  font-size: 50px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+.anim-1 {
+  opacity: 0;
+  animation: fadein 0.5s linear 0s;
+  animation-fill-mode: forwards;
+  width: 60%;
+}
+
+.anim-2 {
+  opacity: 0;
+  animation: fadein 0.5s linear 1s;
+  animation-fill-mode: forwards;
+  width: 60%;
+}
+
+.anim-3 {
+  opacity: 0;
+  animation: fadein 0.5s linear 2s;
+  animation-fill-mode: forwards;
+  width: 60%;
+}
+
+.home-bouton {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 75px;
+}
+
+.home-odysee-connection {
+  font-size: 50px;
+  padding: 10px;
+  background-color: transparent;
+  border: solid #FA9E9D 1px;
+  border-radius: 50px;
+  color: #FA9E9D;
+  opacity: 0;
+  animation: fadein 0.5s linear 2s;
+  animation-fill-mode: forwards;
+  cursor: pointer;
+  width: 20%;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+}
+
+.home-text b {
+  color: #FA9E9D;
+}
+
+.home-odysee-connection:hover{
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
