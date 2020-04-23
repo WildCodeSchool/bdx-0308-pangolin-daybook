@@ -13,7 +13,7 @@ export class ValidDaybookComponent implements OnInit {
   ngOnInit(): void {
     this.daybookService.getAll().subscribe(
       (daybooks) => this.dayBookSorted = daybooks.find(
-        (daybook) => daybook.id === 66).getTasksByImportance());
+        (daybook) => daybook.id === 1).getTasksByImportance());
 
     const test = () => console.log(this.dayBookSorted);
 
