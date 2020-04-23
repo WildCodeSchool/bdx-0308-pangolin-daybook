@@ -12,7 +12,7 @@
       </div>
     <div *ngIf = "daybookNeeded === true" class= "navbar-info">
       <div>
-        <h2><a routerLink ="">Mon daybook</a></h2>
+        <h2><a routerLink ="">Mon Journal</a></h2>
       </div>
       <p-menu styleClass="navbar-menu" #menu [popup]="true" [model]="items"></p-menu>
       <img type="button" (click)="menu.toggle($event)" *ngIf = "userImgNeeded === true"  src="assets/user-profile.png">
