@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { Daybook } from '../Models/daybook';
 
 @Injectable({
@@ -11,7 +11,8 @@ export class DaybookService {
 
   url = 'http://api.witpoc.com/daybooks/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+   }
 
   getAll(): Observable<Daybook[]> {
 
@@ -28,5 +29,15 @@ export class DaybookService {
 
   delete(id): Observable<Daybook> {
     return this.http.delete<Daybook>(this.url + id);
+  }
+  isToday = (someDate) => {
+    const today = new Date();
+    return someDate.getDate() === today.getDate() &&
+      someDate.getMonth() === today.getMonth() &&
+      someDate.getFullYear() === today.getFullYear();
+  }
+
+  getTodayDaybook(): Observable<Daybook> {
+     return this.getAll().pipe(map((daybooks) => daybooks.find((e) => this.isToday(new Date(e.date)))));
   }
 }

@@ -9,10 +9,14 @@ export class Daybook {
   finished = false;
   taskList: Task[] = [];
   theme: string;
-  date: Date;
+  date: Date = new Date();
 
   constructor(daybook?: Daybook) {
-    Object.assign(this, daybook);
+    if ( daybook ) {
+      Object.assign(this, daybook);
+      this.date = new Date(daybook.date);
+     }
+
   }
  getNbTasksByImportance(): TasksFilterForDiagram [] {
    const primordiale = new TasksFilterForDiagram('Primordiales',

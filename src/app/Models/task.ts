@@ -1,8 +1,9 @@
 export class Task {
 
-  id: string;
+  id: number;
   taskChecked = false;
-  constructor(public title: string,  public importance: number) {}
+  constructor(public title: string, public importance: number) {
+  }
 
   checkedTask() {
     this.taskChecked = !this.taskChecked;
