@@ -26,8 +26,6 @@
       </div>
     </form>
 
-    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
-
   <div class="notes">
     <h3>{{daybook.theme}}</h3>
     <ul>
@@ -40,7 +38,9 @@
       </li>
     </ul>
   </div>
-    <button type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirmer le Journal"></button>
+
+    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+    <button  class="confirm-button" type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirmer le Journal"></button>
   </div>
 </div>
 <dbk-footer></dbk-footer>
