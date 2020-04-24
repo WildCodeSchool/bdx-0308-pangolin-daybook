@@ -15,6 +15,7 @@ export class Daybook {
     if ( daybook ) {
       Object.assign(this, daybook);
       this.date = new Date(daybook.date);
+      this.taskList.map((e) => new Task(e));
      }
 
   }
@@ -32,6 +33,7 @@ export class Daybook {
   const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task => task.importance === 3));
   const importantes =  new TasksByImportance('Importantes', this.taskList.filter(task => task.importance === 2));
   const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task => task.importance === 1));
-  return [primordiales, importantes, facultatives];
+  const nonFinie =  new TasksByImportance('Non finies', this.taskList.filter(task => task.taskChecked === false));
+  return [primordiales, importantes, facultatives, nonFinie];
  }
 }
