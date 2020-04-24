@@ -6,6 +6,7 @@ import { CreateDaybookComponent } from './Pages/create-daybook/create-daybook.co
 import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.component';
 import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
