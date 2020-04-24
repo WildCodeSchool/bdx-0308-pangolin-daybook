@@ -9,8 +9,9 @@ import {MenuItem} from 'primeng/api';
 export class NavbarComponent implements OnInit {
 
   @Input() homePage: boolean;
+  @Input() navigationNeeded: boolean;
   @Input() daybookNeeded: boolean;
-  @Input() userImgNeeded: boolean;
+
 
   items: MenuItem[];
 
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
     this.items = [{
       label: 'Menu du Pangolin',
       items: [
-          {label: 'Mon Dashboard', routerLink: ['/dashboard']},
+          {label: 'Mon Dashboard', routerLink:  ['/dashboard']},
           {label: 'Se déconnecter'}
       ]
   }];

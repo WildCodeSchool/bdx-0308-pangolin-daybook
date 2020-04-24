@@ -1,21 +1,23 @@
 <div class="navbar-container">
   <div class="navbar-content">
-      <div *ngIf="homePage === true" class="title-navbar-home">
-        <h1>Le journal d'un Pangolin</h1>
-        <img class="notebook" src="assets/notebook.png">
-        <img class="pangolin" src="assets/pangolin.png">
+    <div *ngIf="homePage === true" class="title-navbar-home">
+      <h1>Le journal d'un Pangolin</h1>
+      <img class="notebook" src="assets/notebook.png">
+      <img class="pangolin" src="assets/pangolin.png">
+    </div>
+    <div *ngIf="homePage === false" class="title-navbar-other">
+      <h1>Le journal d'un Pangolin</h1>
+      <img src="assets/notebook.png">
+      <img src="assets/pangolin.png">
+    </div>
+    <div *ngIf="navigationNeeded === true" class="navbar-info">
+      <div class="navbar-menu">
+        <p-menu #menu [popup]="true" [model]="items"></p-menu>
+        <img type="button" (click)="menu.toggle($event)" src="assets/user-profile.png">
       </div>
-      <div *ngIf="homePage === false" class="title-navbar-other">
-        <h1>Le journal d'un Pangolin</h1>
-        <img src="assets/notebook.png">
-        <img src="assets/pangolin.png">
-      </div>
-    <div class="navbar-info">
       <div *ngIf="daybookNeeded === true">
-        <h2><a routerLink="/daybook">Mon Journal</a></h2>
+          <h2><a routerLink="/daybook">Mon Journal</a></h2>
       </div>
-      <p-menu styleClass="navbar-menu" #menu [popup]="true" [model]="items"></p-menu>
-      <img type="button" (click)="menu.toggle($event)" *ngIf="userImgNeeded === true"  src="assets/user-profile.png">
     </div>
   </div>
 </div>
