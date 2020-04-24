@@ -7,7 +7,7 @@
     <ol>
       <li *ngFor="let task of dayBookSorted[0].tasks">
         <img src="../../../assets/pangolinIcon.png">
-        {{task.title}}<p-checkbox [(ngModel)]="task.checked" binary="true"></p-checkbox>
+        {{task.title}}<p-checkbox [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
       </li>
     </ol></div>
 
@@ -16,7 +16,7 @@
     <ol>
       <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="../../../assets/pangolinIcon.png">
 
-   {{task.title}} <p-checkbox [(ngModel)]="task.checked" binary="true"></p-checkbox>
+   {{task.title}} <p-checkbox [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
     </ol></div>
 
     <div class="sticker facultatives">
@@ -24,7 +24,7 @@
     <ol>
       <li *ngFor="let task of dayBookSorted[2].tasks">
         <img src="../../../assets/pangolinIcon.png">
-        {{task.title}}<p-checkbox [(ngModel)]="task.checked" binary="true"></p-checkbox>
+        {{task.title}}<p-checkbox [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
       </li>
     </ol></div>
 

@@ -15,6 +15,7 @@ export class Daybook {
     if ( daybook ) {
       Object.assign(this, daybook);
       this.date = new Date(daybook.date);
+      this.taskList.map((task) => new Task(task));
      }
 
   }
