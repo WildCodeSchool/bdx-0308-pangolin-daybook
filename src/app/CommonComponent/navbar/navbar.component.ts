@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
     this.items = [{
       label: 'Menu du Pangolin',
       items: [
-          {label: 'Mon Dashboard', routerLink: ['/dashboard']},
+          {label: 'Mon Dashboard', routerLink:  ['/dashboard']},
           {label: 'Se déconnecter'}
       ]
   }];
