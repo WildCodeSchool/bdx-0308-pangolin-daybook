@@ -15,7 +15,7 @@ export class CreateDaybookComponent implements OnInit {
   showEdit = false;
   importance = [];
   daybook: Daybook = new Daybook();
-  task: Task = new Task('', 2);
+  task: Task = new Task();
   daybookOfTheDay: Daybook;
   index: number;
   taskID: number;
@@ -28,6 +28,7 @@ export class CreateDaybookComponent implements OnInit {
       { label: 'important', value: 2 },
       { label: 'facultative', value: 1 },
     ];
+    this.task.importance = 2;
   }
 
   ngOnInit(): void {
