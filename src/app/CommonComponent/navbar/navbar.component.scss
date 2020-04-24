@@ -75,6 +75,10 @@ h1 {
   margin-right: 50px;
 }
 
+.navbar-menu {
+  order: 1;
+}
+
 :host ::ng-deep .ui-menu {
   font-size: 20px;
   width: 225px;
