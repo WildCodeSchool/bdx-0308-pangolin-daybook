@@ -2,10 +2,11 @@
 <div class="dashboard-page">
   <div class="dashboard-histodiagram">
     <div class= "dashboard-historique">
-      <dbk-historique></dbk-historique>
+      <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
+      <!-- <dbk-historique [weekDaybookList]="datesFromCalendar"></dbk-historique> -->
     </div>
     <div class= "dashboard-diagram">
-      <dbk-diagram></dbk-diagram>
+      <dbk-diagram [weekDaybookList]="datesFromCalendar"></dbk-diagram>
     </div>
   </div>
   <div class="dashboard-detail">

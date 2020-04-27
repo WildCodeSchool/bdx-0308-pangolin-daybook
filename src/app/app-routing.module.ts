@@ -6,7 +6,6 @@ import { CreateDaybookComponent } from './Pages/create-daybook/create-daybook.co
 import { ValidDaybookComponent } from './Pages/valid-daybook/valid-daybook.component';
 import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 
-
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
@@ -15,6 +14,7 @@ const routes: Routes = [
   {path: 'end', component: EndDaybookComponent},
   {path: '**', component: HomeComponent}
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

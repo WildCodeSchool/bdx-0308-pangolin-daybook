@@ -40,4 +40,9 @@ export class DaybookService {
   getTodayDaybook(): Observable<Daybook> {
      return this.getAll().pipe(map((daybooks) => daybooks.find((e) => this.isToday(new Date(e.date)))));
   }
+
+  getDaybookOfTheWeek(startDate, endDate): Observable<Daybook[]> {
+    return this.http.get<Daybook[]>(this.url + '?start=' + startDate + '&end=' + endDate)
+    .pipe(map((dayBooksFromServer) => dayBooksFromServer.map((daybook) => new Daybook(daybook))));
+  }
 }
