@@ -1,0 +1,12 @@
+<div class="ui-g-12 ui-md-4">
+  <h3>Calendrier</h3>
+  <p-calendar
+  [(ngModel)]="rangeDates"
+  selectionMode="range"
+  [readonlyInput]="true"
+  dateFormat="dd.mm.yy"
+  (onSelect)="rangeDate()"
+  [touchUI]="true"
+  (onClose)="sendDateArray()">
+</p-calendar>
+</div>
