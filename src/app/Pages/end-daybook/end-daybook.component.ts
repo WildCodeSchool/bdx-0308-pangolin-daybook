@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndDaybookComponent implements OnInit {
 
+  finished = true;
   constructor() { }
 
   ngOnInit(): void {

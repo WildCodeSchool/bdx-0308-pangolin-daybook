@@ -4,4 +4,68 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.end-page-content {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 15%;
+  margin-top: 25px;
+}
+
+.end-page-content h1{
+  font-size: 40px;
+  color: #FA9E9D;
+}
+
+.end-page-content h2 {
+  margin-top: 50px;
+  font-size: 30px;
+  color: #FA9E9D;
+}
+
+.task-resume {
+  display: flex;
+  justify-content: space-evenly;
+  height: 40%;
+  width: 100%;
+}
+
+.task-primordiale {
+  background-color: brown;
+  width: 30%;
+}
+
+.task-importante {
+  background-color: coral;
+  width: 30%;
+}
+
+.task-facultative {
+  background-color: darkblue;
+  width: 30%;
+}
+
+.end-page-to-dashboard {
+  margin-top: 20px;
+  width: 100%;
+  height: 15%;
+}
+
+.end-page-to-dashboard h2 {
+  color: #FA9E9D;
+  font-size: 30px;
+}
+
+.end-page-to-dashboard h3 {
+  color: #FA9E9D;
+  font-size: 25px;
+}
+
+.all-task-finished h3 {
+  margin-top: 10px;
 }
