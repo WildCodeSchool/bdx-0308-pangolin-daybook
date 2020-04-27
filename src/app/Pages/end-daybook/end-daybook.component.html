@@ -1,3 +1,33 @@
 <dbk-navbar [homePage]="false" [navigationNeeded]="true" [daybookNeeded]="false"></dbk-navbar>
-<div class="end-page-container"></div>
+<div class="end-page-container">
+  <div class="end-page-content">
+      <h1>Bravo, tu viens de terminer ta journée ! Ça mérite bien une pause non ?</h1>
+      <h2>Aujourd'hui, tu auras réalisé : </h2>
+    </div>
+    <div class="task-resume">
+      <div class="task-primordiale">
+        Primordiale
+      </div>
+      <div class="task-importante">
+        Importante
+      </div>
+      <div class="task-facultative">
+        Facultative
+      </div>
+    </div>
+    <div class="end-page-to-dashboard">
+      <div *ngIf="finished === false" class="task-unfinished">
+        <h2>Malheureusement, il te manque quelques quêtes non réalisées... Mais c'est pas grave, tu pourras toujours les faire plus tard !</h2>
+        <div class="unfinished-task">
+          Liste des quêtes non faites
+        </div>
+        <h3>Retourne sur ton dashbord pour avoir plus de détails sur ta journée et à demain pour une nouvelle journée !</h3>
+      </div>
+      <div *ngIf="finished === true" class="all-task-finished">
+        <h2>Incroyable, tu as réussi à réaliser toutes les tâches de la journée, félicitations !</h2>
+        <h3>Retourne sur ton dashbord pour avoir plus de détails sur ta journée et à demain pour une nouvelle journée !</h3>
+      </div>
+      <button pButton type="text" routerLink="/dashboard" label="Retourner au dashboard"></button>
+    </div>
+</div>
 <dbk-footer></dbk-footer>
