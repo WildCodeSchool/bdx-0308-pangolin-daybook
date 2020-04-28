@@ -25,18 +25,4 @@ fdescribe('NavbarComponent', () => {
     de = fixture.debugElement;
     fixture.detectChanges();
   });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should items array is created', () => {
-    expect(component.items).toBeTruthy();
-  });
-
-  it('should find the <h1> with fixture.debugElement.nativeElement)', () => {
-    component.homePage = false;
-    fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('h1'))).toBeTruthy();
-  });
 });
