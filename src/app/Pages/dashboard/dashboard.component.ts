@@ -11,17 +11,15 @@ export class DashboardComponent implements OnInit {
 
   datesFromCalendar: Date[];
   daybookOfTheWeekSelected: Daybook[];
+  daybook: Daybook;
   constructor(private daybookService: DaybookService) { }
 
   ngOnInit(): void {
-
+    this.daybookService.getTodayDaybook().subscribe((e) => this.daybook = e);
     const today = this.changeDateFormat(new Date()).toString();
-
     const defaultDate = new Date();
     defaultDate.setDate(defaultDate.getDate() - 7);
-
     const startDate = this.changeDateFormat(defaultDate).toString();
-
     this.daybookService.getDaybookOfTheWeek(startDate, today).subscribe(
       (e) => this.daybookOfTheWeekSelected = e);
   }

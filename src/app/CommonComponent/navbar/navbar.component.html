@@ -16,7 +16,7 @@
         <img type="button" (click)="menu.toggle($event)" src="assets/user-profile.png">
       </div>
       <div *ngIf="daybookNeeded === true">
-          <h2><a routerLink="/daybook">Mon Journal</a></h2>
+          <h2><a (click)="goToForm()">Mon Journal</a></h2>
       </div>
     </div>
   </div>
