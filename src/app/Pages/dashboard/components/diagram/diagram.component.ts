@@ -1,9 +1,7 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Daybook } from 'src/app/Models/daybook';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
 import { DiagramMultidata } from 'src/app/Models/diagram-multidata';
-import { TasksByImportance } from 'src/app/Models/tasks-by-importance';
 
 
 @Component({
