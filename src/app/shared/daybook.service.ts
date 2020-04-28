@@ -45,4 +45,10 @@ export class DaybookService {
     return this.http.get<Daybook[]>(this.url + '?start=' + startDate + '&end=' + endDate)
     .pipe(map((dayBooksFromServer) => dayBooksFromServer.map((daybook) => new Daybook(daybook))));
   }
+  Isvalidated(): Observable<boolean> {
+    return this.getTodayDaybook().pipe(map((daybook) => daybook.validated));
+  }
+  IsFinished(): Observable<boolean> {
+    return this.getTodayDaybook().pipe(map((daybook) => daybook.finished));
+  }
 }
