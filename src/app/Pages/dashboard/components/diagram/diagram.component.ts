@@ -42,14 +42,11 @@ export class DiagramComponent implements OnInit, OnChanges {
     this.multi = this.getMultiData();
     this.weekdata = this.weekDaybookList.map((e) => e.getNbTasksByImportance());
     this.single = this.getSingleData();
-    console.log(this.single);
-
   }
   ngOnChanges(): void {
     this.multi = this.getMultiData();
     this.weekdata = this.weekDaybookList.map((e) => e.getNbTasksByImportance());
     this.single = this.getSingleData();
-    console.log(this.single);
   }
 
   getMultiData() {

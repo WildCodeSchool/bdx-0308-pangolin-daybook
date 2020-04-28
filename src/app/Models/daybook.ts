@@ -39,5 +39,10 @@ export class Daybook {
  getDayAndMonth() {
    return  ('0' + (this.date.getDate())).slice(-2) + '/' + ('0' + (this.date.getMonth() + 1)).slice(-2);
  }
-
+ canGoToFormStep1() {
+  return (!this.finished && !this.validated);
+ }
+ canGoToFormStep2() {
+  return (!this.finished && this.validated);
+ }
 }
