@@ -36,4 +36,8 @@ export class Daybook {
   const nonFinie =  new TasksByImportance('Non finies', this.taskList.filter(task => task.taskChecked === false));
   return [primordiales, importantes, facultatives, nonFinie];
  }
+ getDayAndMonth() {
+   return  ('0' + (this.date.getDate())).slice(-2) + '/' + ('0' + (this.date.getMonth() + 1)).slice(-2);
+ }
+
 }

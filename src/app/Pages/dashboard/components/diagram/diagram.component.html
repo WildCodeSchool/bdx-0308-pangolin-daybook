@@ -6,8 +6,7 @@
   <ngx-charts-pie-grid class="test"*ngIf="diagramStyle === 'gridpie'"
     [view]="view"
     [scheme]="colorScheme"
-    [results]="single"
-    (select)="onSelect($event)">
+    [results]="single">
   </ngx-charts-pie-grid>
   <br>
   <ngx-charts-bar-vertical-stacked   *ngIf="diagramStyle === 'stackedBar'"
@@ -22,8 +21,7 @@
     [showYAxisLabel]="showYAxisLabel"
     [xAxisLabel]="xAxisLabel"
     [yAxisLabel]="yAxisLabel"
-    [animations]="animations"
-    (select)="onSelect($event)">
+    [animations]="animations">
   </ngx-charts-bar-vertical-stacked>
 </div>
 

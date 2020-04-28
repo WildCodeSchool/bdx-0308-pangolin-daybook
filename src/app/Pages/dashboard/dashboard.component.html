@@ -6,7 +6,7 @@
       <!-- <dbk-historique [weekDaybookList]="datesFromCalendar"></dbk-historique> -->
     </div>
     <div class= "dashboard-diagram">
-      <dbk-diagram [weekDaybookList]="datesFromCalendar"></dbk-diagram>
+      <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
     </div>
   </div>
   <div class="dashboard-detail">
