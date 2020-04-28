@@ -10,7 +10,4 @@ describe('Form2Guard', () => {
     guard = TestBed.inject(Form2Guard);
   });
 
-  it('should be created', () => {
-    expect(guard).toBeTruthy();
-  });
 });
