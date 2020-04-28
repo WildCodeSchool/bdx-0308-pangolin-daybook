@@ -7,7 +7,7 @@ import { NavbarComponent } from './navbar.component';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 
-fdescribe('NavbarComponent', () => {
+describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
   let de: DebugElement;
