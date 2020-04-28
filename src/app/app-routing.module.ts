@@ -12,9 +12,12 @@ import { Form1Guard } from './core/form1.guard';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'daybook', component: CreateDaybookComponent, canActivate: [Form1Guard]},
-  {path: 'valid', component: ValidDaybookComponent, canActivate: [Form2Guard]},
-  {path: 'end', component: EndDaybookComponent, canActivate: [Form3Guard]},
+  {path: 'daybook', component: CreateDaybookComponent},
+  {path: 'valid', component: ValidDaybookComponent},
+  {path: 'end', component: EndDaybookComponent},
+  // {path: 'daybook', component: CreateDaybookComponent, canActivate: [Form1Guard]},
+  // {path: 'valid', component: ValidDaybookComponent, canActivate: [Form2Guard]},
+  // {path: 'end', component: EndDaybookComponent, canActivate: [Form3Guard]},
   {path: '**', component: HomeComponent}
 ];
 
