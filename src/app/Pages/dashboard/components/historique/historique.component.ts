@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
+import { Daybook } from 'src/app/Models/daybook';
 
 @Component({
   selector: 'dbk-historique',
@@ -9,16 +10,21 @@ import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
 })
 export class HistoriqueComponent implements OnInit {
 
+  @Input() weekDaybookList: Daybook[];
+
   responsiveOptions;
   daybookFiltre: TasksFilterForDiagram[];
 
-    constructor(public daybookService: DaybookService) { }
+  constructor(public daybookService: DaybookService) { }
 
     ngOnInit() {
       this.daybookService.getAll().subscribe((data) => {
-        this.daybookFiltre = data.find(element => element.id === 66).getNbTasksByImportance();
+        this.daybookFiltre = data.find(element => element.id === 1).getNbTasksByImportance();
         console.log(this.daybookFiltre);
 
       });
     }
+
+
+
 }

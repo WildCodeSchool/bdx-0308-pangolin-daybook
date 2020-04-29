@@ -27,6 +27,7 @@ import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
 import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
 import { HistoriqueComponent } from './Pages/dashboard/components/historique/historique.component';
+import { CalendarComponent } from './Pages/dashboard/components/calendar/calendar.component';
 
 
 
@@ -41,7 +42,8 @@ import { HistoriqueComponent } from './Pages/dashboard/components/historique/his
     NavbarComponent,
     FooterComponent,
     DiagramComponent,
-    HistoriqueComponent
+    HistoriqueComponent,
+    CalendarComponent
   ],
   imports: [
 

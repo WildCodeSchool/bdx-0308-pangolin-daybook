@@ -69,9 +69,9 @@ export class CreateDaybookComponent implements OnInit {
     this.confirmationService.confirm({
       message: 'Si vous confirmez votre Journal vous ne pourrez plus le modifier !',
       accept: () => {
-         // this.daybook.validated = true;
-    // this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = e );
-    this.route.navigateByUrl('/valid');
+         this.daybook.validated = true;
+         this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = e );
+         this.route.navigateByUrl('/valid');
       }
   });
 

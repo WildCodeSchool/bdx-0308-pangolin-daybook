@@ -1,1 +1,51 @@
-<p>end-daybook works!</p>
+<dbk-navbar [homePage]="false" [navigationNeeded]="true" [daybookNeeded]="false"></dbk-navbar>
+<div class="end-page-container">
+  <div class="end-page-content">
+    <div>
+      <h2><b>Bravo !</b> Journée terminée ! Ça mérite bien <b>une pause</b> non ?</h2>
+    </div>
+      <h2><b>Aujourd'hui</b>, tu auras réalisé : </h2>
+    </div>
+    <div class="task-resume">
+      <div class="task-primordiale">
+        <div class="task-title">
+          <h3>{{daybookImportance[0].name}}</h3>
+        </div>
+        <div class="task-list" *ngFor="let a of daybookImportance[0].tasks">
+          <img src="assets/pangolinIcon.png"> {{a.title}}
+        </div>
+      </div>
+      <div class="task-importante">
+        <div class="task-title">
+          <h3>{{daybookImportance[1].name}}</h3>
+        </div>
+        <div class="task-list" *ngFor="let a of daybookImportance[1].tasks">
+          <img src="assets/pangolinIcon.png"> {{a.title}}
+        </div>
+      </div>
+      <div class="task-facultative">
+        <div class="task-title">
+          <h3>{{daybookImportance[2].name}}</h3>
+        </div>
+        <div class="task-list" *ngFor="let a of daybookImportance[2].tasks">
+          <img src="assets/pangolinIcon.png"> {{a.title}}
+        </div>
+      </div>
+    </div>
+    <div class="end-page-to-dashboard">
+      <div *ngIf="finished === false" class="task-unfinished">
+        <div class="display-unfinished-task">
+          <h2><b>Malheureusement</b>, il te reste quelques <b>quêtes non réalisées :</b></h2>
+          <p *ngFor="let a of daybookImportance[3].tasks">{{a.title}}</p>
+        </div>
+        <h2>Mais c'est <b>pas grave</b>, tu pourras toujours les faire <b>plus tard</b> !</h2>
+        <h2>Retourne sur ton <b>dashbord</b> pour avoir plus de <b>détails</b> sur ta journée et <b>à demain pour une nouvelle journée</b> !</h2>
+      </div>
+      <div *ngIf="finished === true" class="task-finished">
+        <h2><b>Incroyable</b>, tu as réussi à réaliser <b>toutes</b> les quêtes de la journée, <b>félicitations</b> !</h2>
+        <h2>Retourne sur ton <b>dashbord</b> pour avoir plus de <b>détails</b> sur ta journée et <b>à demain pour une nouvelle journée</b> !</h2>
+      </div>
+      <button pButton type="text" routerLink="/dashboard" label="Retourner au dashboard"></button>
+    </div>
+</div>
+<dbk-footer></dbk-footer>

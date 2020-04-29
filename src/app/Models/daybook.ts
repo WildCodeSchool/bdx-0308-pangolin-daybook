@@ -15,7 +15,7 @@ export class Daybook {
     if ( daybook ) {
       Object.assign(this, daybook);
       this.date = new Date(daybook.date);
-      this.taskList.map((task) => new Task(task));
+      this.taskList.map((e) => new Task(e));
      }
 
   }
@@ -35,4 +35,23 @@ export class Daybook {
   const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task => task.importance === 1));
   return [primordiales, importantes, facultatives];
  }
+
+ getTasksByImportance() {
+  const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task =>
+    task.importance === 3 && task.taskChecked === true));
+  const importantes =  new TasksByImportance('Importantes', this.taskList.filter(task =>
+    task.importance === 2 && task.taskChecked === true));
+  const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task =>
+    task.importance === 1 && task.taskChecked === true));
+  const nonFinie =  new TasksByImportance('Non finies', this.taskList.filter(task => task.taskChecked === false));
+  return [primordiales, importantes, facultatives, nonFinie];
+ }
+ getDayAndMonth() {
+   return  ('0' + (this.date.getDate())).slice(-2) + '/' + ('0' + (this.date.getMonth() + 1)).slice(-2);
+ }
+ canGoToFormStep1() {
+  return (!this.finished && !this.validated);
+ }
+ canGoToFormStep2() {
+  return (!this.finished && this.validated);
 }
