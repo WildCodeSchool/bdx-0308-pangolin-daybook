@@ -55,3 +55,4 @@ export class Daybook {
  canGoToFormStep2() {
   return (!this.finished && this.validated);
 }
+}
