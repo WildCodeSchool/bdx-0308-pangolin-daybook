@@ -5,6 +5,7 @@
       <h2>Quêtes {{dayBookSorted[0].name}}</h2>
     <ol>
       <li *ngFor="let task of dayBookSorted[0].tasks">
+
         <img src="assets/pangolinIcon.png">
         {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
       </li>
@@ -15,6 +16,7 @@
     <ol>
       <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="assets/pangolinIcon.png">
 
+
    {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
     </ol></div>
 
@@ -22,6 +24,7 @@
       <h2>Quêtes {{dayBookSorted[2].name}}</h2>
     <ol>
       <li *ngFor="let task of dayBookSorted[2].tasks">
+
         <img src="assets/pangolinIcon.png">
         {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
       </li>

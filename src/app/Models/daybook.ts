@@ -29,6 +29,13 @@ export class Daybook {
    const nonFinie =  new TasksFilterForDiagram('Non finies', this.taskList.filter(task => task.taskChecked === false).length);
    return [primordiale, importante, facultatives, nonFinie];
  }
+ getTasksByImportanceForForm2() {
+  const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task => task.importance === 3));
+  const importantes =  new TasksByImportance('Importantes', this.taskList.filter(task => task.importance === 2));
+  const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task => task.importance === 1));
+  return [primordiales, importantes, facultatives];
+ }
+
  getTasksByImportance() {
   const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task =>
     task.importance === 3 && task.taskChecked === true));
@@ -47,5 +54,5 @@ export class Daybook {
  }
  canGoToFormStep2() {
   return (!this.finished && this.validated);
- }
+}
 }
