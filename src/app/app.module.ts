@@ -31,6 +31,7 @@ import { CalendarComponent } from './Pages/dashboard/components/calendar/calenda
 
 import { TokenInterceptor } from './shared/tokenInterceptor';
 
+import { DetailsViewComponent } from './Pages/dashboard/components/details-view/details-view.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { TokenInterceptor } from './shared/tokenInterceptor';
     DiagramComponent,
     HistoriqueComponent,
     CalendarComponent,
+    DetailsViewComponent
   ],
   imports: [
 
