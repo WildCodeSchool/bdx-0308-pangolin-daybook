@@ -9,11 +9,9 @@ import { Daybook } from 'src/app/Models/daybook';
 })
 export class EndDaybookComponent implements OnInit {
 
-  finished2 = false;
   finished: boolean;
   daybook: Daybook;
   daybookImportance = [];
-  phraseAcceuil = `<h2><b>Bravo !</b> Journée terminée ! Ça mérite bien <b>une pause</b> non ?</h2>`;
 
 constructor(public todayDaybook: DaybookService) { }
 
