@@ -39,6 +39,6 @@ export class ValidDaybookComponent implements OnInit {
     // this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = e);
       }
     });
-
+   }
   }
 
