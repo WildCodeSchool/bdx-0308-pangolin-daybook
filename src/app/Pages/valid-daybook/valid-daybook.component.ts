@@ -13,7 +13,7 @@ export class ValidDaybookComponent implements OnInit {
   constructor(private daybookService: DaybookService) { }
 
   ngOnInit(): void {
-    this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookSorted = daybook.getTasksByImportance());
+    this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookSorted = daybook.getTasksByImportanceForForm2());
 
   }
   }
