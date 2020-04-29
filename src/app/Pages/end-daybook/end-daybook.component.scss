@@ -4,20 +4,23 @@
 
 .end-page-container {
   background-image: url("/assets/image-end-page.jpg");
-  height: 900px;
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 40px;
 }
 
 .end-page-content {
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
   flex-direction: column;
-  height: 15%;
+  height: 100%;
+  width: 88%;
+  margin-bottom: 20px;
 }
 
 :host ::ng-deep .end-page-container h2 {
@@ -25,10 +28,18 @@
   margin-top: 20px;
 }
 
+.today-resume {
+  align-self: flex-start;
+}
+
+.today-resume h2 {
+  font-size: 25px;
+}
+
 .task-resume {
   display: flex;
   justify-content: space-evenly;
-  height: 45%;
+  height: 100%;
   width: 100%;
   margin-top: -10px;
 }
@@ -55,6 +66,7 @@
   background-size: cover;
   border-radius: 16px;
   width: 25%;
+  height: 400px;
   overflow: auto;
 }
 
@@ -63,6 +75,7 @@
   background-size: cover;
   border-radius: 16px;
   width: 25%;
+  height: 400px;
   overflow: auto;
 }
 
@@ -71,6 +84,7 @@
   background-size: cover;
   border-radius: 16px;
   width: 25%;
+  height: 400px;
   overflow: auto;
 }
 
@@ -98,11 +112,22 @@
 }
 
 .display-unfinished-task {
-  display: flex;
   font-size: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
-.display-unfinished-task p {
+.display-unfinished-task h2 {
+  margin-bottom: 15px;
+}
+
+.display-unfinished-task ul {
+  margin-bottom: 15px;
+}
+
+.display-unfinished-task li {
+  float: left;
+  width: 150px;
   margin-top: 15px;
   margin-left: 20px;
   color: #6b5c52;
