@@ -23,7 +23,7 @@ export class ValidDaybookComponent implements OnInit {
     this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookSorted = daybook.getTasksByImportanceForForm2());
   }
 
-  
+
 
   fonction(task: Task) {
     this.dayBookAll.taskList.find((e) => e.id === task.id).taskChecked = task.taskChecked;
