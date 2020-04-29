@@ -30,9 +30,12 @@ export class Daybook {
    return [primordiale, importante, facultatives, nonFinie];
  }
  getTasksByImportance() {
-  const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task => task.importance === 3));
-  const importantes =  new TasksByImportance('Importantes', this.taskList.filter(task => task.importance === 2));
-  const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task => task.importance === 1));
+  const primordiales = new TasksByImportance('Primodiales', this.taskList.filter(task =>
+    task.importance === 3 && task.taskChecked === true));
+  const importantes =  new TasksByImportance('Importantes', this.taskList.filter(task =>
+    task.importance === 2 && task.taskChecked === true));
+  const facultatives = new TasksByImportance('Facultatives', this.taskList.filter(task =>
+    task.importance === 1 && task.taskChecked === true));
   const nonFinie =  new TasksByImportance('Non finies', this.taskList.filter(task => task.taskChecked === false));
   return [primordiales, importantes, facultatives, nonFinie];
  }

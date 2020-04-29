@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DaybookService } from 'src/app/shared/daybook.service';
+import { Daybook } from 'src/app/Models/daybook';
 
 @Component({
   selector: 'dbk-end-daybook',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EndDaybookComponent implements OnInit {
 
-  constructor() { }
+  finished: boolean;
+  daybook: Daybook;
+  daybookImportance = [];
 
-  ngOnInit(): void {
+constructor(public todayDaybook: DaybookService) { }
+
+ngOnInit(): void {
+    this.todayDaybook.getTodayDaybook().subscribe(data => {
+      this.daybook = data;
+      this.daybookImportance = this.daybook.getTasksByImportance();
+      if (this.daybookImportance[3].tasks.length > 0) {
+         this.finished = false;
+        } else {
+          this.finished = true;
+        }
+     });
   }
-
 }
