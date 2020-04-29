@@ -20,10 +20,11 @@ export class ValidDaybookComponent implements OnInit {
   constructor(private daybookService: DaybookService, private confirmationService: ConfirmationService, private route: Router) { }
 
   ngOnInit(): void {
+    this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookAll = daybook);
     this.daybookService.getTodayDaybook().subscribe((daybook) => this.dayBookSorted = daybook.getTasksByImportanceForForm2());
   }
 
-  
+
 
   fonction(task: Task) {
     this.dayBookAll.taskList.find((e) => e.id === task.id).taskChecked = task.taskChecked;
@@ -41,4 +42,3 @@ export class ValidDaybookComponent implements OnInit {
     });
    }
   }
-

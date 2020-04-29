@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   @Input() navigationNeeded: boolean;
   @Input() daybookNeeded: boolean;
   @Input() daybook: Daybook;
-
+git;
   items: MenuItem[];
 
   constructor(private daybookService: DaybookService, private router: Router) { }
