@@ -1,4 +1,4 @@
-b {
+:host ::ng-deep b {
   color: #FA9E9D;
 }
 
@@ -20,7 +20,7 @@ b {
   height: 15%;
 }
 
-.end-page-container h2 {
+:host ::ng-deep .end-page-container h2 {
   font-size: 32px;
   margin-top: 20px;
 }
@@ -30,7 +30,7 @@ b {
   justify-content: space-evenly;
   height: 45%;
   width: 100%;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .task-title {
@@ -107,4 +107,13 @@ b {
   margin-left: 20px;
   color: #6b5c52;
   font-weight: bold;
+}
+
+.phrase-acceuil h2{
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.phrase-acceuil b {
+  color: #FA9E9D;
 }
