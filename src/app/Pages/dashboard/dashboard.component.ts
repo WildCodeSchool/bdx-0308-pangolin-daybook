@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Daybook } from 'src/app/Models/daybook';
 import { DaybookService } from 'src/app/shared/daybook.service';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'dbk-dashboard',
@@ -12,9 +14,14 @@ export class DashboardComponent implements OnInit {
   datesFromCalendar: Date[];
   daybookOfTheWeekSelected: Daybook[];
   daybook: Daybook;
-  constructor(private daybookService: DaybookService) { }
+  constructor(private daybookService: DaybookService, private router: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('userToken')) {
+      this.router.paramMap.subscribe((param) => {
+          this.userService.setToken(param.get('token'));
+         });
+    }
     this.daybookService.getTodayDaybook().subscribe((e) => this.daybook = e);
     const today = this.changeDateFormat(new Date()).toString();
     const defaultDate = new Date();
@@ -22,11 +29,11 @@ export class DashboardComponent implements OnInit {
     const startDate = this.changeDateFormat(defaultDate).toString();
     this.daybookService.getDaybookOfTheWeek(startDate, today).subscribe(
       (e) => this.daybookOfTheWeekSelected = e);
+
   }
 
   datesReceived($event) {
     this.datesFromCalendar = $event;
-    console.log(this.datesFromCalendar);
     const date1 = this.changeDateFormat(this.datesFromCalendar[0]).toString();
     const date2 = this.changeDateFormat(this.datesFromCalendar[1]).toString();
 

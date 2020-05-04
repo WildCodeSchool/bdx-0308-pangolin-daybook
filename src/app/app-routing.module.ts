@@ -8,18 +8,21 @@ import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { Form3Guard } from './core/form3.guard';
 import { Form2Guard } from './core/form2.guard';
 import { Form1Guard } from './core/form1.guard';
+import { UserGuard } from './core/user.guard';
+
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'daybook', component: CreateDaybookComponent},
-  {path: 'valid', component: ValidDaybookComponent},
-  {path: 'end', component: EndDaybookComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [UserGuard]},
+  {path: 'daybook', component: CreateDaybookComponent, canActivate: [UserGuard] },
+  {path: 'valid', component: ValidDaybookComponent, canActivate: [UserGuard]},
+  {path: 'end', component: EndDaybookComponent, canActivate: [UserGuard]},
   // {path: 'daybook', component: CreateDaybookComponent, canActivate: [Form1Guard]},
   // {path: 'valid', component: ValidDaybookComponent, canActivate: [Form2Guard]},
   // {path: 'end', component: EndDaybookComponent, canActivate: [Form3Guard]},
-  {path: '**', component: HomeComponent}
+  {path: 'auth/:token', component: DashboardComponent},
+  {path: '**', component: DashboardComponent, canActivate: [UserGuard]},
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import {MenuItem, ConfirmationService} from 'primeng/api';
 import { Daybook } from 'src/app/Models/daybook';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { Router } from '@angular/router';
@@ -15,7 +15,6 @@ export class NavbarComponent implements OnInit {
   @Input() navigationNeeded: boolean;
   @Input() daybookNeeded: boolean;
   @Input() daybook: Daybook;
-git;
   items: MenuItem[];
 
   constructor(private daybookService: DaybookService, private router: Router) { }
@@ -25,12 +24,16 @@ git;
       label: 'Menu du Pangolin',
       items: [
           {label: 'Mon Dashboard', routerLink:  ['/dashboard']},
-          {label: 'Se déconnecter'}
+          {label: 'Se déconnecter', command : this.confirm, routerLink: ['']}
       ]
   }];
-
-
   }
+
+  confirm() {
+         localStorage.removeItem('userToken');
+         alert('Vous avez été déconnecté');
+    }
+
   goToForm() {
     if (this.daybook.finished) {
       this.router.navigateByUrl('/end');
