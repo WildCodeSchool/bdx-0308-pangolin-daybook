@@ -11,7 +11,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {CarouselModule} from 'primeng/carousel';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
@@ -28,6 +28,8 @@ import { FooterComponent } from './CommonComponent/footer/footer.component';
 import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
 import { HistoriqueComponent } from './Pages/dashboard/components/historique/historique.component';
 import { CalendarComponent } from './Pages/dashboard/components/calendar/calendar.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { TokenInterceptor } from './shared/tokenInterceptor';
 
 
 
@@ -43,7 +45,8 @@ import { CalendarComponent } from './Pages/dashboard/components/calendar/calenda
     FooterComponent,
     DiagramComponent,
     HistoriqueComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent
   ],
   imports: [
 
@@ -66,7 +69,12 @@ import { CalendarComponent } from './Pages/dashboard/components/calendar/calenda
     CheckboxModule
 
   ],
-  providers: [ConfirmationService],
+  providers: [ConfirmationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
