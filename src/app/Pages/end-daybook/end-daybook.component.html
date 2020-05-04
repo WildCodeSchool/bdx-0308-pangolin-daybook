@@ -1,10 +1,9 @@
 <dbk-navbar [homePage]="false" [navigationNeeded]="true" [daybookNeeded]="false"></dbk-navbar>
 <div class="end-page-container">
   <div class="end-page-content">
-    <div>
-      <h2><b>Bravo !</b> Journée terminée ! Ça mérite bien <b>une pause</b> non ?</h2>
+    <div [innerHTML]="phraseInjecte">
     </div>
-      <h2><b>Aujourd'hui</b>, tu auras réalisé : </h2>
+      <h2 class="today-resume"><b>Aujourd'hui</b>, tu auras réalisé : </h2>
     </div>
     <div class="task-resume">
       <div class="task-primordiale">
@@ -36,10 +35,12 @@
       <div *ngIf="finished === false" class="task-unfinished">
         <div class="display-unfinished-task">
           <h2><b>Malheureusement</b>, il te reste quelques <b>quêtes non réalisées :</b></h2>
-          <p *ngFor="let a of daybookImportance[3].tasks">{{a.title}}</p>
+          <ul>
+            <li *ngFor="let a of daybookImportance[3].tasks">{{a.title}}</li>
+          </ul>
+          <h2>Mais c'est <b>pas grave</b>, tu pourras toujours les faire <b>plus tard</b> !</h2>
+          <h2>Retourne sur ton <b>dashbord</b> pour avoir plus de <b>détails</b> sur ta journée et <b>à demain pour une nouvelle journée</b> !</h2>
         </div>
-        <h2>Mais c'est <b>pas grave</b>, tu pourras toujours les faire <b>plus tard</b> !</h2>
-        <h2>Retourne sur ton <b>dashbord</b> pour avoir plus de <b>détails</b> sur ta journée et <b>à demain pour une nouvelle journée</b> !</h2>
       </div>
       <div *ngIf="finished === true" class="task-finished">
         <h2><b>Incroyable</b>, tu as réussi à réaliser <b>toutes</b> les quêtes de la journée, <b>félicitations</b> !</h2>
