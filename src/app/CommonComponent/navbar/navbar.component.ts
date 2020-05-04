@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  @Input() homePage: boolean;
-  @Input() navigationNeeded: boolean;
-  @Input() daybookNeeded: boolean;
+  @Input() homePage = false;
+  @Input() navigationNeeded = false;
+  @Input() daybookNeeded = false;
   @Input() daybook: Daybook;
   items: MenuItem[];
 
