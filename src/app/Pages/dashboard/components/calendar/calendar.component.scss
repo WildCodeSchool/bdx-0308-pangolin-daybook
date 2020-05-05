@@ -1,6 +1,7 @@
 
 :host ::ng-deep .ui-datepicker-current-day{
 background-color:rgbA(253, 179, 147, 0.5);
+
 }
 
 :host ::ng-deep .ui-inputtext{
@@ -9,6 +10,7 @@ background-color:rgbA(253, 179, 147, 0.5);
 
 :host ::ng-deep .ui-datepicker-calendar	{
   background: #ffffff;
+cursor: pointer;
 }
 
 :host ::ng-deep .ui-datepicker-header{

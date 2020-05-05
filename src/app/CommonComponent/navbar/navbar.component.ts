@@ -3,6 +3,8 @@ import {MenuItem, ConfirmationService} from 'primeng/api';
 import { Daybook } from 'src/app/Models/daybook';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { Router } from '@angular/router';
+import { User } from 'src/app/Models/user';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'dbk-navbar',
@@ -16,10 +18,11 @@ export class NavbarComponent implements OnInit {
   @Input() daybookNeeded = false;
   @Input() daybook: Daybook;
   items: MenuItem[];
-
-  constructor(private daybookService: DaybookService, private router: Router) { }
+  user: User;
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    this.user = this.userService.currentUser;
     this.items = [{
       label: 'Menu du Pangolin',
       items: [
