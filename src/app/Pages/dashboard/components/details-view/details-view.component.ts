@@ -20,8 +20,30 @@ export class DetailsViewComponent implements OnInit {
     this.daybookService.getTodayDaybook().subscribe((daybook) => {
       this.daybookSelected = daybook;
       this.sortedTasks = daybook.getTasksByImportance();
+      console.log(this.sortedTasks);
+      console.log(this.daybookSelected);
     });
 
   }
+
+  classMethod(taskArray) {
+    if (taskArray.name === 'Primodiales') {
+      return 'priorities primodiales';
+    } else if (taskArray.name === 'Importantes') {
+      return 'priorities importantes';
+    } else if (taskArray.name === 'Facultatives') {
+      return 'priorities facultatives';
+    } else {
+      return 'nonfinies';
+  }
 }
 
+displayTaskArray(taskArray) {
+  if (taskArray.tasks === []) {
+    return false;
+  } else {
+    return true;
+  }
+
+}
+}
