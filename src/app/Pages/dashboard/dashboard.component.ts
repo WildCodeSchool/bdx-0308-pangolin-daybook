@@ -11,14 +11,12 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class DashboardComponent implements OnInit {
 
-
   datesFromCalendar: Date[];
   daybookOfTheWeekSelected: Daybook[];
   daybook: Daybook;
   constructor(private daybookService: DaybookService, private router: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
-
     if (!localStorage.getItem('userToken')) {
       this.router.paramMap.subscribe((param) => {
           this.userService.setToken(param.get('token'));

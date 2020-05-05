@@ -1,16 +1,15 @@
-<div id="opacity" class="test">
-  <dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybook"></dbk-navbar>
-  <div class="dashboard-page">
-    <div class="dashboard-histodiagram">
-      <div class= "dashboard-historique">
-        <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
-        <!-- <dbk-historique [weekDaybookList]="datesFromCalendar"></dbk-historique> -->
-      </div>
-      <div class= "dashboard-diagram">
-        <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
-      </div>
+<dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybook"></dbk-navbar>
+<div class="dashboard-page">
+  <div class="dashboard-histodiagram">
+    <div class= "dashboard-historique">
+      <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
+      <!-- <dbk-historique [weekDaybookList]="datesFromCalendar"></dbk-historique> -->
     </div>
-    <div class="dashboard-detail">
+    <div class= "dashboard-diagram">
+      <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
     </div>
   </div>
+  <div class="dashboard-detail">
+  </div>
 </div>
+
