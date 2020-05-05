@@ -24,18 +24,19 @@ export class NavbarComponent implements OnInit {
       label: 'Menu du Pangolin',
       items: [
           {label: 'Mon Dashboard', routerLink:  ['/dashboard']},
-          {label: 'Se déconnecter', command : this.logout}
+          {label: 'Se déconnecter', command : this.logoutFunction}
       ]
   }];
   }
-  // routerLink: ['']
 
-  logout() {
+  logoutFunction() {
     document.getElementById('logout').className = 'show';
+    document.getElementById('logout-opacity').className = 'transparance';
   }
 
   hide() {
     document.getElementById('logout').className = 'hide';
+    document.getElementById('logout-opacity').className = 'hide';
   }
 
   confirm() {
