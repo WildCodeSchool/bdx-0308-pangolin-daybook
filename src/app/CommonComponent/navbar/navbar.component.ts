@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {MenuItem, ConfirmationService} from 'primeng/api';
 import { Daybook } from 'src/app/Models/daybook';
-import { DaybookService } from 'src/app/shared/daybook.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,25 +16,26 @@ export class NavbarComponent implements OnInit {
   @Input() daybook: Daybook;
   items: MenuItem[];
 
-  constructor(private daybookService: DaybookService, private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.items = [{
       label: 'Menu du Pangolin',
       items: [
           {label: 'Mon Dashboard', routerLink:  ['/dashboard']},
-          {label: 'Se déconnecter', command : this.logout}
+          {label: 'Se déconnecter', command : this.logoutFunction}
       ]
   }];
   }
-  // routerLink: ['']
 
-  logout() {
+  logoutFunction() {
     document.getElementById('logout').className = 'show';
+    document.getElementById('logout-opacity').className = 'transparance';
   }
 
   hide() {
     document.getElementById('logout').className = 'hide';
+    document.getElementById('logout-opacity').className = 'hide';
   }
 
   confirm() {
