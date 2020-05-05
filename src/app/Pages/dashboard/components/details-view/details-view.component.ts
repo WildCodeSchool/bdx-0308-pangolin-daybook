@@ -20,8 +20,6 @@ export class DetailsViewComponent implements OnInit {
     this.daybookService.getTodayDaybook().subscribe((daybook) => {
       this.daybookSelected = daybook;
       this.sortedTasks = daybook.getTasksByImportance();
-      console.log(this.sortedTasks);
-      console.log(this.daybookSelected);
     });
 
   }
