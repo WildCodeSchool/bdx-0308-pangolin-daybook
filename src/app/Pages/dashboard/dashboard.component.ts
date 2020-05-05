@@ -23,11 +23,13 @@ export class DashboardComponent implements OnInit {
          });
     }
     this.daybookService.getTodayDaybook().subscribe((e) => this.daybook = e);
-    const today = this.changeDateFormat(new Date()).toString();
+    const today = new Date();
+    today.setDate(today.getDate() + 1);
+    const endDate = this.changeDateFormat(today).toString();
     const defaultDate = new Date();
-    defaultDate.setDate(defaultDate.getDate() - 7);
+    defaultDate.setDate(defaultDate.getDate() - 5 );
     const startDate = this.changeDateFormat(defaultDate).toString();
-    this.daybookService.getDaybookOfTheWeek(startDate, today).subscribe(
+    this.daybookService.getDaybookOfTheWeek(startDate, endDate).subscribe(
       (e) => this.daybookOfTheWeekSelected = e);
 
   }
