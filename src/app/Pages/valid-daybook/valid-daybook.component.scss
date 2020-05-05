@@ -5,11 +5,12 @@
    background-position: center;
    display: flex;
    flex-direction: column;
+   height: 850px;
 }
 
 .tasksList{
   margin: auto;
-  width: 1000px;
+  width: 980px;
   height: 900px;
   display: flex;
   justify-content: space-evenly;
@@ -75,4 +76,5 @@ h2{
 .confirm-dialogue button {
   height: 50px;
   font-size: 22px;
+  margin-bottom: 150px;
 }
