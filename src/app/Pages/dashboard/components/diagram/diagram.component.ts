@@ -18,7 +18,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   multi: DiagramMultidata[];
   view: any[] = [700, 400];
   colorScheme = {
-    domain: ['#FDB393', '#E39384', '#E384AE', '#FA9E9D']
+    domain: ['#F57BA8', '#8CD8DB', '#CABE8A', '#FAC3AA']
   };
   showXAxis = true;
   showYAxis = true;
