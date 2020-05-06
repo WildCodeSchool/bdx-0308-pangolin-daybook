@@ -1,0 +1,15 @@
+<div class="hostList">
+    <h2>{{daybookSelected.theme}}</h2>
+      <div *ngFor="let taskArray of sortedTasks; index as i">
+        <div class="priorities">
+          <h3>{{sortedTasks[i].name}}</h3>
+
+          <div *ngFor="let task of sortedTasks[i].tasks">
+            <p>{{task.title}} <img src="./assets/tick.png" alt="tick" *ngIf="task.taskChecked === true">
+            </p>
+          </div>
+        </div>
+
+      </div>
+</div>
+
