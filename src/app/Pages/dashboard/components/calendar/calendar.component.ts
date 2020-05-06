@@ -23,6 +23,5 @@ rangeDate() {
 
 sendDateArray() {
   this.datesSelected.emit(this.rangeDates);
-  console.log(this.rangeDates);
 }
 }
