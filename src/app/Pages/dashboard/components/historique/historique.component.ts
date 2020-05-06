@@ -14,17 +14,23 @@ export class HistoriqueComponent implements OnInit {
 
   responsiveOptions;
   daybookFiltre: TasksFilterForDiagram[];
+  todayDaybook: Daybook;
+  daybookPrimordiale;
 
   constructor(public daybookService: DaybookService) { }
 
     ngOnInit() {
-      this.daybookService.getAll().subscribe((data) => {
-        this.daybookFiltre = data.find(element => element.id === 1).getNbTasksByImportance();
+      this.daybookService.getTodayDaybook().subscribe(data => {
+        this.todayDaybook = data;
+        this.daybookFiltre = this.todayDaybook.getNbTasksByImportance();
+        this.daybookPrimordiale = this.daybookFiltre[0];
+        console.log(this.weekDaybookList);
         console.log(this.daybookFiltre);
+        console.log(this.todayDaybook);
+    });
+  }
 
-      });
-    }
-
-
-
+  test() {
+    console.log(this.weekDaybookList);
+  }
 }
