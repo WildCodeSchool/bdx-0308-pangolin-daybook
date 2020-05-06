@@ -56,7 +56,7 @@ export class CreateDaybookComponent implements OnInit {
    editTask() {
      this.daybook.taskList[this.index].title = this.task.title;
      this.daybook.taskList[this.index].importance = this.task.importance;
-     this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = e);
+     this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = new Daybook(e));
      this.showEdit = false;
      this.task.title = '';
    }
@@ -65,7 +65,7 @@ export class CreateDaybookComponent implements OnInit {
    }
   addTask() {
     this.daybook.taskList.push(this.task);
-    this.daybookService.edit(this.daybook , this.daybook.id).subscribe((edited) => this.daybook = edited);
+    this.daybookService.edit(this.daybook , this.daybook.id).subscribe((edited) => this.daybook = new Daybook(edited));
     this.task.title = '';
   }
   confirm() {

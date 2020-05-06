@@ -30,7 +30,7 @@ export class ValidDaybookComponent implements OnInit {
 
   fonction(task: Task) {
     this.dayBookAll.taskList.find((e) => e.id === task.id).taskChecked = task.taskChecked;
-    this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = e);
+    this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = new Daybook(e));
   }
 
   confirm() {
