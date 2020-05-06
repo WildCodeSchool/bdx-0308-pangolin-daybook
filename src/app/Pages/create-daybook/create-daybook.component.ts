@@ -35,8 +35,13 @@ export class CreateDaybookComponent implements OnInit {
     this.daybookService.getTodayDaybook().subscribe((daybookOfTheDay) => {
       if (daybookOfTheDay) {
         this.daybook = daybookOfTheDay;
+        this.task.daybook.id = daybookOfTheDay.id;
      } else {
-       this.daybookService.post(new Daybook()).subscribe((newDaybook) => this.daybook = newDaybook );
+       this.daybookService.post(new Daybook()).subscribe(
+         (newDaybook) => {
+         this.daybook = newDaybook;
+         this.task.daybook.id = newDaybook.id;
+        } );
      } });
 
 
