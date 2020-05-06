@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../Models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ setToken(token) {
 getToken() {
   return localStorage.getItem('userToken');
 }
-getMe() {
- return this.http.get(UserService.BASE_URL + '/me');
+getMe(): Observable<User> {
+ return this.http.get<User>(UserService.BASE_URL + '/me');
 }
 }
