@@ -1,7 +1,7 @@
 <div class="hostList">
-    <h2>{{daybookSelected.theme}}</h2>
-      <div *ngFor="let taskArray of sortedTasks; index as i">
-        <div *ngIf="sortedTasks[i].tasks.length === 0? false :true" class="priorities">
+  <h2>{{daybookSelected.theme}}</h2>
+  <div *ngFor="let taskArray of sortedTasks; index as i">
+      <div *ngIf="sortedTasks[i].tasks.length === 0? false :true" class="priorities">
         <div [ngClass]="classMethod(taskArray)">
         <h3>{{sortedTasks[i].name}}</h3>
 
