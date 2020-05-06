@@ -142,7 +142,8 @@ a:hover {
   margin-top: 3px;
   border-radius: 50%;
   height: 80px;
-  width: auto;
+  background-color: white;
+  min-width: 80px;
   border: solid 2px white;
 }
 #avatar:hover {

@@ -57,4 +57,5 @@ export class NavbarComponent implements OnInit {
       this.router.navigateByUrl('/daybook');
     }
   }
+
 }
