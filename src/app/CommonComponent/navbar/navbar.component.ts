@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+    if (!this.homePage) {
     this.userService.getMe().subscribe((user) => this.user = user);
+    }
     this.items = [{
       label: 'Menu du Pangolin',
       items: [
