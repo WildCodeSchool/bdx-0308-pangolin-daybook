@@ -23,7 +23,10 @@ export class DashboardComponent implements OnInit {
           this.userService.setToken(param.get('token'));
          });
     }
-    this.daybookService.getTodayDaybook().subscribe((e) => this.daybookoftheDay = e);
+    this.daybookService.getTodayDaybook().subscribe((e) => {
+      this.daybookoftheDay = e;
+      this.daybookChosen = e;
+    });
     const today = new Date();
     today.setDate(today.getDate() + 1);
     const endDate = this.changeDateFormat(today).toString();
