@@ -4,16 +4,15 @@
   </p-header>
   <ng-template let-daybook pTemplate="item">
     <div class="daybook-details">
+      <div class="date">{{daybook.date | date:'EEEE d MMMM '| titlecase}}</div>
       <div class="item-content" *ngIf="daybook.theme">
-        <div>{{daybook.date | date:'dd MMM yyyy'}}</div>
         <div>{{daybook.theme}} </div>
         <div *ngIf="daybook.taskList.length>1">{{daybook.taskList.length}} tâches</div>
         <div *ngIf="daybook.taskList.length===1"> 1 tâche </div>
         <button pButton (click)="chooseDaybook(daybook.id)"type="button" class="ui-button-secondary" icon="pi pi-search"></button>
       </div>
       <div class="empty-daybook" *ngIf="!daybook.theme">
-        <div>{{daybook.date | date:'dd MMM yyyy'}}</div>
-        <div> Pas de journal pour ce journée</div>
+        <div> Pas de journal pour cette journée</div>
       </div>
     </div>
   </ng-template>

@@ -8,7 +8,7 @@ p-header h3 {
   font-size: 30px;
 }
 :host ::ng-deep .ui-carousel-item .daybook-details {
-  border: 1px solid #b3c2ca;
+  border: 1px solid #FA9E9D;
   border-radius: 3px;
   margin: 0.3em;
   text-align: center;
@@ -16,7 +16,7 @@ p-header h3 {
   height:240px;
 
 }
-.item-content{
+.item-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,4 +36,11 @@ p-header h3 {
 
 :host ::ng-deep .ui-carousel-dot-icon {
   background-color: #FA9E9D;
+}
+.date{
+  font-size: 25px;
+  color: #FA9E9D;
+}
+.empty-daybook {
+  margin-top:50px;
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FormsModule } from '@angular/forms';
 import { MenuModule } from 'primeng/menu';
@@ -15,6 +15,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {CarouselModule} from 'primeng/carousel';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,7 +35,7 @@ import { TokenInterceptor } from './shared/tokenInterceptor';
 
 import { DetailsViewComponent } from './Pages/dashboard/components/details-view/details-view.component';
 
-
+registerLocaleData(localeFr);
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +69,7 @@ import { DetailsViewComponent } from './Pages/dashboard/components/details-view/
     HttpClientModule,
     CarouselModule,
     ConfirmDialogModule,
-    CheckboxModule
+    CheckboxModule,
 
   ],
   providers: [ConfirmationService,
@@ -75,7 +77,9 @@ import { DetailsViewComponent } from './Pages/dashboard/components/details-view/
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-}],
+},
+{provide: LOCALE_ID, useValue: 'fr-FR' }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
