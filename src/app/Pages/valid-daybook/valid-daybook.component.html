@@ -2,33 +2,16 @@
 <div class="background">
   <div class="tasksList">
 
-    <div class="sticker primordiales">
-      <h2>Quêtes {{dayBookSorted[0].name}}</h2>
+    <div *ngFor="let daybook of dayBookSorted; index as i" [ngClass]="daybookClass(i)">
+
+      <h2>Quêtes {{dayBookSorted[i].name}}</h2>
     <ol>
-      <li *ngFor="let task of dayBookSorted[0].tasks">
+      <li *ngFor="let task of dayBookSorted[i].tasks">
         <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
         {{task.title}}
       </li>
     </ol>
-    </div>
 
-    <div class="sticker importantes">
-      <h2>Quêtes {{dayBookSorted[1].name}} </h2>
-    <ol>
-      <li *ngFor="let task of dayBookSorted[1].tasks">
-      <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
-      {{task.title}}
-    </ol>
-    </div>
-
-    <div class="sticker facultatives">
-      <h2>Quêtes {{dayBookSorted[2].name}}</h2>
-    <ol>
-      <li *ngFor="let task of dayBookSorted[2].tasks">
-        <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
-        {{task.title}}
-      </li>
-    </ol>
     </div>
 
   </div>
