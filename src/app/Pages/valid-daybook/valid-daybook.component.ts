@@ -43,4 +43,15 @@ export class ValidDaybookComponent implements OnInit {
       }
     });
    }
+
+   daybookClass(index) {
+    if (index === 0) {
+      return 'sticker primordiales';
+    } else if (index === 1) {
+      return 'sticker importantes';
+    } else {
+      return 'sticker facultatives';
+    }
+   }
+
   }

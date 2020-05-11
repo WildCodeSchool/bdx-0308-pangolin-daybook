@@ -14,7 +14,7 @@
 }
 
 .theme{
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-top: 1%;
 }
 
@@ -64,7 +64,7 @@ form{
   width: 378px;
   background: url('../../../assets/whitenotepad.png');
   padding: 3%;
-  margin-top: 3%;
+  margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 10%;
   transform : rotate(-20deg);
@@ -73,20 +73,36 @@ form{
 .notes li{
   padding: 1%;
   list-style: none;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .notes li img{
   vertical-align: middle;
   cursor: pointer;
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
 }
 .notes h3 {
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 .importance {
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
-
-
+.primordiales{
+ color: #F57BA8;
+}
+.facultatives{
+ color: rgb(184, 173, 124);
+}
+.importantes{
+ color: rgb(129, 200, 202);
+}
 .send{
   margin: auto;
   width: 40%;
@@ -115,31 +131,3 @@ form{
 :host ::ng-deep .ui-dialog {
   background-color: rgba(255, 255, 255, 0.87);
 }
-
-// @media screen and (max-width: 1000px) {
-//   .desk{
-//     display: inline-block;
-//   }
-// form{
-//   margin-left: 10%;
-// }
-//   form h3{
-//     padding:3%;
-//   }
-//   .taskdef{
-//     display: flex;
-//     flex-direction: column;
-//   }
-// .ui-button{
-//   width: 20%;
-// }
-// .notes{
-//   margin-left: 20%;
-// }
-// .ui-button{
-//   margin-top: 5%;
-//   margin-bottom: 5%;
-//   width: 40%;
-// }
-
-// }

@@ -80,4 +80,36 @@ export class CreateDaybookComponent implements OnInit {
 
 
   }
+
+  taskImportance(task) {
+    if (task.importance === 3) {
+      return 'importance primordiales';
+    } else if (task.importance === 2) {
+      return 'importance importantes';
+    } else {
+      return 'importance facultatives';
+    }
+}
+
+taskTitle(task) {
+  if (task.importance === 3) {
+    return true;
+  } else if (task.importance === 2) {
+    return true;
+  } else {
+    return true;
+  }
+}
+
+taskIcon(task) {
+  if (task.importance === 3) {
+    return './assets/push_pin_rose.png';
+  } else if (task.importance === 2) {
+    return './assets/push_pin_bleu.png';
+  } else {
+    return './assets/push_pin.png';
+  }
+}
+
+
 }
