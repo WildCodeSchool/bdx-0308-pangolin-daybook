@@ -1,34 +1,35 @@
 <dbk-navbar [navigationNeeded]="true"></dbk-navbar>
 <div class="background">
   <div class="tasksList">
+
     <div class="sticker primordiales">
       <h2>Quêtes {{dayBookSorted[0].name}}</h2>
     <ol>
       <li *ngFor="let task of dayBookSorted[0].tasks">
-
-        <img src="assets/pangolinIcon.png">
-        {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+        <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+        {{task.title}}
       </li>
-    </ol></div>
+    </ol>
+    </div>
 
     <div class="sticker importantes">
       <h2>Quêtes {{dayBookSorted[1].name}} </h2>
     <ol>
-      <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="assets/pangolinIcon.png">
-
-
-   {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
-    </ol></div>
+      <li *ngFor="let task of dayBookSorted[1].tasks">
+      <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+      {{task.title}}
+    </ol>
+    </div>
 
     <div class="sticker facultatives">
       <h2>Quêtes {{dayBookSorted[2].name}}</h2>
     <ol>
       <li *ngFor="let task of dayBookSorted[2].tasks">
-
-        <img src="assets/pangolinIcon.png">
-        {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+        <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+        {{task.title}}
       </li>
-    </ol></div>
+    </ol>
+    </div>
 
   </div>
   <div class="confirm-dialogue">
