@@ -3,11 +3,7 @@
   <div class="dashboard-histodiagram">
     <div class= "dashboard-historique">
       <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
-<<<<<<< HEAD
       <dbk-historique (daybookChosen)="changeDaybookDetails($event)" [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-historique>
-=======
-      <dbk-historique [weekDaybookList]="datesFromCalendar"></dbk-historique>
->>>>>>> 52d7434535000174799ebbe1fbbd055c67cf0fd1
     </div>
     <div class= "dashboard-diagram">
       <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
