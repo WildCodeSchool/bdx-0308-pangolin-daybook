@@ -1,8 +1,15 @@
+import { Daybook } from './daybook';
+
 export class Task {
 
-  id: string;
+  id: number;
   taskChecked = false;
-  constructor(public title: string,  public importance: number) {}
+  public title: string;
+  public importance: number;
+  daybook = new Daybook();
+  constructor(task?: Task) {
+    Object.assign(this, task);
+  }
 
   checkedTask() {
     this.taskChecked = !this.taskChecked;

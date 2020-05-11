@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Daybook } from 'src/app/Models/daybook';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
+import { DiagramMultidata } from 'src/app/Models/diagram-multidata';
 
 
 @Component({
@@ -9,185 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrls: ['./diagram.component.scss'],
 
 })
-export class DiagramComponent implements OnInit {
+export class DiagramComponent implements OnInit, OnChanges {
   @Input() weekDaybookList: Daybook[];
   diagramStyle = 'gridpie';
-
-  single: any[] = [
-    {
-      name : 'Facultatives',
-      value: 3
-    },
-    {
-      name : 'Importantes',
-      value : 1
-    },
-    {
-      name : 'Primordiales',
-      value : 2,
-    },
-    {
-      name : 'Non finies',
-      value : 3,
-    }
-   ];
-   multi = [
-    {
-      name: 'Lundi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 3
-        },
-        {
-          name: 'Importantes',
-          value: 1
-        },
-        {
-          name: 'Facultatives',
-          value: 4
-        },
-        {
-          name: 'Non finies',
-          value: 2
-        }
-      ]
-    },
-
-    {
-      name: 'Mardi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 2
-        },
-        {
-          name: 'Importantes',
-          value: 1
-        },
-        {
-          name: 'Facultatives',
-          value: 1
-        },
-        {
-          name: 'Non finies',
-          value: 1
-        }
-      ]
-    },
-    {
-      name: 'Mercredi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 2
-        },
-        {
-          name: 'Importantes',
-          value: 1
-        },
-        {
-          name: 'Facultatives',
-          value: 1
-        },
-        {
-          name: 'Non finies',
-          value: 4
-        }
-      ]
-    },
-    {
-      name: 'Jeudi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 2
-        },
-        {
-          name: 'Importantes',
-          value: 1
-        },
-        {
-          name: 'Facultatives',
-          value: 3
-        },
-        {
-          name: 'Non finies',
-          value: 1
-        }
-      ]
-    },
-    {
-      name: 'Vendredi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 2
-        },
-        {
-          name: 'Importantes',
-          value: 1
-        },
-        {
-          name: 'Facultatives',
-          value: 1
-        },
-        {
-          name: 'Non finies',
-          value: 1
-        }
-      ]
-    },
-    {
-      name: 'Samedi',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 1
-        },
-        {
-          name: 'Importantes',
-          value: 5
-        },
-        {
-          name: 'Facultatives',
-          value: 3
-        },
-        {
-          name: 'Non finies',
-          value: 1
-        }
-      ]
-    },
-    {
-      name: 'Dimanche',
-      series: [
-        {
-          name: 'Primordiales',
-          value: 0
-        },
-        {
-          name: 'Importantes',
-          value: 0
-        },
-        {
-          name: 'Facultatives',
-          value: 1
-        },
-        {
-          name: 'Non finies',
-          value: 1
-        }
-      ]
-    },
-      ];
-
-
-  view: any[] = [ 700, 400];
-
-
+  weekdata: (TasksFilterForDiagram[])[];
+  single: TasksFilterForDiagram[];
+  multi: DiagramMultidata[];
+  view: any[] = [700, 400];
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#F57BA8', '#8CD8DB', '#CABE8A', '#FAC3AA']
   };
   showXAxis = true;
   showYAxis = true;
@@ -201,15 +32,51 @@ export class DiagramComponent implements OnInit {
   diagramlist = [];
 
   constructor() {
-this.diagramlist = [
-  {label: 'GridPie', value: 'gridpie'},
-  {label: 'Stackedbar', value: 'stackedBar'},
-];
+    this.diagramlist = [
+      { label: 'GridPie', value: 'gridpie' },
+      { label: 'Stackedbar', value: 'stackedBar' },
+    ];
   }
 
+  ngOnInit(): void {
+    this.multi = this.getMultiData();
+    this.weekdata = this.weekDaybookList.map((e) => e.getNbTasksByImportance());
+    this.single = this.getSingleData();
+  }
+  ngOnChanges(): void {
+    this.multi = this.getMultiData();
+    this.weekdata = this.weekDaybookList.map((e) => e.getNbTasksByImportance());
+    this.single = this.getSingleData();
+  }
 
-  ngOnInit(): void {}
-
-  onSelect(event) {}
+  getMultiData() {
+  const result = [];
+  if (this.weekDaybookList.length > 0) {
+  for (const  daybook of this.weekDaybookList) {
+    result.push(new DiagramMultidata(daybook.getDayAndMonth(), daybook.getNbTasksByImportance()));
+  }
+  return result;
+  } else {
+    return [];
+  }
+  }
+  getSingleData() {
+    if (this.weekdata.length > 0) {
+    const reducedArray = this.weekdata.reduce((a, b) => a.concat(b));
+    return [
+    new TasksFilterForDiagram('Primordiales', reducedArray.filter((e) => e.name === 'Primordiales').reduce((a, b) => a + b.value, 0)),
+    new TasksFilterForDiagram('Importantes', reducedArray.filter((e) => e.name === 'Importantes').reduce((a, b) => a + b.value, 0)),
+    new TasksFilterForDiagram('Facultatives', reducedArray.filter((e) => e.name === 'Facultatives').reduce((a, b) => a + b.value, 0)),
+    new TasksFilterForDiagram('Non finies', reducedArray.filter((e) => e.name === 'Non finies').reduce((a, b) => a + b.value, 0)),
+    ];
+  } else {
+    return [
+     new TasksFilterForDiagram('Primordiales', 0) ,
+    new TasksFilterForDiagram('Importantes', 0) ,
+    new TasksFilterForDiagram('Facultatives', 0) ,
+    new TasksFilterForDiagram('Non finies', 0) ,
+    ];
+  }
+  }
 
 }

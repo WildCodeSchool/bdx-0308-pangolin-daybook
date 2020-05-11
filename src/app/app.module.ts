@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FormsModule } from '@angular/forms';
-import {MenuModule} from 'primeng/menu';
+import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,11 @@ import { SliderModule } from 'primeng/slider';
 import { CalendarModule } from 'primeng/calendar';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {CarouselModule} from 'primeng/carousel';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService} from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +26,12 @@ import { EndDaybookComponent } from './Pages/end-daybook/end-daybook.component';
 import { NavbarComponent } from './CommonComponent/navbar/navbar.component';
 import { FooterComponent } from './CommonComponent/footer/footer.component';
 import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.component';
+import { HistoriqueComponent } from './Pages/dashboard/components/historique/historique.component';
+import { CalendarComponent } from './Pages/dashboard/components/calendar/calendar.component';
 
+import { TokenInterceptor } from './shared/tokenInterceptor';
+
+import { DetailsViewComponent } from './Pages/dashboard/components/details-view/details-view.component';
 
 
 @NgModule({
@@ -34,9 +44,13 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     EndDaybookComponent,
     NavbarComponent,
     FooterComponent,
-    DiagramComponent
+    DiagramComponent,
+    HistoriqueComponent,
+    CalendarComponent,
+    DetailsViewComponent
   ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -49,10 +63,19 @@ import { DiagramComponent } from './Pages/dashboard/components/diagram/diagram.c
     DropdownModule,
     InputTextModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    HttpClientModule,
+    CarouselModule,
+    ConfirmDialogModule,
+    CheckboxModule
 
   ],
-  providers: [],
+  providers: [ConfirmationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

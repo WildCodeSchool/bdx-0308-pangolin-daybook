@@ -1,1 +1,39 @@
-<p>valid-daybook works!</p>
+<dbk-navbar [navigationNeeded]="true"></dbk-navbar>
+<div class="background">
+  <div class="tasksList">
+    <div class="sticker primordiales">
+      <h2>Quêtes {{dayBookSorted[0].name}}</h2>
+    <ol>
+      <li *ngFor="let task of dayBookSorted[0].tasks">
+
+        <img src="assets/pangolinIcon.png">
+        {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+      </li>
+    </ol></div>
+
+    <div class="sticker importantes">
+      <h2>Quêtes {{dayBookSorted[1].name}} </h2>
+    <ol>
+      <li  *ngFor="let task of dayBookSorted[1].tasks"><img src="assets/pangolinIcon.png">
+
+
+   {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+    </ol></div>
+
+    <div class="sticker facultatives">
+      <h2>Quêtes {{dayBookSorted[2].name}}</h2>
+    <ol>
+      <li *ngFor="let task of dayBookSorted[2].tasks">
+
+        <img src="assets/pangolinIcon.png">
+        {{task.title}} <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+      </li>
+    </ol></div>
+
+  </div>
+  <div class="confirm-dialogue">
+    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+    <button  class="confirm-button" type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirmer le Journal"></button>
+  </div>
+</div>
+<dbk-footer></dbk-footer>

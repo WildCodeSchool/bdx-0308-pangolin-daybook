@@ -19,7 +19,4 @@ describe('ValidDaybookComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

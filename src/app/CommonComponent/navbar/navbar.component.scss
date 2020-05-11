@@ -1,21 +1,13 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-}
-
 h1 {
   margin-right: 20px;
 }
 
 .navbar-container {
-  height: 150px;
   background-color: #FA9E9D;
 }
 
 .navbar-content {
   width: 100%;
-  height: 150px;
   display: flex;
 }
 
@@ -25,13 +17,13 @@ h1 {
   align-items: center;
   color : #FFFFFF;
   font-size: 40px;
-  height: 150px;
   width: 100%;
 }
 
 .title-navbar-home img{
   height: 120px;
   width: 120px;
+  margin: 10px 25px 10px 0;
   margin-left: 25px;
 }
 
@@ -40,14 +32,14 @@ h1 {
   align-items: center;
   color : #FFFFFF;
   font-size: 28px;
-  height: 150px;
   width: 50%;
   margin-left: 100px;
 }
 
 .title-navbar-other img{
-  height: 100px;
-  width: 100px;
+  max-height: 85px;
+  width: 85px;
+  margin: 10px 25px 10px 0;
 }
 
 .navbar-info {
@@ -69,10 +61,14 @@ h1 {
 }
 
 .navbar-info  img{
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   cursor: pointer;
   margin-right: 50px;
+}
+
+.navbar-menu {
+  order: 1;
 }
 
 :host ::ng-deep .ui-menu {
@@ -81,3 +77,94 @@ h1 {
   background-color: white;
 }
 
+a:hover {
+  cursor: pointer;
+  background-color: #ffcfcf;
+  border-radius: 8px;
+  padding:3px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  opacity: 0;
+  animation: fadein 0.2s linear;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  background-color: white;
+  color: #FA9E9D;
+  border: solid 2px #FA9E9D;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.show h1 {
+  margin-top: 20px;
+  align-self: center;
+  margin-right: 0;
+  padding: 10px;
+}
+
+.logoff-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logoff-buttons button {
+  background-color: #FA9E9D;
+  color: white;
+  font-size: 35px;
+  border: none;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+}
+
+#avatar {
+  margin-top: 3px;
+  border-radius: 50%;
+  height: 80px;
+  background-color: white;
+  min-width: 80px;
+  border: solid 2px white;
+}
+#avatar:hover {
+  opacity: 90%;
+}
+
+.transparance {
+  animation: backcolor 0.2s linear;
+  background-color: rgba(255, 255, 255, 0.808);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes backcolor {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.808);
+  }
+
+}
