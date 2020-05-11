@@ -29,14 +29,15 @@
 .hostList h3{
   color: #FA9E9D;
   padding: 2%;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 .hostList p{
   padding: 1%;
   padding-left: 7%;
   font-size: 1.5rem;
 }
-.primodiales{
+.primordiales{
   background-image: url("/assets/push_pin_rose.png");
   border: 5px solid #F57BA8;
   border-radius: 5px;
@@ -58,6 +59,7 @@
 .nonfinies{
   border: 5px solid #FAC3AA;
   border-radius: 5px;
+  padding-bottom: 8px;
 }
 .list-container{
   height: 100%;

@@ -22,8 +22,8 @@ ngOnChanges(): void {
   this.sortedTasks = this.daybookSelected.getTasksByImportance();
 }
   classMethod(taskArray) {
-    if (taskArray.name === 'Primodiales') {
-      return 'priorities primodiales';
+    if (taskArray.name === 'Primordiales') {
+      return 'priorities primordiales';
     } else if (taskArray.name === 'Importantes') {
       return 'priorities importantes';
     } else if (taskArray.name === 'Facultatives') {

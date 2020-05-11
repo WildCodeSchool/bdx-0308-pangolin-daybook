@@ -12,11 +12,12 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import {CarouselModule} from 'primeng/carousel';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {ConfirmationService} from 'primeng/api';
-import { registerLocaleData } from '@angular/common';
+import { CarouselModule } from 'primeng/carousel';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+import { registerLocaleData, DatePipe } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -77,9 +78,10 @@ registerLocaleData(localeFr);
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-},
-{provide: LOCALE_ID, useValue: 'fr-FR' }
-],
+    },
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

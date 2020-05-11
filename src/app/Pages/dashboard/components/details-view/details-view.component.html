@@ -8,7 +8,7 @@
       <div [ngClass]="classMethod(taskArray)">
       <h3>{{sortedTasks[i].name}}</h3>
         <div *ngFor="let task of sortedTasks[i].tasks">
-          <p>{{task.title}} <img src="./assets/tick.png" alt="tick" *ngIf="task.taskChecked === true">
+          <p> <img src="./assets/tick.png" alt="tick" *ngIf="task.taskChecked === true"> {{task.title}}
           </p>
       </div>
     </div>
