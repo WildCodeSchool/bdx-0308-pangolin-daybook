@@ -21,7 +21,7 @@ const routes: Routes = [
   // {path: 'daybook', component: CreateDaybookComponent, canActivate: [Form1Guard]},
   // {path: 'valid', component: ValidDaybookComponent, canActivate: [Form2Guard]},
   // {path: 'end', component: EndDaybookComponent, canActivate: [Form3Guard]},
-  {path: 'auth/:token', component: DashboardComponent},
+  {path: 'oauth/:token', component: DashboardComponent},
   {path: '**', component: DashboardComponent, canActivate: [UserGuard]},
 ];
 
