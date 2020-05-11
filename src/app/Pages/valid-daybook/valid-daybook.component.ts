@@ -38,8 +38,8 @@ export class ValidDaybookComponent implements OnInit {
       message: 'Si vous confirmez votre Journal vous ne pourrez plus le modifier !',
       accept: () => {
     this.route.navigateByUrl('/end');
-    // this.dayBookAll.finished = true;
-    // this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = e);
+    this.dayBookAll.finished = true;
+    this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = e);
       }
     });
    }

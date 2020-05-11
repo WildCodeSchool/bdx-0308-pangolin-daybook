@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
 import { Daybook } from 'src/app/Models/daybook';
@@ -11,20 +11,15 @@ import { Daybook } from 'src/app/Models/daybook';
 export class HistoriqueComponent implements OnInit {
 
   @Input() weekDaybookList: Daybook[];
-
-  responsiveOptions;
-  daybookFiltre: TasksFilterForDiagram[];
+  @Output() daybookChosen = new EventEmitter<number>();
+  responsiveOptions: [];
 
   constructor(public daybookService: DaybookService) { }
 
     ngOnInit() {
-      this.daybookService.getAll().subscribe((data) => {
-        this.daybookFiltre = data.find(element => element.id === 1).getNbTasksByImportance();
-        console.log(this.daybookFiltre);
+  }
 
-      });
-    }
-
-
-
+  chooseDaybook(id) {
+    this.daybookChosen.emit(id);
+  }
 }

@@ -1,4 +1,7 @@
-
+.container{
+  padding-top: 5px;
+  margin-left: 38%;
+}
 :host ::ng-deep .ui-datepicker-current-day{
 background-color:rgbA(253, 179, 147, 0.5);
 
@@ -15,4 +18,9 @@ cursor: pointer;
 
 :host ::ng-deep .ui-datepicker-header{
   background: #ffffff;
+}
+.title{
+ font-size: 20px;
+ color:#FA9E9D;
+  margin-right:  20px ;
 }

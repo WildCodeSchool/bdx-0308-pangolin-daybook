@@ -16,7 +16,7 @@ ngOnInit(): void {  }
 
 rangeDate() {
   const date = new Date(this.rangeDates[0]);
-  date.setDate(date.getDate() + 6);
+  date.setDate(date.getDate() + 8);
   const dateArray = [this.rangeDates[0], date];
   this.rangeDates = dateArray;
  }

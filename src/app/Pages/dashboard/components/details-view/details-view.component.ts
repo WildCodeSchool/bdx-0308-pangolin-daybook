@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { Daybook } from 'src/app/Models/daybook';
 import { TasksByImportance } from 'src/app/Models/tasks-by-importance';
@@ -8,25 +8,22 @@ import { TasksByImportance } from 'src/app/Models/tasks-by-importance';
   templateUrl: './details-view.component.html',
   styleUrls: ['./details-view.component.scss']
 })
-export class DetailsViewComponent implements OnInit {
+export class DetailsViewComponent implements OnInit, OnChanges {
 
-  daybookSelected: Daybook;
+  @Input() daybookSelected: Daybook;
   sortedTasks: TasksByImportance[];
 
   constructor(private daybookService: DaybookService) { }
 
   ngOnInit(): void {
-
-    this.daybookService.getTodayDaybook().subscribe((daybook) => {
-      this.daybookSelected = daybook;
-      this.sortedTasks = daybook.getTasksByImportance();
-    });
-
+    this.sortedTasks = this.daybookSelected.getTasksByImportance();
   }
-
+ngOnChanges(): void {
+  this.sortedTasks = this.daybookSelected.getTasksByImportance();
+}
   classMethod(taskArray) {
-    if (taskArray.name === 'Primodiales') {
-      return 'priorities primodiales';
+    if (taskArray.name === 'Primordiales') {
+      return 'priorities primordiales';
     } else if (taskArray.name === 'Importantes') {
       return 'priorities importantes';
     } else if (taskArray.name === 'Facultatives') {
