@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../Models/user';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,6 @@ getToken() {
   return localStorage.getItem('userToken');
 }
 getMe(): Observable<User> {
- return this.http.get<User>(UserService.BASE_URL + '/me');
+ return this.http.get<User>(UserService.BASE_URL + '/me').pipe(tap((user) => this.setUser(user)));
 }
 }

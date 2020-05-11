@@ -2,30 +2,14 @@
   <p-header>
       <h3>Historique</h3>
   </p-header>
-  <ng-template pTemplate="item">
-    <div class="task-card">
-      <div *ngFor="let daybook of weekDaybookList">
-        {{daybook.theme}}
-      </div>
-      <div class="task-primordiale">
-        <h3>Primordiales</h3>
-          <div>
-            <p></p>
-          </div>
-      </div>
-      <div class="task-importante">
-        <h3>Importantes</h3>
-          <div>
-            <p></p>
-          </div>
-      </div>
-      <div class="task-facultative">
-        <h3>Facultatives</h3>
-          <div>
-            <p></p>
-          </div>
-      </div>
+  <ng-template let-daybook pTemplate="item">
+    <div class="daybook-details">
+      <div>{{daybook.date | date:'dd MMM yyyy'}}</div>
+      <div>{{daybook.theme}} </div>
+      <div *ngIf="daybook.taskList.length>1">{{daybook.taskList.length}} tâches</div>
+      <div *ngIf="daybook.taskList.length===1"> 1 tâche </div>
+
+      <button pButton (click)="chooseDaybook(daybook.id)"type="button" class="ui-button-secondary" icon="pi pi-search"></button>
     </div>
   </ng-template>
 </p-carousel>
-<button (click)="test()">Click</button>

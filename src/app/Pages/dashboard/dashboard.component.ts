@@ -13,7 +13,8 @@ export class DashboardComponent implements OnInit {
 
   datesFromCalendar: Date[];
   daybookOfTheWeekSelected: Daybook[];
-  daybook: Daybook;
+  daybookChosen: Daybook;
+  daybookoftheDay: Daybook;
   constructor(private daybookService: DaybookService, private router: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -22,12 +23,12 @@ export class DashboardComponent implements OnInit {
           this.userService.setToken(param.get('token'));
          });
     }
-    this.daybookService.getTodayDaybook().subscribe((e) => this.daybook = e);
+    this.daybookService.getTodayDaybook().subscribe((e) => this.daybookoftheDay = e);
     const today = new Date();
     today.setDate(today.getDate() + 1);
     const endDate = this.changeDateFormat(today).toString();
     const defaultDate = new Date();
-    defaultDate.setDate(defaultDate.getDate() - 5 );
+    defaultDate.setDate(defaultDate.getDate() - 6 );
     const startDate = this.changeDateFormat(defaultDate).toString();
     this.daybookService.getDaybookOfTheWeek(startDate, endDate).subscribe(
       (e) => this.daybookOfTheWeekSelected = e);
@@ -47,5 +48,8 @@ export class DashboardComponent implements OnInit {
     return  ('0' + (date.getMonth() + 1)).slice(-2)
     + ('0' + (date.getDate())).slice(-2)
     + date.getFullYear();
+  }
+  changeDaybookDetails($event) {
+this.daybookChosen = this.daybookOfTheWeekSelected.find((daybook) => daybook.id === $event);
   }
 }
