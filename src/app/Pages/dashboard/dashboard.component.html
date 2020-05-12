@@ -1,16 +1,18 @@
-<dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybookoftheDay"></dbk-navbar>
 <div class="dashboard-page">
-  <div class="dashboard-histodiagram">
-    <div class= "dashboard-historique">
-      <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
-      <dbk-historique (daybookChosen)="changeDaybookDetails($event)" [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-historique>
+  <dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybookoftheDay"></dbk-navbar>
+  <div class="dashboard">
+    <div class="dashboard-histodiagram">
+      <div class= "dashboard-historique">
+        <dbk-calendar (datesSelected)="datesReceived($event)"></dbk-calendar>
+        <dbk-historique (daybookChosen)="changeDaybookDetails($event)" [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-historique>
+      </div>
+      <div class= "dashboard-diagram">
+        <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
+      </div>
     </div>
-    <div class= "dashboard-diagram">
-      <dbk-diagram [weekDaybookList]="daybookOfTheWeekSelected" *ngIf="daybookOfTheWeekSelected"></dbk-diagram>
+    <div class="dashboard-detail">
+      <dbk-details-view [daybookSelected]="daybookChosen" *ngIf="daybookChosen"></dbk-details-view>
     </div>
-  </div>
-  <div class="dashboard-detail">
-    <dbk-details-view [daybookSelected]="daybookChosen" *ngIf="daybookChosen"></dbk-details-view>
   </div>
 </div>
 
