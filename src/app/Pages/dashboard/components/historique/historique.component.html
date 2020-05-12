@@ -1,31 +1,20 @@
-<p-carousel [value]="daybookFiltre" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+<p-carousel [value]="weekDaybookList" [numVisible]="4" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
   <p-header>
-      <h3>Historique</h3>
-  </p-header>
-  <ng-template let-importanceDaybook pTemplate="item">
-    <div class="task-card">
-      <div *ngFor="let theme of importanceDaybook">
-        <h3></h3>
-      </div>
-      <div class="task-primordiale">
-        <h3>Primordiales</h3>
-          <div>
-            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
-          </div>
-      </div>
-      <div class="task-importante">
-        <h3>Importantes</h3>
 
-          <div>
-            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
-          </div>
+  </p-header>
+  <ng-template let-daybook pTemplate="item">
+    <div class="daybook-details">
+      <div class="date">{{daybook.date | date:'EEEE d MMMM '| titlecase}}</div>
+      <div class="item-content" *ngIf="daybook.theme">
+        <div>{{daybook.theme}} </div>
+        <div *ngIf="daybook.taskList.length>1">{{daybook.taskList.length}} tâches</div>
+        <div *ngIf="daybook.taskList.length===1"> 1 tâche </div>
+        <button pButton (click)="chooseDaybook(daybook.id)"type="button" class="ui-button-secondary" icon="pi pi-search"></button>
       </div>
-      <div class="task-facultative">
-        <h3>Facultatives</h3>
-          <div>
-            <p *ngFor="let current of importanceDaybook.tasks">{{current.title}}</p>
-          </div>
+      <div class="empty-daybook" *ngIf="!daybook.theme">
+        <div> Pas de journal pour cette journée</div>
       </div>
     </div>
   </ng-template>
 </p-carousel>
+

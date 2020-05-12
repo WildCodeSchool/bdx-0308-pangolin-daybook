@@ -12,11 +12,11 @@ import { DiagramMultidata } from 'src/app/Models/diagram-multidata';
 })
 export class DiagramComponent implements OnInit, OnChanges {
   @Input() weekDaybookList: Daybook[];
-  diagramStyle = 'gridpie';
+  diagramStyle = 'stackedBar';
   weekdata: (TasksFilterForDiagram[])[];
   single: TasksFilterForDiagram[];
   multi: DiagramMultidata[];
-  view: any[] = [700, 400];
+  view: any[] = [800, 400];
   colorScheme = {
     domain: ['#F57BA8', '#8CD8DB', '#CABE8A', '#FAC3AA']
   };

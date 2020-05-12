@@ -1,5 +1,6 @@
-<div class="ui-g-12 ui-md-4">
-  <h3>Calendrier</h3>
+
+<div class="container">
+  <span class="title">Calendrier :</span>
   <p-calendar
   [(ngModel)]="rangeDates"
   selectionMode="range"
@@ -8,4 +9,5 @@
   (onSelect)="rangeDate()"
   (onClose)="sendDateArray()">
 </p-calendar>
+
 </div>

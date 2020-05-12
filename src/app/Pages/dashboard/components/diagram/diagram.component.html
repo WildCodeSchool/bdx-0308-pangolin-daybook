@@ -10,13 +10,14 @@
   </ngx-charts-pie-grid>
   <br>
   <ngx-charts-bar-vertical-stacked   *ngIf="diagramStyle === 'stackedBar'"
-    [view]="view"
     [scheme]="colorScheme"
     [results]="multi"
     [gradient]="gradient"
     [xAxis]="showXAxis"
     [yAxis]="showYAxis"
     [legend]="showLegend"
+    [view]="view"
+    legendTitle="Légende"
     [showXAxisLabel]="showXAxisLabel"
     [showYAxisLabel]="showYAxisLabel"
     [xAxisLabel]="xAxisLabel"

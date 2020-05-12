@@ -29,12 +29,14 @@
   <div class="notes">
     <h3>{{daybook.theme}}</h3>
     <ul>
-      <li *ngFor="let task of daybook.taskList, let i = index"><img src="assets/pangolinIcon.png"> {{task.title}}
-        <span class="importance" *ngIf="(task.importance === 3)">primordiale</span>
-        <span class="importance" *ngIf="(task.importance === 2)">importante</span>
-        <span class="importance" *ngIf="(task.importance === 1)">facultative</span>
-        <img src="assets/editlogo.png" alt="edit" id="iconedit" (click)="showEditForm(task,i)">
-        <img src="assets/removeicon.svg" alt="remove" id="icondelete" (click)="deleteTask(task,i)">
+      <li *ngFor="let task of daybook.taskList, let i = index">
+        <div *ngIf="taskTitle(task)">
+          <img class="pins"[src]="taskIcon(task)">
+          <span [ngClass]="taskImportance(task)">{{task.title}}</span>
+       </div>
+       <div class="buttons">
+         <img src="assets/editlogo.png" alt="edit" id="iconedit" (click)="showEditForm(task,i)">
+        <img src="assets/removeicon.svg" alt="remove" id="icondelete" (click)="deleteTask(task,i)"></div>
       </li>
     </ul>
   </div>

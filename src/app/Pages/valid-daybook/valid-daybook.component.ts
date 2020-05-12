@@ -37,10 +37,23 @@ export class ValidDaybookComponent implements OnInit {
     this.confirmationService.confirm({
       message: 'Si vous confirmez votre Journal vous ne pourrez plus le modifier !',
       accept: () => {
-    this.route.navigateByUrl('/end');
-    // this.dayBookAll.finished = true;
-    // this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => this.dayBookAll = e);
+    this.dayBookAll.finished = true;
+    this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => {
+       this.dayBookAll = e;
+       this.route.navigateByUrl('/end');
+      });
       }
     });
    }
+
+   daybookClass(index) {
+    if (index === 0) {
+      return 'sticker primordiales';
+    } else if (index === 1) {
+      return 'sticker importantes';
+    } else {
+      return 'sticker facultatives';
+    }
+   }
+
   }

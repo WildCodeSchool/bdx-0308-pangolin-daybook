@@ -14,14 +14,11 @@ import { UserGuard } from './core/user.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [UserGuard]},
-  {path: 'daybook', component: CreateDaybookComponent, canActivate: [UserGuard] },
-  {path: 'valid', component: ValidDaybookComponent, canActivate: [UserGuard]},
-  {path: 'end', component: EndDaybookComponent, canActivate: [UserGuard]},
-  // {path: 'daybook', component: CreateDaybookComponent, canActivate: [Form1Guard]},
-  // {path: 'valid', component: ValidDaybookComponent, canActivate: [Form2Guard]},
-  // {path: 'end', component: EndDaybookComponent, canActivate: [Form3Guard]},
-  {path: 'auth/:token', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [UserGuard] },
+  {path: 'daybook', component: CreateDaybookComponent, canActivate: [UserGuard, Form1Guard] },
+  {path: 'valid', component: ValidDaybookComponent, canActivate: [UserGuard, Form2Guard]},
+  {path: 'end', component: EndDaybookComponent, canActivate: [UserGuard, Form3Guard]},
+  {path: 'oauth/:token', component: DashboardComponent},
   {path: '**', component: DashboardComponent, canActivate: [UserGuard]},
 ];
 

@@ -73,11 +73,46 @@ export class CreateDaybookComponent implements OnInit {
       message: 'Si vous confirmez votre Journal vous ne pourrez plus le modifier !',
       accept: () => {
          this.daybook.validated = true;
-         this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => this.daybook = e );
-         this.route.navigateByUrl('/valid');
+         this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => {
+           this.daybook = e;
+           this.route.navigateByUrl('/valid');
+        });
+
       }
   });
 
 
   }
+
+  taskImportance(task) {
+    if (task.importance === 3) {
+      return 'importance primordiales';
+    } else if (task.importance === 2) {
+      return 'importance importantes';
+    } else {
+      return 'importance facultatives';
+    }
+}
+
+taskTitle(task) {
+  if (task.importance === 3) {
+    return true;
+  } else if (task.importance === 2) {
+    return true;
+  } else {
+    return true;
+  }
+}
+
+taskIcon(task) {
+  if (task.importance === 3) {
+    return './assets/push_pin_rose.png';
+  } else if (task.importance === 2) {
+    return './assets/push_pin_bleu.png';
+  } else {
+    return './assets/push_pin.png';
+  }
+}
+
+
 }
