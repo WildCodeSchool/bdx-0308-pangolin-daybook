@@ -1,20 +1,18 @@
- <div class="hostList">
+<div class="hostList">
   <div *ngIf="daybookSelected">
     <h2>{{daybookSelected.theme}}</h2>
   </div>
   <div class="list-container">
     <div *ngFor="let taskArray of sortedTasks; index as i">
-      <div *ngIf="sortedTasks[i].tasks.length === 0? false :true" class="priorities">
-      <div [ngClass]="classMethod(taskArray)">
-      <h3>{{sortedTasks[i].name}}</h3>
-        <div *ngFor="let task of sortedTasks[i].tasks">
-          <p> <img src="./assets/tick.png" alt="tick" *ngIf="task.taskChecked === true"> {{task.title}}
-          </p>
+      <div *ngIf="sortedTasks[i].tasks.length === 0? false : true" class="priorities">
+        <div [ngClass]="classMethod(taskArray)">
+          <h3>{{sortedTasks[i].name}}</h3>
+          <div *ngFor="let task of sortedTasks[i].tasks">
+            <p><img src="./assets/tick.png" alt="tick" *ngIf="task.taskChecked === true"> {{task.title}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-  </div>
-
 </div>
 
