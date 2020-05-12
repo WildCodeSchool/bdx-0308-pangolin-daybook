@@ -16,7 +16,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   weekdata: (TasksFilterForDiagram[])[];
   single: TasksFilterForDiagram[];
   multi: DiagramMultidata[];
-  view: any[] = [700, 400];
+  view: any[] = [800, 400];
   colorScheme = {
     domain: ['#F57BA8', '#8CD8DB', '#CABE8A', '#FAC3AA']
   };
