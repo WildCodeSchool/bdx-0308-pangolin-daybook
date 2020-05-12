@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlServer : 'https://api.witpoc.com/oauth/odyssey/battle',
+  urlServer : 'https://api.witpoc.com/oauth/odyssey/local',
 };
 
 /*
