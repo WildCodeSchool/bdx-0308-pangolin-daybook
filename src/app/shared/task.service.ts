@@ -8,7 +8,7 @@ import { Task } from '../Models/task';
 })
 export class TaskService {
 
-  url = 'http://api.witpoc.com/tasks/';
+  url = 'https://api.witpoc.com/tasks/';
 
 
   constructor(private http: HttpClient) {

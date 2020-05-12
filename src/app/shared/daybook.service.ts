@@ -9,7 +9,7 @@ import { Daybook } from '../Models/daybook';
 })
 export class DaybookService {
 
-  url = 'http://api.witpoc.com/daybooks/';
+  url = 'https://api.witpoc.com/daybooks/';
 
   constructor(private http: HttpClient) {
    }
