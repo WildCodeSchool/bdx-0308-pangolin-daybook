@@ -31,11 +31,12 @@
     <ul>
       <li *ngFor="let task of daybook.taskList, let i = index">
         <div *ngIf="taskTitle(task)">
-          <img [src]="taskIcon(task)">
+          <img class="pins"[src]="taskIcon(task)">
           <span [ngClass]="taskImportance(task)">{{task.title}}</span>
-      </div>
-        <img src="assets/editlogo.png" alt="edit" id="icon iconedit" (click)="showEditForm(task,i)">
-        <img src="assets/removeicon.svg" alt="remove" id="icon icondelete" (click)="deleteTask(task,i)">
+       </div>
+       <div class="buttons">
+         <img src="assets/editlogo.png" alt="edit" id="iconedit" (click)="showEditForm(task,i)">
+        <img src="assets/removeicon.svg" alt="remove" id="icondelete" (click)="deleteTask(task,i)"></div>
       </li>
     </ul>
   </div>
