@@ -2,13 +2,13 @@
   width: 100%;
   background-color: #FA9E9D;
   padding: 0;
-  font-size: 25px;
   color: white;
-  height: 10%;
+  height: 100%;
 }
 
 hr {
   width: 100%;
+  margin-top: 25px;
 }
 
 .footer-content {
@@ -17,38 +17,38 @@ hr {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 50%;
 }
 
 .wcs-content {
   display: flex;
-  margin-top: 15px;
+  margin-top: 40px;
 }
 
 .wcs h3 {
   margin: 0;
-  font-size: 28px;
+  font-size: 1.5vw;
 }
 
 .footer-content a {
   color: white;
-  font-size: 21px;
-  margin-bottom: 5px;
+  font-size: 1.2vw;
 }
 
 .footer-content p {
-  font-size: 21px;
-  margin-bottom: 5px;
+  font-size: 1.2vw;
 }
 
 .social-media {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 
 .fa {
   padding: 10px;
-  width: 40px;
+  width: 2.25vw;
   text-align: center;
   margin: 5px 2px;
   border-radius: 50%;
@@ -58,16 +58,22 @@ hr {
 .fa-facebook{
   background: #3B5998;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-twitter {
   background: #55ACEE;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-instagram {
   background: linear-gradient(to top right, #FFDC80, #F77737, #F56040, #FD1D1D, #E1306C, #833AB4, #405DE6);
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-legal-mention {
@@ -75,13 +81,15 @@ hr {
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 50%;
+  background-color: #FA9E9D;
+  border-top: solid 1px white;
+  margin-top: 35px;
 }
 
 .footer-legal-mention p {
-  font-size: 21px;
+  font-size: 1.15vw;
   margin-left: 5px;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 .footer-legal-mention a {
@@ -89,7 +97,7 @@ hr {
   font-weight: bold;
 }
 
-@media (max-width: 1125px) {
+@media (max-width: 1024px) {
   .social-media {
     text-align: center;
   }
@@ -103,5 +111,63 @@ hr {
   .footer-legal-mention p {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 1.25vw;
+  }
+
+  .footer-legal-mention a{
+    font-size: 1.25vw;
+  }
+
+  .wcs h3 {
+    font-size: 2vw;
+  }
+
+  .footer-content a {
+    font-size: 1.25vw;
+  }
+
+  .footer-content p {
+    font-size: 1.25vw;
+  }
+
+  .fa {
+    width: 3vw;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .wcs h3 {
+    font-size: 3vw;
+  }
+
+  .footer-content a {
+    font-size: 2vw;
+  }
+
+  .footer-content p {
+    font-size: 2vw;
+  }
+
+  .fa {
+    width: 4.5vw;
+  }
+
+  .footer-content {
+    height: 80%;
+  }
+
+  .footer-legal-mention {
+    margin-top: 0px;
+    background-color: #FA9E9D;
+    height: 85%;
+  }
+
+  .footer-legal-mention p {
+    font-size: 2vw;
+  }
+
+  .footer-legal-mention a {
+    font-size: 2vw;
   }
 }

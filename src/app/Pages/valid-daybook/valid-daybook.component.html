@@ -1,23 +1,25 @@
-<dbk-navbar [navigationNeeded]="true"></dbk-navbar>
-<div class="background">
-  <div class="tasksList">
-
-    <div *ngFor="let daybook of dayBookSorted; index as i" [ngClass]="daybookClass(i)">
-
-      <h2>Quêtes {{dayBookSorted[i].name}}</h2>
-    <ol>
-      <li *ngFor="let task of dayBookSorted[i].tasks">
-        <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
-        {{task.title}}
-      </li>
-    </ol>
-
-    </div>
-
+<div class="valid-page">
+  <div class="navbar">
+    <dbk-navbar [navigationNeeded]="true"></dbk-navbar>
   </div>
-  <div class="confirm-dialogue">
-    <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
-    <button  class="confirm-button" type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirmer le Journal"></button>
+  <div class="background">
+    <div class="tasksList">
+      <div *ngFor="let daybook of dayBookSorted; index as i" [ngClass]="daybookClass(i)">
+        <h2>Quêtes {{dayBookSorted[i].name}}</h2>
+      <ol>
+        <li *ngFor="let task of dayBookSorted[i].tasks">
+          <p-checkbox (onChange)="fonction(task)" [(ngModel)]="task.taskChecked" binary="true"></p-checkbox>
+          {{task.title}}
+        </li>
+      </ol>
+      </div>
+    </div>
+    <div class="confirm-dialogue">
+      <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+      <button  class="confirm-button" type="text" (click)="confirm()" pButton icon="pi pi-check" label="Confirmer le Journal"></button>
+    </div>
+  </div>
+  <div class="footer">
+    <dbk-footer></dbk-footer>
   </div>
 </div>
-<dbk-footer></dbk-footer>

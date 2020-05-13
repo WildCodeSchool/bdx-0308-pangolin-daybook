@@ -1,20 +1,34 @@
+.valid-page {
+  height: 100%;
+}
+
+.navbar {
+  height: 12%;
+}
+
+.footer {
+  height: 15%;
+}
+
 .background{
-  background-image: url(/assets/validpage/bcgvalidpage.png);
+  background-image: url("/assets/validpage/bcgvalidpage.png");
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
    display: flex;
    flex-direction: column;
-   height: 850px;
+   align-items: center;
+   height: 88%;
 }
 
 .tasksList{
-  margin: auto auto -100px;
-  width: 980px;
-  height: 900px;
+  width: 50%;
+  height: 80%;
+  margin-top: 50px;
+  margin-right: 75px;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sticker{
@@ -22,16 +36,15 @@
   color: #ffffff;
   font-size: 1.5em;
   overflow: auto;
-  margin: auto;
-  background-repeat: no-repeat;
   background-position: center;
-  height: 300px;
-  width: 300px;
+  height: 16vw;
+  width: 16vw;
   border-radius: 16px;
 }
+
 h2{
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1.25vw;
   letter-spacing: 2px;
   padding: 3%;
 }
@@ -40,6 +53,7 @@ h2{
   text-align: center;
   padding: 1%;
   list-style: none;
+  font-size: 1.15vw;
 }
 
 .sticker li img{
@@ -62,16 +76,49 @@ h2{
   background-color: rgba(255, 255, 255, 0.87);
 }
 
+
 .confirm-dialogue {
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .confirm-dialogue button {
-  height: 50px;
-  font-size: 22px;
-  margin-bottom: 150px;
+  font-size: 1.25vw;
+  margin-bottom: 1vw;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .tasksList {
+    margin-top: 200px;
+    width: 55%;
+    height: 80%;
+  }
+
+  .confirm-dialogue {
+    margin-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .tasksList {
+    width: 70%;
+    height: 80%;
+    margin-top: 100px;
+    margin-right: 75px;
+  }
+
+  .sticker {
+    height: 25vw;
+    width: 21vw;
+  }
+
+  .confirm-dialogue button {
+    font-size: 2vw;
+  }
 }
