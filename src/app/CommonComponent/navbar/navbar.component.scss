@@ -11,6 +11,7 @@ h1 {
   width: 100%;
   display: flex;
   height: 100%;
+  background-color: #FA9E9D
 }
 
 .title-navbar-home {
@@ -34,14 +35,18 @@ h1 {
   display: flex;
   align-items: center;
   color : #FFFFFF;
-  font-size: 28px;
-  width: 50%;
-  margin-left: 100px;
+  font-size: 1.65vw;
+  height: 100%;
+}
+
+.title-navbar-other h1 {
+  font-size: 3vw;
+  margin-left: 5vw;
 }
 
 .title-navbar-other img{
-  max-height: 85px;
-  width: 85px;
+  height: 5.25vw;
+  width: 5.25vw;
   margin: 10px 25px 10px 0;
 }
 
@@ -50,6 +55,7 @@ h1 {
   justify-content: flex-end;
   align-items: center;
   width: 50%;
+  height: 100%;
 }
 
 .navbar-info h2{
@@ -63,15 +69,25 @@ h1 {
   color: white;
 }
 
-.navbar-info  img{
-  height: 90px;
-  width: 90px;
+#avatar {
+  margin-top: 3px;
+  border-radius: 50%;
+  background-color: white;
+  border: solid 2px white;
+  height: 5vw;
+  width: 5vw;
   cursor: pointer;
-  margin-right: 50px;
+}
+
+#avatar:hover {
+  opacity: 0.8;
 }
 
 .navbar-menu {
   order: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 :host ::ng-deep .ui-menu {
@@ -141,18 +157,6 @@ a:hover {
 
 }
 
-#avatar {
-  margin-top: 3px;
-  border-radius: 50%;
-  height: 80px;
-  background-color: white;
-  min-width: 80px;
-  border: solid 2px white;
-}
-#avatar:hover {
-  opacity: 0.8;
-}
-
 .transparance {
   animation: backcolor 0.2s linear;
   background-color: rgba(255, 255, 255, 0.808);
@@ -170,4 +174,31 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.808);
   }
 
+}
+
+@media screen and (max-width: 768px) {
+  #avatar {
+    height: 8vw;
+    width: 8vw;
+    margin-right: 25px;
+  }
+
+  .navbar-info {
+    width: 30%;
+  }
+
+  .title-navbar-other {
+    width: 70%;
+  }
+
+  .title-navbar-other h1 {
+    font-size: 3.5vw;
+    margin-left: 15px;
+  }
+
+  .title-navbar-other img{
+    height: 9vw;
+    width: 9vw;
+
+  }
 }

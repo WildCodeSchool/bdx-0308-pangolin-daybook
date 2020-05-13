@@ -97,7 +97,7 @@ hr {
   font-weight: bold;
 }
 
-@media (max-width: 1125px) {
+@media (max-width: 1024px) {
   .social-media {
     text-align: center;
   }
@@ -111,5 +111,63 @@ hr {
   .footer-legal-mention p {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 1.25vw;
+  }
+
+  .footer-legal-mention a{
+    font-size: 1.25vw;
+  }
+
+  .wcs h3 {
+    font-size: 2vw;
+  }
+
+  .footer-content a {
+    font-size: 1.25vw;
+  }
+
+  .footer-content p {
+    font-size: 1.25vw;
+  }
+
+  .fa {
+    width: 3vw;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .wcs h3 {
+    font-size: 3vw;
+  }
+
+  .footer-content a {
+    font-size: 2vw;
+  }
+
+  .footer-content p {
+    font-size: 2vw;
+  }
+
+  .fa {
+    width: 4.5vw;
+  }
+
+  .footer-content {
+    height: 80%;
+  }
+
+  .footer-legal-mention {
+    margin-top: 0px;
+    background-color: #FA9E9D;
+    height: 85%;
+  }
+
+  .footer-legal-mention p {
+    font-size: 2vw;
+  }
+
+  .footer-legal-mention a {
+    font-size: 2vw;
   }
 }
