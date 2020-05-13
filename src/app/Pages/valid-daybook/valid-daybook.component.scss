@@ -9,7 +9,7 @@
 }
 
 .tasksList{
-  margin: auto;
+  margin: auto auto -100px;
   width: 980px;
   height: 900px;
   display: flex;
@@ -27,7 +27,6 @@
   background-position: center;
   height: 300px;
   width: 300px;
-  transform: rotate(-20deg);
   border-radius: 16px;
 }
 h2{
