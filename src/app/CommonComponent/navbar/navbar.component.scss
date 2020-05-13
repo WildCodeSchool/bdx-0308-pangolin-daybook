@@ -4,12 +4,13 @@ h1 {
 
 .navbar-container {
   background-color: #FA9E9D;
+  height: 100%;
 }
 
 .navbar-content {
   width: 100%;
   display: flex;
-  height: 20%;
+  height: 100%;
 }
 
 .title-navbar-home {
@@ -17,14 +18,15 @@ h1 {
   justify-content: center;
   align-items: center;
   color : #FFFFFF;
-  font-size: 40px;
+  font-size: 2.25vw;
   width: 100%;
+  height: 100%;
 }
 
 .title-navbar-home img{
-  height: 120px;
-  width: 120px;
-  margin: 10px 25px 10px 0;
+  height: 6.5vw;
+  width: 6.5vw;
+  margin: 10px 20px 10px 0;
   margin-left: 25px;
 }
 
