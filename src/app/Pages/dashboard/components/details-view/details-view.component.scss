@@ -1,6 +1,7 @@
 .hostList{
   margin-top: 0;
-  padding: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .hostList h2{
@@ -17,13 +18,12 @@
   display: flex;
   flex-direction: column;
 }
-
-
 .priorities{
   background-repeat: no-repeat;
   background-position: right;
   padding-bottom: 2%;
   overflow: auto;
+  direction: rtl;
   color: #6b5c52;
   font-weight: 400;
 }
@@ -34,11 +34,17 @@
   font-size: 1.5rem;
   text-align: center;
 }
-
 .hostList p{
-  padding: 1%;
-  padding-left: 7%;
+  margin: 5px;
+  margin-right: 65px;
+  padding-left: 3%;
   font-size: 1.5rem;
+}
+.hostList p img{
+  float: left;
+  margin-right: 2%;
+  margin-top: 1%;
+  vertical-align: middle;
 }
 
 .primordiales{
@@ -47,6 +53,8 @@
   border-radius: 5px;
   height: 175px;
   overflow: auto;
+  direction: rtl;
+  text-align: left;
   margin-bottom: 5px;
 }
 
@@ -58,6 +66,8 @@
   border-radius: 5px;
   height: 175px;
   overflow: auto;
+  direction: rtl;
+  text-align: left;
   margin-bottom: 5px;
 }
 
@@ -69,6 +79,8 @@
   border-radius: 5px;
   height: 175px;
   overflow: auto;
+  direction: rtl;
+  text-align: left;
   margin-bottom: 5px;
 }
 
@@ -78,5 +90,7 @@
   padding-bottom: 8px;
   height: 175px;
   overflow: auto;
+  direction: rtl;
+  text-align: left;
 }
 
