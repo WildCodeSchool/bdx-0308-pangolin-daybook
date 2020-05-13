@@ -5,19 +5,24 @@
   font-family: 'Roboto', sans-serif;
   margin:0;
   padding:0;
+  // background-color: #FFFFFF;
+  // #e2e1e0 gris odyssey
+  // #FA9E9D rose clair ?
+  // #F9A5A5 rose clair ?
+
+  // .card {
+  //   background: #fff;
+  //   border-radius: 2px;
+  //   display: inline-block;
+  //   height: 300px;
+  //   margin: 1rem;
+  //   position: relative;
+  //   width: 300px;
+  //   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  // }
+
 }
 
 html, body {
   height: 100%;
-}
-::-webkit-scrollbar {
-  width: 8px;
-
-}
-::-webkit-scrollbar-track {
-  background: rgb(226, 222, 222);
-}
-::-webkit-scrollbar-thumb {
-  background: #F9a5a5;
-  border-radius: 4px;
 }
