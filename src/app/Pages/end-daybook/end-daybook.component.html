@@ -1,63 +1,69 @@
-<dbk-navbar [navigationNeeded]="true"></dbk-navbar>
-<div class="end-page-container">
-  <div class="end-page-content" *ngIf="daybook">
-    <div [innerHTML]="phraseInjecte"></div>
-    <div class="today-resume">
-      <h3><b>Aujourd'hui</b>, tu auras réalisé : </h3>
-    </div>
-    <div class="task-resume" *ngIf="daybook">
-      <div class="task-primordiale">
-        <div class="pins">
-          <img src="assets/push_pin_rose.png">
-        </div>
-        <div class="content-primordiale">
-          <div class="task-title">
-            <h3>{{daybookImportance[0].name}}</h3>
-          </div>
-          <div class="task-list" *ngFor="let a of daybookImportance[0].tasks">
-            <img src="assets/pangolinIcon.png"> {{a.title}}
-          </div>
-       </div>
+<div class="end-page">
+  <div class="navbar">
+    <dbk-navbar [navigationNeeded]="true"></dbk-navbar>
+  </div>
+  <div class="end-page-container">
+    <div class="end-page-content" *ngIf="daybook">
+      <div [innerHTML]="phraseInjecte"></div>
+      <div class="today-resume">
+        <h3><b>Aujourd'hui</b>, tu auras réalisé : </h3>
       </div>
-      <div class="task-importante">
-        <div class="pins">
-          <img src="assets/push_pin_bleu.png">
-        </div>
-        <div class="content-importante">
-          <div class="task-title">
-            <h3>{{daybookImportance[1].name}}</h3>
+      <div class="task-resume" *ngIf="daybook">
+        <div class="task-primordiale">
+          <div class="pins">
+            <img src="assets/push_pin_rose.png">
           </div>
-          <div class="task-list" *ngFor="let a of daybookImportance[1].tasks">
-            <img src="assets/pangolinIcon.png"> {{a.title}}
-          </div>
+          <div class="content-primordiale">
+            <div class="task-title">
+              <h3>{{daybookImportance[0].name}}</h3>
+            </div>
+            <div class="task-list" *ngFor="let a of daybookImportance[0].tasks">
+              <img src="assets/pangolinIcon.png"> {{a.title}}
+            </div>
         </div>
-      </div>
-      <div class="task-facultative">
-        <div class="pins">
-          <img src="assets/push_pin.png">
         </div>
-        <div class="content-facultative">
-          <div class="task-title">
-            <h3>{{daybookImportance[2].name}}</h3>
+        <div class="task-importante">
+          <div class="pins">
+            <img src="assets/push_pin_bleu.png">
           </div>
-          <div class="task-list" *ngFor="let a of daybookImportance[2].tasks">
-            <img src="assets/pangolinIcon.png"> {{a.title}}
+          <div class="content-importante">
+            <div class="task-title">
+              <h3>{{daybookImportance[1].name}}</h3>
+            </div>
+            <div class="task-list" *ngFor="let a of daybookImportance[1].tasks">
+              <img src="assets/pangolinIcon.png"> {{a.title}}
+            </div>
           </div>
         </div>
+        <div class="task-facultative">
+          <div class="pins">
+            <img src="assets/push_pin.png">
+          </div>
+          <div class="content-facultative">
+            <div class="task-title">
+              <h3>{{daybookImportance[2].name}}</h3>
+            </div>
+            <div class="task-list" *ngFor="let a of daybookImportance[2].tasks">
+              <img src="assets/pangolinIcon.png"> {{a.title}}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="end-page-to-dashboard">
-      <div *ngIf="!finished" class="unfinished-task">
-          <h3><b>Malheureusement</b>, il te reste quelques <b>quêtes non réalisées</b> à faire plus tard :</h3>
-          <ul>
-            <li *ngFor="let a of daybookImportance[3].tasks">{{a.title}}</li>
-          </ul>
+      <div class="end-page-to-dashboard">
+        <div *ngIf="!finished" class="unfinished-task">
+            <h3><b>Malheureusement</b>, il te reste quelques <b>quêtes non réalisées</b> à faire plus tard :</h3>
+            <ul>
+              <li *ngFor="let a of daybookImportance[3].tasks">{{a.title}}</li>
+            </ul>
+        </div>
+        <div *ngIf="finished" class="task-finished">
+          <h3><b>Incroyable</b>, tu as réussi à réaliser <b>toutes</b> les quêtes de la journée, <b>félicitations</b> !</h3>
+        </div>
+        <button pButton type="text" routerLink="/dashboard" label="Retourner au dashboard"></button>
       </div>
-      <div *ngIf="finished" class="task-finished">
-        <h3><b>Incroyable</b>, tu as réussi à réaliser <b>toutes</b> les quêtes de la journée, <b>félicitations</b> !</h3>
-      </div>
-      <button pButton type="text" routerLink="/dashboard" label="Retourner au dashboard"></button>
     </div>
   </div>
+  <div class="footer">
+    <dbk-footer></dbk-footer>
+  </div>
 </div>
-<dbk-footer></dbk-footer>

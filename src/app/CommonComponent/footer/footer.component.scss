@@ -1,14 +1,13 @@
 .footer-container {
   width: 100%;
   background-color: #FA9E9D;
-  padding: 0;
-  font-size: 25px;
   color: white;
-  height: 10%;
+  height: 100%;
 }
 
 hr {
   width: 100%;
+  margin-top: 25px;
 }
 
 .footer-content {
@@ -17,34 +16,34 @@ hr {
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-
-.wcs-content {
-  display: flex;
-  margin-top: 15px;
+  height: 70%;
 }
 
 .wcs h3 {
   margin: 0;
-  font-size: 28px;
-}
-
-.footer-content a {
+  font-size: 2rem;
+  margin-top: 15px;
   color: white;
-  font-size: 21px;
-  margin-bottom: 5px;
 }
 
 .footer-content p {
-  font-size: 21px;
-  margin-bottom: 5px;
+  font-size: 1.3rem;
 }
 
 .social-media {
   display: flex;
   align-items: center;
+  height: 100%;
+  margin-bottom: 15px;
 }
 
+.footer-mobile {
+  display: none;
+}
+
+.logo-rs {
+  display: flex;
+}
 
 .fa {
   padding: 10px;
@@ -58,50 +57,84 @@ hr {
 .fa-facebook{
   background: #3B5998;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-twitter {
   background: #55ACEE;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-instagram {
   background: linear-gradient(to top right, #FFDC80, #F77737, #F56040, #FD1D1D, #E1306C, #833AB4, #405DE6);
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-legal-mention {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 30%;
+  background-color: #FA9E9D;
+  border-top: solid 1px white;
 }
 
 .footer-legal-mention p {
-  font-size: 21px;
+  font-size: 1.15rem;
   margin-left: 5px;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 .footer-legal-mention a {
   color: white;
   font-weight: bold;
+  font-size: 1.15rem;
 }
 
-@media (max-width: 1125px) {
-  .social-media {
-    text-align: center;
+
+@media screen and (max-width: 600px) {
+  .wcs h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: flex;
+  }
+
+  .logo-rs {
+    display: flex;
+  }
+
+  .fa {
+    padding: 5px;
+    width: 30px;
   }
 
   .footer-legal-mention {
-    display: flex;
     flex-direction: column;
-    text-align: center;
-  }
+    margin-top: 0px;
+    height: 35%;
+}
 
   .footer-legal-mention p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 0.7rem;
   }
+
+  .footer-legal-mention a {
+    font-size: 0.7rem;
+  }
+
 }
