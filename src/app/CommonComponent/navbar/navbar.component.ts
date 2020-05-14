@@ -44,7 +44,6 @@ export class NavbarComponent implements OnInit {
 
   confirm() {
          localStorage.removeItem('userToken');
-         alert('Vous avez été déconnecté');
          this.router.navigateByUrl('');
     }
 
