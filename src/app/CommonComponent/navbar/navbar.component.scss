@@ -176,7 +176,7 @@ a:hover {
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .title-navbar-home {
     font-size: 0.8rem;
   }
@@ -189,6 +189,26 @@ a:hover {
   .title-navbar-home img{
     height: 70px;
     width: 70px;
+  }
+
+  .title-navbar-other h1 {
+    font-size: 1.5rem;
+    width: 150px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .title-navbar-other img{
+    height: 40px;
+    width: 40px;
+    margin: 0px;
+  }
+
+  #avatar {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
   }
 
 }

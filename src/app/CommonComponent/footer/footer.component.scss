@@ -96,8 +96,44 @@ hr {
   font-size: 1.15rem;
 }
 
+@media screen and (min-width: 2000px) {
+  .wcs h3 {
+    font-size: 3rem;
+  }
 
-@media screen and (max-width: 600px) {
+  .footer-content p {
+    font-size: 2.15rem;
+  }
+
+  .footer-mobile {
+    display: none;
+  }
+
+  .logo-rs {
+    display: flex;
+  }
+
+  .fa {
+    font-size: 2rem;
+    padding: 20px;
+    width: 70px;
+  }
+
+  .footer-legal-mention {
+    height: 35%;
+}
+
+  .footer-legal-mention p {
+    font-size: 2.15rem;
+  }
+
+  .footer-legal-mention a {
+    font-size: 2.15rem;
+  }
+}
+
+
+@media screen and (max-width: 850px) {
   .wcs h3 {
     font-size: 1.1rem;
   }
