@@ -24,8 +24,8 @@
 }
 
 :host ::ng-deep .end-page-container h2 {
-  font-size: 40px;
-  margin-top: 40px;
+  font-size: 2rem;
+  margin-top: 20px;
   font-weight: lighter;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .today-resume h3 {
-  font-size: 32px;
+  font-size: 1.5rem;
   margin: 25px 0px 25px 25px;
   font-weight: lighter;
 }
@@ -53,7 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -62,13 +62,14 @@
 }
 
 .task-list {
-  margin-top: 25px;
-  margin-left: 25px;
-  font-size: 23px;
+  margin: 25px;
+  font-size: 1rem;
   font-weight: bold;
   color: #6b5c52;
 }
-
+.task-list img{
+  vertical-align: middle;
+}
 .pins {
   display: flex;
   justify-content: center;
@@ -126,12 +127,12 @@
 }
 
 .end-page-to-dashboard h3 {
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: lighter;
 }
 
 .unfinished-task {
-  font-size: 25px;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   margin-left: 25px;
@@ -139,6 +140,8 @@
 
 .unfinished-task ul {
   margin: 30px 0px 30px 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .unfinished-task li {
@@ -153,11 +156,96 @@
 }
 
 .end-page-to-dashboard button {
-  margin-top: 25px;
+  margin-top: auto;
   align-self: center;
   width: 20%;
-  font-size: 25px;
+  font-size: 1.5rem;
   margin-bottom: 20%;
 }
 
+@media screen and (min-width: 2000px) {
+  .end-page-to-dashboard button{
 
+    font-size: 2rem;
+  }
+  :host ::ng-deep .end-page-container h2 {
+    font-size: 2.5rem;
+  }
+  .today-resume h3 {
+    font-size: 2rem;
+  }
+  .task-title{
+    font-size: 1.7rem;
+  }
+  .task-resume{
+    height: 100%;
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .task-list{
+    font-size: 1.5rem;
+  }
+
+.end-page-to-dashboard h3 {
+  font-size: 2rem;
+}
+
+.unfinished-task {
+  font-size: 1.7rem;
+}
+ }
+@media screen and (max-width: 600px) {
+  .end-page-container {
+    background-image: url("/assets/keyboardmouse.jpeg");
+    // background-image: url("/assets/seconddesk.jpeg");
+  }
+  :host ::ng-deep .end-page-container h2{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .today-resume h3 {
+    font-size: 1.3rem;
+  }
+  .task-title{
+    font-size: 1rem;
+  }
+  .task-resume{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+   }
+  .task-primordiale{
+    width: 100%;
+  }
+  .content-primordiale{
+    width: 100%;
+  }
+  .task-importante{
+    width: 100%;
+  }
+  .content-importante{
+    width: 100%;
+  }
+  .task-facultative{
+    width: 100%;
+  }
+.content-facultative{
+    width: 100%;
+  }
+  .end-page-to-dashboard h3 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  .unfinished-task {
+    margin: auto;
+    font-size: 1rem;
+  }
+  .end-page-to-dashboard button{
+    font-size: 1rem;
+    width: 33%;
+  }
+}
