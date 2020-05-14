@@ -12,14 +12,22 @@ export class HistoriqueComponent implements OnInit {
 
   @Input() weekDaybookList: Daybook[];
   @Output() daybookChosen = new EventEmitter<number>();
-  responsiveOptions: [];
+responsiveOptions =
+[
+  {
+  breakpoint: '768px',
+  numVisible: 1,
+  numScroll: 1,
+  },
+];
 
-  constructor(public daybookService: DaybookService) { }
+constructor(public daybookService: DaybookService) { }
 
-    ngOnInit() {
+ngOnInit() {
   }
 
-  chooseDaybook(id) {
+chooseDaybook(id) {
     this.daybookChosen.emit(id);
   }
+
 }
