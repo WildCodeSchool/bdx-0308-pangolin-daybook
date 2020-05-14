@@ -1,38 +1,51 @@
+.valid-page {
+  height: 100%;
+}
+
+.navbar {
+  height: 12%;
+}
+
+.footer {
+  height: 15%;
+}
+
 .background{
-  background-image: url(/assets/validpage/bcgvalidpage.png);
+  background-image: url("/assets/validpage/bcgvalidpage.png");
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
    display: flex;
    flex-direction: column;
-   height: 850px;
+   align-items: center;
+   height: 88%;
 }
 
 .tasksList{
-  margin: auto;
-  width: 980px;
-  height: 900px;
+  max-width: 63%;
+  height: 80%;
+  margin-top: 3%;
+  padding-top: 6%;
+  margin-left: 4%;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 50px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sticker{
   padding: 1%;
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 2rem;
   overflow: auto;
-  margin: auto;
-  background-repeat: no-repeat;
   background-position: center;
-  height: 300px;
-  width: 300px;
-  transform: rotate(-20deg);
+  height: 60%;
+  width: 30%;
   border-radius: 16px;
 }
+
 h2{
   text-align: center;
-  font-size: 0.9em;
+  font-size: 1.25rem;
   letter-spacing: 2px;
   padding: 3%;
 }
@@ -41,6 +54,7 @@ h2{
   text-align: center;
   padding: 1%;
   list-style: none;
+  font-size: 1.15rem;
 }
 
 .sticker li img{
@@ -63,16 +77,59 @@ h2{
   background-color: rgba(255, 255, 255, 0.87);
 }
 
+
 .confirm-dialogue {
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .confirm-dialogue button {
-  height: 50px;
-  font-size: 22px;
-  margin-bottom: 150px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+
+  .background{
+    background-image: url("/assets/whitenotepad.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: right;
+     align-items: center;
+     height: 88%;
+  }
+   .tasksList {
+    display: flex;
+    flex-direction: column;
+    min-width:100%;
+    min-height: 90%;
+    padding-top: 10%;
+
+  }
+  h2{
+    font-size: 1rem;
+  }
+   .sticker {
+    margin-bottom: 5%;
+    width: 66%;
+   }
+   .sticker li{
+     font-size: 0.8rem;
+   }
+}
+
+@media screen and (min-width: 2000px) {
+
+.sticker{
+  height: 40%;
+}
+.confirm-dialogue button {
+  font-size: 2rem;
+  margin-bottom: 1.75rem;
+}
+
 }

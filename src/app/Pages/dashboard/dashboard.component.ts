@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Daybook } from 'src/app/Models/daybook';
 import { DaybookService } from 'src/app/shared/daybook.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
 import { DatePipe } from '@angular/common';
+import { User } from 'src/app/Models/user';
 
 @Component({
   selector: 'dbk-dashboard',
@@ -16,18 +17,39 @@ export class DashboardComponent implements OnInit {
   daybookOfTheWeekSelected: Daybook[];
   daybookChosen: Daybook;
   daybookoftheDay: Daybook;
-  constructor(private daybookService: DaybookService, private router: ActivatedRoute, private userService: UserService,
-              private datePipe: DatePipe) { }
+  user: User;
+  canLoad = false;
+  constructor(private daybookService: DaybookService, private route: ActivatedRoute, private userService: UserService,
+              private datePipe: DatePipe, private router: Router) { }
 
   ngOnInit(): void {
     if (!localStorage.getItem('userToken')) {
-      this.router.paramMap.subscribe((param) => {
+      this.route.paramMap.subscribe((param) => {
           this.userService.setToken(param.get('token'));
+          this.userService.getMe().subscribe((user) => {
+            this.user = user;
+            this.canLoad = true;
+          });
          });
+        } else if (this.userService.currentUser) {
+      this.canLoad = true;
+    } else if (!this.userService.currentUser) {
+      this.userService.getMe().subscribe((user) => {
+        this.user = user;
+        this.canLoad = true;
+      });
     }
-    this.daybookService.getTodayDaybook().subscribe((e) => {
-      this.daybookoftheDay = e;
-      this.daybookChosen = e;
+    this.daybookService.getTodayDaybook().subscribe((daybook) => {
+      if (daybook) {
+      this.daybookoftheDay = daybook;
+      this.daybookChosen = daybook;
+      } else {
+        this.daybookService.post(new Daybook()).subscribe((newDaybook) => {
+          this.showPopup();
+          this.daybookoftheDay = newDaybook;
+          this.daybookChosen = newDaybook;
+        });
+      }
     });
     const today = new Date();
     today.setDate(today.getDate() + 1);
@@ -56,5 +78,14 @@ export class DashboardComponent implements OnInit {
   }
   changeDaybookDetails($event) {
 this.daybookChosen = this.daybookOfTheWeekSelected.find((daybook) => daybook.id === $event);
+  }
+  confirm() {
+    document.getElementById('first-connexion').className = 'hide';
+    document.getElementById('popup-opacity').className = 'hide';
+    this.router.navigateByUrl('/daybook');
+  }
+  showPopup() {
+    document.getElementById('first-connexion').className = 'show';
+    document.getElementById('popup-opacity').className = 'transparance';
   }
 }

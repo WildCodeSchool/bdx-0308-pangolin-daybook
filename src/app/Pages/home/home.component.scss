@@ -1,25 +1,40 @@
+.home-page {
+  height: 100%;
+}
+
+.navbar {
+  height: 15%;
+}
+
+.footer {
+  height: 15%;
+}
+
+
 .home-content {
   background-image: url("/assets/test2-fond-home-page.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
+  height: 85%;
 }
 
 .home-text {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  height: 80%;
   width: 100%;
-  margin-top: 100px;
 }
 
 .home-text p {
-  font-size: 50px;
+  font-size: 2.65rem;
   line-height: 1.5;
-  margin-top: 30px;
+  margin-top: 50px;
+  width: 70%;
 }
 
 .anim-1 {
@@ -51,13 +66,8 @@
   margin-bottom: 100px;
 }
 
-.home-bouton button {
-  background-color: rgba(255, 255, 255, 0.733);
-  min-width: 200px;
-}
-
 .home-odysee-connection {
-  font-size: 50px;
+  font-size: 3rem;
   padding: 10px;
   background-color: transparent;
   border: solid #FA9E9D 1px;
@@ -67,7 +77,7 @@
   animation: fadein 0.5s linear 2s;
   animation-fill-mode: forwards;
   cursor: pointer;
-  width: 20%;
+  background-color: rgba(255, 255, 255, 0.733);
 }
 
 @keyframes fadein {
@@ -87,4 +97,26 @@
 .home-odysee-connection:hover{
 
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+@media screen and (max-width: 600px) {
+  .home-text {
+    justify-content: flex-start;
+  }
+
+  .home-text p {
+    font-size: 1.15rem;
+    width: 50%;
+    margin-top: 25px;
+  }
+
+  .home-bouton {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .home-odysee-connection {
+    font-size: 1.5rem;
+  }
 }

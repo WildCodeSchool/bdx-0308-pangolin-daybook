@@ -1,6 +1,7 @@
 .hostList{
   margin-top: 0;
-  padding: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .hostList h2{
@@ -17,13 +18,12 @@
   display: flex;
   flex-direction: column;
 }
-
-
 .priorities{
   background-repeat: no-repeat;
   background-position: right;
   padding-bottom: 2%;
   overflow: auto;
+  direction: rtl;
   color: #6b5c52;
   font-weight: 400;
 }
@@ -34,17 +34,28 @@
   font-size: 1.5rem;
   text-align: center;
 }
-
 .hostList p{
-  padding: 1%;
-  padding-left: 7%;
-  font-size: 1.5rem;
+  margin: 5px;
+  margin-right: 65px;
+  padding-left: 3%;
+  font-size: 1.2rem;
+}
+.hostList p img{
+  float: left;
+  margin-right: 2%;
+  margin-top: 1%;
+  vertical-align: middle;
 }
 
 .primordiales{
   background-image: url("/assets/push_pin_rose.png");
   border: 5px solid #F57BA8;
   border-radius: 5px;
+  height: 175px;
+  overflow: auto;
+  direction: rtl;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .importantes{
@@ -53,6 +64,11 @@
   background-position: right;
   border: 5px solid #8CD8DB;
   border-radius: 5px;
+  height: 175px;
+  overflow: auto;
+  direction: rtl;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .facultatives{
@@ -61,11 +77,20 @@
   background-position: right;
   border: 5px solid #CABE8A;
   border-radius: 5px;
+  height: 175px;
+  overflow: auto;
+  direction: rtl;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .nonfinies{
   border: 5px solid #FAC3AA;
   border-radius: 5px;
   padding-bottom: 8px;
+  height: 175px;
+  overflow: auto;
+  direction: rtl;
+  text-align: left;
 }
 
