@@ -11,7 +11,7 @@
     <div *ngIf="navigationNeeded" class="navbar-info">
       <div class="navbar-menu">
         <p-menu #menu [popup]="true" [model]="items"></p-menu>
-        <img id="avatar" type="button" (click)="menu.toggle($event)" src="https://avatars.githubusercontent.com/{{user.github}}" *ngIf="user">
+        <img id="avatar" type="button" (click)="menu.toggle($event)" src="https://avatars.githubusercontent.com/{{user.github}}" onerror="this.onerror = null;this.src='assets/pango2.png';"*ngIf="user">
       </div>
       <div *ngIf="daybookNeeded">
           <h2><a (click)="goToForm()">Mon Journal</a></h2>
