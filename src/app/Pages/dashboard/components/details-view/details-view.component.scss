@@ -94,3 +94,39 @@
   text-align: left;
 }
 
+@media screen and (max-width: 768px) {
+  .priorities{
+    height: auto;
+  }
+  .primordiales{
+    height: auto;
+  }
+  .nonfinies{
+    height: auto;
+  }
+  .facultatives{
+    height: auto;
+  }
+  .importantes{
+    height: auto;
+  }
+
+}
+@media screen and (min-width: 2000px){
+  .priorities{
+    height: auto;
+  }
+  .primordiales{
+    height: auto;
+  }
+  .nonfinies{
+    height: auto;
+  }
+  .facultatives{
+    height: auto;
+  }
+  .importantes{
+    height: auto;
+  }
+}
+

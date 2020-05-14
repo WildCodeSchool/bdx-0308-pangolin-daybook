@@ -1,6 +1,7 @@
 
 .dashboard-page {
-  border:  5px solid #FA9E9D;
+  border-left:  5px solid #FA9E9D;
+  border-right:  5px solid #FA9E9D;
   display: flex;
   flex-direction: column;
   margin-bottom: none;
@@ -28,8 +29,7 @@
 
 .dashboard-diagram{
   margin-top: 7px;
-  margin-left: 15%;
-  margin-right: 15%;
+  width: inherit;
 }
 .dashboard-historique {
   width: 100%;
@@ -115,4 +115,37 @@
     background-color: rgba(255, 255, 255, 0.808);
   }
 
+}
+@media screen and (max-width: 768px) {
+  .dashboard-page {
+    border: none;
+  }
+  .dashboard{
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard-left{
+    width: inherit;
+  }
+  .dashboard-histodiagram{
+    width: 100%;
+    border: none;
+  }
+  .dashboard-historique{
+    border: none;
+    width: 100%;
+  }
+  .dashboard-diagram{
+    width: 100%;
+    display: none;
+  }
+  .dashboard-right{
+    width: inherit;
+  }
+}
+
+@media screen and (min-width: 2000px){
+  .dashboard-historique{
+    height: 40%;
+  }
 }

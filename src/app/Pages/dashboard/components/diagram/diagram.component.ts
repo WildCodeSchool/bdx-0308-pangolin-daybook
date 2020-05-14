@@ -32,6 +32,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   diagramlist = [];
 
   constructor() {
+    this.view = [innerWidth / 1.48, 370];
     this.diagramlist = [
       { label: 'GridPie', value: 'gridpie' },
       { label: 'Stackedbar', value: 'stackedBar' },
@@ -78,5 +79,8 @@ export class DiagramComponent implements OnInit, OnChanges {
     ];
   }
   }
+  onResize(event) {
+    this.view = [event.target.innerWidth / 1.9, 400];
+}
 
 }
