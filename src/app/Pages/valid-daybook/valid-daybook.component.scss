@@ -22,10 +22,11 @@
 }
 
 .tasksList{
-  width: 50%;
+  max-width: 63%;
   height: 80%;
-  margin-top: 50px;
-  margin-right: 75px;
+  margin-top: 3%;
+  padding-top: 6%;
+  margin-left: 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,17 +35,17 @@
 .sticker{
   padding: 1%;
   color: #ffffff;
-  font-size: 1.5em;
+  font-size: 2rem;
   overflow: auto;
   background-position: center;
-  height: 16vw;
-  width: 16vw;
+  height: 60%;
+  width: 30%;
   border-radius: 16px;
 }
 
 h2{
   text-align: center;
-  font-size: 1.25vw;
+  font-size: 1.25rem;
   letter-spacing: 2px;
   padding: 3%;
 }
@@ -53,7 +54,7 @@ h2{
   text-align: center;
   padding: 1%;
   list-style: none;
-  font-size: 1.15vw;
+  font-size: 1.15rem;
 }
 
 .sticker li img{
@@ -87,38 +88,48 @@ h2{
 }
 
 .confirm-dialogue button {
-  font-size: 1.25vw;
-  margin-bottom: 1vw;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 600px) {
 
-  .tasksList {
-    margin-top: 200px;
-    width: 55%;
-    height: 80%;
+  .background{
+    background-image: url("/assets/whitenotepad.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: right;
+     align-items: center;
+     height: 88%;
   }
+   .tasksList {
+    display: flex;
+    flex-direction: column;
+    min-width:100%;
+    min-height: 90%;
+    padding-top: 10%;
 
-  .confirm-dialogue {
-    margin-bottom: 200px;
   }
+  h2{
+    font-size: 1rem;
+  }
+   .sticker {
+    margin-bottom: 5%;
+    width: 66%;
+   }
+   .sticker li{
+     font-size: 0.8rem;
+   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 2000px) {
 
-  .tasksList {
-    width: 70%;
-    height: 80%;
-    margin-top: 100px;
-    margin-right: 75px;
-  }
+.sticker{
+  height: 40%;
+}
+.confirm-dialogue button {
+  font-size: 2rem;
+  margin-bottom: 1.75rem;
+}
 
-  .sticker {
-    height: 25vw;
-    width: 21vw;
-  }
-
-  .confirm-dialogue button {
-    font-size: 2vw;
-  }
 }
