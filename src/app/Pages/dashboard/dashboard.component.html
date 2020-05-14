@@ -1,6 +1,6 @@
 <div class="dashboard-page">
   <div class="navbar">
-    <dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybookoftheDay"></dbk-navbar>
+    <dbk-navbar [navigationNeeded]="true" [daybookNeeded]="true" [daybook]="daybookoftheDay" *ngIf="canLoad"></dbk-navbar>
   </div>
   <div class="dashboard">
     <div class="dashboard-left">
@@ -20,4 +20,12 @@
       </div>
     </div>
   </div>
+  <div id="first-connexion" class="hide">
+    <h2>C'est votre première connexion, pour créer votre tout  premier journal cliquer sur le pangolin !</h2>
+     (avec des gants bien sûr)
+    <div class="confirm-button">
+      <img src="assets/pangolinIconJournal.png" alt="continuer" (click)="confirm()">
+    </div>
 </div>
+<div id="popup-opacity" class="hide"></div>
+
