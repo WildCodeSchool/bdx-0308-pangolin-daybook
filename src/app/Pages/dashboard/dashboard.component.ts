@@ -40,15 +40,16 @@ export class DashboardComponent implements OnInit {
       });
     }
     this.daybookService.getTodayDaybook().subscribe((daybook) => {
-      if (daybook) {
       this.daybookoftheDay = daybook;
       this.daybookChosen = daybook;
-      } else {
-        this.daybookService.post(new Daybook()).subscribe((newDaybook) => {
-          this.showPopup();
-          this.daybookoftheDay = newDaybook;
-          this.daybookChosen = newDaybook;
-        });
+    });
+    this.daybookService.getAll().subscribe((daybooks) => {
+      if (daybooks === []) {
+          this.daybookService.post(new Daybook()).subscribe((newDaybook) => {
+            this.showPopup();
+            this.daybookoftheDay = newDaybook;
+            this.daybookChosen = newDaybook;
+          });
       }
     });
     const today = new Date();
