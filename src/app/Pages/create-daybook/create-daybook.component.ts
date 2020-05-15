@@ -75,7 +75,7 @@ export class CreateDaybookComponent implements OnInit {
          this.daybook.validated = true;
          this.daybookService.edit(this.daybook, this.daybook.id).subscribe((e) => {
            this.daybook = e;
-           this.route.navigateByUrl('/valid');
+           this.route.navigateByUrl('/validation-journal');
         });
 
       }

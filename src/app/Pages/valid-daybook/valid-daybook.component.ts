@@ -40,7 +40,7 @@ export class ValidDaybookComponent implements OnInit {
     this.dayBookAll.finished = true;
     this.daybookService.edit(this.dayBookAll, this.dayBookAll.id).subscribe((e) => {
        this.dayBookAll = e;
-       this.route.navigateByUrl('/end');
+       this.route.navigateByUrl('/resume-journal');
       });
       }
     });
