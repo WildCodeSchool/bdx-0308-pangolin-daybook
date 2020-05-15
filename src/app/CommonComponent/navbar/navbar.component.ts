@@ -49,11 +49,11 @@ export class NavbarComponent implements OnInit {
 
   goToForm() {
     if (this.daybook.finished) {
-      this.router.navigateByUrl('/end');
+      this.router.navigateByUrl('/resume-journal');
     } else if (this.daybook.validated) {
-      this.router.navigateByUrl('/valid');
+      this.router.navigateByUrl('/validation-journal');
     } else {
-      this.router.navigateByUrl('/daybook');
+      this.router.navigateByUrl('/mon-journal');
     }
   }
 

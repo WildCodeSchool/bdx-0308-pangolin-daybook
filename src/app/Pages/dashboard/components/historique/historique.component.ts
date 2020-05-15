@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
-import { TasksFilterForDiagram } from 'src/app/Models/tasks-filter-for-diagram';
 import { Daybook } from 'src/app/Models/daybook';
 
 @Component({
