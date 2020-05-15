@@ -35,18 +35,18 @@ h1 {
   display: flex;
   align-items: center;
   color : #FFFFFF;
-  font-size: 1.65vw;
   height: 100%;
+  width: 50%;
 }
 
 .title-navbar-other h1 {
-  font-size: 3vw;
-  margin-left: 5vw;
+  font-size: 3rem;
+  margin-left: 75px;
 }
 
 .title-navbar-other img{
-  height: 5.25vw;
-  width: 5.25vw;
+  height: 70px;
+  width: 70px;
   margin: 10px 25px 10px 0;
 }
 
@@ -56,6 +56,7 @@ h1 {
   align-items: center;
   width: 50%;
   height: 100%;
+  margin-right: 50px;
 }
 
 .navbar-info h2{
@@ -70,12 +71,12 @@ h1 {
 }
 
 #avatar {
-  margin-top: 3px;
+  margin-top: 5px;
   border-radius: 50%;
   background-color: white;
   border: solid 2px white;
-  height: 5vw;
-  width: 5vw;
+  height: 75px;
+  width: 75px;
   cursor: pointer;
 }
 
@@ -220,6 +221,20 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  .navbar-info {
+    margin-right: 5px;
+  }
+
+  .navbar-info h2{
+    font-size: 1.25rem;
+    margin-right: 10px;
+  }
+
+  .navbar-info h2 a {
+    text-decoration: none;
+    color: white;
   }
 
 }
