@@ -26,44 +26,46 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 80%;
+  height: 85%;
   width: 100%;
 }
 
-.home-text p {
-  font-size: 2.65rem;
-  line-height: 1.5;
-  margin-top: 50px;
-  width: 70%;
-}
-
 .anim-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.25rem;
+  line-height: 1.5;
   opacity: 0;
   animation: fadein 0.5s linear 0s;
   animation-fill-mode: forwards;
-  width: 60%;
+  width: 100%;
+  height: 30%;
 }
 
 .anim-2 {
+  display: flex;
+  font-size: 2.75rem;
   opacity: 0;
   animation: fadein 0.5s linear 1s;
   animation-fill-mode: forwards;
   width: 60%;
+  height: 30%;
 }
 
 .anim-3 {
+  font-size: 2.75rem;
   opacity: 0;
   animation: fadein 0.5s linear 2s;
   animation-fill-mode: forwards;
   width: 60%;
+  height: 30%;
 }
 
 .home-bouton {
   width: 80%;
   display: flex;
   justify-content: flex-end;
-  margin-top: 75px;
-  margin-bottom: 100px;
 }
 
 .home-odysee-connection {
@@ -99,24 +101,78 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-@media screen and (max-width: 600px) {
-  .home-text {
-    justify-content: flex-start;
+@media (max-width: 1024px) {
+
+  .anim-1 {
+    font-size: 2.5rem;
   }
 
-  .home-text p {
-    font-size: 1.15rem;
-    width: 50%;
-    margin-top: 10px;
+  .anim-2, .anim-3 {
+    font-size: 2rem;
+  }
+
+  .home-odysee-connection {
+    font-size: 2.5rem;
   }
 
   .home-bouton {
     width: 100%;
+    display: flex;
     justify-content: center;
-    margin-top: 10px;
+
+  }
+}
+
+
+@media (max-width: 769px) {
+
+  .anim-1 {
+    font-size: 2.2rem;
+  }
+
+  .anim-2, .anim-3 {
+    font-size: 1.8rem;
+  }
+
+  .home-odysee-connection {
+    font-size: 2.2rem;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+  .anim-1 {
+    font-size: 1.8rem;
+  }
+
+  .anim-2, .anim-3 {
+    font-size: 1.5rem;
+  }
+
+  .home-odysee-connection {
+    font-size: 1.8rem;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .anim-1 {
+    font-size: 1.3rem;
+  }
+
+  .anim-2, .anim-3 {
+    font-size: 1rem;
   }
 
   .home-odysee-connection {
     font-size: 1.5rem;
   }
+
 }
+
+
+
+
+
