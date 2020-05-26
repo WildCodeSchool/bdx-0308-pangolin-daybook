@@ -84,7 +84,6 @@ hr {
   height: 30%;
   background-color: #FA9E9D;
   border-top: solid 1px white;
-  padding: 15px;
 }
 
 .footer-legal-mention p {
@@ -134,14 +133,39 @@ hr {
   }
 }
 
+@media (max-width: 1024px) {
 
-@media screen and (max-width: 850px) {
   .wcs h3 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   .footer-content p {
+    font-size: 1rem;
+  }
+
+  .footer-legal-mention p {
     font-size: 0.8rem;
+  }
+
+  .footer-legal-mention a {
+    font-size: 0.7rem;
+  }
+
+  .social-media {
+    margin-bottom: 0px;
+  }
+
+  .fa {
+    padding: 8px;
+    width: 35px;
+  }
+
+}
+
+@media (max-width: 769px) {
+
+  .footer-legal-mention {
+    flex-direction: column;
   }
 
   .footer-desktop {
@@ -151,28 +175,33 @@ hr {
   .footer-mobile {
     display: flex;
   }
+}
 
-  .logo-rs {
-    display: flex;
+@media screen and (max-width: 576px) {
+
+
+}
+
+@media screen and (max-width: 425px) {
+  .wcs h3 {
+    font-size: 1rem;
+  }
+
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+
+  .footer-legal-mention p {
+    font-size: 0.6rem;
+  }
+
+  .footer-legal-mention a {
+    font-size: 0.6rem;
   }
 
   .fa {
     padding: 5px;
     width: 30px;
-  }
-
-  .footer-legal-mention {
-    flex-direction: column;
-    margin-top: 0px;
-    height: 35%;
-}
-
-  .footer-legal-mention p {
-    font-size: 0.7rem;
-  }
-
-  .footer-legal-mention a {
-    font-size: 0.7rem;
   }
 
 }
