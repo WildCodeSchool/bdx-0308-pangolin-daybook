@@ -123,6 +123,12 @@
   }
 }
 
+@media (max-width: 1024px) and (orientation: landscape) {
+  .home-page {
+    height: 200%;
+  }
+}
+
 @media (max-width: 769px) {
 
   .anim-1 {
@@ -158,7 +164,7 @@
 @media screen and (max-width: 425px) {
 
   .anim-1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .anim-2, .anim-3 {
