@@ -1,21 +1,19 @@
-<div class="navbar-container">
-  <div class="navbar-content">
-    <div *ngIf="homePage" class="title-navbar-home">
-      <h1>Le journal d'un Pangolin</h1>
-      <img class="notebook" src="assets/notebook2.png">
+<div class="navbar-content">
+  <div *ngIf="homePage" class="title-navbar-home">
+    <h1>Le journal d'un Pangolin</h1>
+    <img class="notebook" src="assets/notebook2.png">
+  </div>
+  <div *ngIf="!homePage" class="title-navbar-other">
+    <h1>Le journal d'un Pangolin</h1>
+    <img src="assets/notebook2.png">
+  </div>
+  <div *ngIf="navigationNeeded" class="navbar-info">
+    <div class="navbar-menu">
+      <p-menu #menu [popup]="true" [model]="items"></p-menu>
+      <img id="avatar" type="button" (click)="menu.toggle($event)" src="https://avatars.githubusercontent.com/{{user.github}}" onerror="this.onerror = null;this.src='assets/pango2.png';"*ngIf="user">
     </div>
-    <div *ngIf="!homePage" class="title-navbar-other">
-      <h1>Le journal d'un Pangolin</h1>
-      <img src="assets/notebook2.png">
-    </div>
-    <div *ngIf="navigationNeeded" class="navbar-info">
-      <div class="navbar-menu">
-        <p-menu #menu [popup]="true" [model]="items"></p-menu>
-        <img id="avatar" type="button" (click)="menu.toggle($event)" src="https://avatars.githubusercontent.com/{{user.github}}" onerror="this.onerror = null;this.src='assets/pango2.png';"*ngIf="user">
-      </div>
-      <div *ngIf="daybookNeeded">
-          <h2><a (click)="goToForm()">Mon Journal</a></h2>
-      </div>
+    <div *ngIf="daybookNeeded">
+        <h2><a (click)="goToForm()">Mon Journal</a></h2>
     </div>
   </div>
 </div>
