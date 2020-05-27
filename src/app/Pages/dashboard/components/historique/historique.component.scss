@@ -2,22 +2,17 @@
   height: 80%;
 }
 
-p-header h3 {
-  text-align: center;
-  color: #FA9E9D;
-  font-size: 30px;
-}
 :host ::ng-deep .ui-carousel-item .daybook-details {
   border: 1px solid #FA9E9D;
   border-radius: 3px;
   margin: 0.3em;
   text-align: center;
   padding: 2em 0 2.25em 0;
-  height:240px;
-
+  height: 240px;
 }
+
 .item-content {
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -37,10 +32,12 @@ p-header h3 {
 :host ::ng-deep .ui-carousel-dot-icon {
   background-color: #FA9E9D;
 }
+
 .date{
   font-size: 25px;
   color: #FA9E9D;
 }
+
 .empty-daybook {
   margin-top:50px;
 }

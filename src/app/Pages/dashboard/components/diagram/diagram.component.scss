@@ -1,12 +1,22 @@
+.test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .container{
   width :100%;
   height: 100%;
 }
+
 p-dropdown {
   display: inline-block;
   margin-left: 25%;
   color: #F9A5A5
 }
+
 h2 {
   display: inline-block;
   color:#F9A5A5 ;
