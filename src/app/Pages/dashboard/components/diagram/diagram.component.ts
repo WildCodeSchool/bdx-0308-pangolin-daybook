@@ -16,7 +16,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   weekdata: (TasksFilterForDiagram[])[];
   single: TasksFilterForDiagram[];
   multi: DiagramMultidata[];
-  view: any[] = [800, 400];
+  view: any[] = [800, 300];
   colorScheme = {
     domain: ['#F57BA8', '#8CD8DB', '#CABE8A', '#FAC3AA']
   };
@@ -32,7 +32,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   diagramlist = [];
 
   constructor() {
-    this.view = [innerWidth / 1.48, 370];
+    this.view = [innerWidth / 1.48, 300];
     this.diagramlist = [
       { label: 'GridPie', value: 'gridpie' },
       { label: 'Stackedbar', value: 'stackedBar' },
@@ -80,7 +80,7 @@ export class DiagramComponent implements OnInit, OnChanges {
   }
   }
   onResize(event) {
-    this.view = [event.target.innerWidth / 1.9, 400];
+    this.view = [event.target.innerWidth / 1.9, 300];
 }
 
 }
