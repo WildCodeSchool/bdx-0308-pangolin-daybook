@@ -65,7 +65,6 @@ export class DashboardComponent implements OnInit {
 
   datesReceived($event) {
     this.datesFromCalendar = $event;
-    console.log(this.datesFromCalendar);
 
     const date1 = this.changeDateFormat(this.datesFromCalendar[0]).toString();
     const date2 = this.changeDateFormat(this.datesFromCalendar[1]).toString();

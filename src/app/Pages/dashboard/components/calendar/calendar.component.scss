@@ -16,14 +16,32 @@ background-color:rgbA(253, 179, 147, 0.5);
 
 :host ::ng-deep .ui-datepicker-calendar	{
   background: #ffffff;
-cursor: pointer;
+  cursor: pointer;
 }
 
 :host ::ng-deep .ui-datepicker-header{
   background: #ffffff;
 }
+
 .title{
  font-size: 1.6rem;
  color:#FA9E9D;
   margin-right:  20px ;
+}
+
+@media screen and (max-width: 576px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  :host ::ng-deep .ui-inputtext {
+    height: 20px;
+    width: 150px;
+  }
 }
