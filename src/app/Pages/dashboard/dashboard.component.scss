@@ -124,7 +124,12 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
+
+  .navbar {
+    height: 16%;
+  }
+
   .dashboard-page {
     border: none;
   }
