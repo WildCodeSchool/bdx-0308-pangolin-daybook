@@ -209,6 +209,11 @@ a:hover {
     height: 60px;
     width: 60px;
   }
+
+  :host ::ng-deep .ui-menu {
+    position: absolute;
+    left: 25%;
+  }
 }
 
 @media (max-width: 769px) {
@@ -274,6 +279,11 @@ a:hover {
 
   .navbar-info {
     margin-right: 20px;
+  }
+
+  #avatar {
+    height: 45px;
+    width: 45px;
   }
 
 }
