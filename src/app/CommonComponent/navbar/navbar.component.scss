@@ -34,11 +34,11 @@ h1 {
   align-items: center;
   color : #FFFFFF;
   height: 100%;
-  width: 50%;
+  width: 70%;
 }
 
 .title-navbar-other h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-left: 75px;
 }
 
@@ -52,15 +52,15 @@ h1 {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 50%;
+  width: 30%;
   height: 100%;
   margin-right: 50px;
 }
 
 .navbar-info h2{
   color : #FFFFFF;
-  font-size: 30px;
-  margin-right: 50px;
+  font-size: 2rem;
+  margin-right: 25px;
 }
 
 .navbar-info h2 a {
@@ -180,6 +180,35 @@ a:hover {
   .title-navbar-home h1 {
     font-size: 3.5rem;
   }
+
+  .title-navbar-other {
+    width: 70%;
+  }
+
+  .navbar-info {
+    width: 30%;
+  }
+
+  .navbar-info h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  .title-navbar-other img{
+    height: 60px;
+    width: 60px;
+  }
+
+  .title-navbar-other h1 {
+    font-size: 2rem;
+    margin-left: 30px;
+  }
+
+  #avatar {
+    height: 60px;
+    width: 60px;
+  }
 }
 
 @media (max-width: 769px) {
@@ -191,6 +220,28 @@ a:hover {
   .title-navbar-home img{
     height: 85px;
     width: 85px;
+  }
+
+  .title-navbar-other h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-navbar-other img{
+    height: 45px;
+    width: 45px;
+  }
+
+  #avatar {
+    height: 55px;
+    width: 55px;
+  }
+
+  .navbar-info {
+    margin-right: 20px;
+  }
+
+  .navbar-info h2 {
+    font-size: 1rem;
   }
 
 }
@@ -209,12 +260,46 @@ a:hover {
     margin-right: 10px;
   }
 
+  .title-navbar-other h1 {
+    font-size: 1.1rem;
+    margin: 0;
+    margin-left: 20px;
+  }
+
+  .title-navbar-other img{
+    height: 35px;
+    width: 35px;
+    margin-left: 10px;
+  }
+
+  .navbar-info {
+    margin-right: 20px;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
 
   .title-navbar-home h1 {
     font-size: 1.5rem;
+  }
+
+  .title-navbar-other h1 {
+    font-size: 0.9rem;
+  }
+
+  .navbar-info h2 {
+    font-size: 0.8rem;
+  }
+
+  #avatar {
+    height: 40px;
+    width: 40px;
+  }
+
+  .title-navbar-other img{
+    height: 30px;
+    width: 30px;
   }
 
 }

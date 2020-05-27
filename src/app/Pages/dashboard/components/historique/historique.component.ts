@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DaybookService } from 'src/app/shared/daybook.service';
 import { Daybook } from 'src/app/Models/daybook';
+import {ElementRef, NgZone } from '@angular/core';
+import { Carousel } from 'primeng/carousel';
 
 @Component({
   selector: 'dbk-historique',
@@ -14,13 +16,16 @@ export class HistoriqueComponent implements OnInit {
 responsiveOptions =
 [
   {
-  breakpoint: '768px',
-  numVisible: 1,
-  numScroll: 1,
-  },
+    breakpoint: '1500px',
+    numVisible: 2,
+    numScroll: 3,
+  }
 ];
 
-constructor(public daybookService: DaybookService) { }
+constructor(public daybookService: DaybookService, public el: ElementRef, public zone: NgZone) {
+  Carousel.prototype.changePageOnTouch = (e, diff) => {};
+
+  }
 
 ngOnInit() {
   }
