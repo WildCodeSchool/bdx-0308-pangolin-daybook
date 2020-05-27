@@ -1,28 +1,29 @@
+<div class=test>
+  <div class="container">
+    <h2>Diagramme</h2>
+    <p-dropdown [styleClass]="'dropdown'" [options]="diagramlist" [(ngModel)]="diagramStyle" placeholder="Choisis un diagramme"  [showClear]="true"></p-dropdown>
 
-<div class="container">
-  <h2>Diagramme</h2>
-  <p-dropdown [styleClass]="'dropdown'" [options]="diagramlist" [(ngModel)]="diagramStyle" placeholder="Choisis un diagramme"  [showClear]="true"></p-dropdown>
-
-  <ngx-charts-pie-grid class="test"*ngIf="diagramStyle === 'gridpie'"
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="single">
-  </ngx-charts-pie-grid>
-  <br>
-  <ngx-charts-bar-vertical-stacked (window:resize)="onResize($event)"  *ngIf="diagramStyle === 'stackedBar'"
-    [scheme]="colorScheme"
-    [results]="multi"
-    [gradient]="gradient"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
-    [view]="view"
-    legendTitle="Légende"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    [animations]="animations">
-  </ngx-charts-bar-vertical-stacked>
+    <ngx-charts-pie-grid class="test"*ngIf="diagramStyle === 'gridpie'"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="single">
+    </ngx-charts-pie-grid>
+    <br>
+    <ngx-charts-bar-vertical-stacked (window:resize)="onResize($event)"  *ngIf="diagramStyle === 'stackedBar'"
+      [scheme]="colorScheme"
+      [results]="multi"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [view]="view"
+      legendTitle="Légende"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [animations]="animations">
+    </ngx-charts-bar-vertical-stacked>
+  </div>
 </div>
 
