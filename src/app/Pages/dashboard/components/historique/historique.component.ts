@@ -17,6 +17,11 @@ responsiveOptions =
 [
   {
     breakpoint: '1500px',
+    numVisible: 3,
+    numScroll: 3,
+  },
+  {
+    breakpoint: '1024px',
     numVisible: 2,
     numScroll: 3,
   }
