@@ -23,7 +23,7 @@
 .home-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   height: 85%;
@@ -101,13 +101,13 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-@media (orientation: landscape) {
-  .home-text {
-    height: 150%;
+@media screen and (orientation: landscape) {
+  .home-page {
+    height: 200%;
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
 
   .anim-1 {
     font-size: 2.5rem;
@@ -129,7 +129,7 @@
   }
 }
 
-@media (max-width: 769px) {
+@media screen and (max-width: 769px) {
 
   .anim-1 {
     font-size: 2.2rem;
