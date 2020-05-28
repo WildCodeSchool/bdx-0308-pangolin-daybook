@@ -101,13 +101,21 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-@media screen and (orientation: landscape) {
-  .home-page {
-    height: 200%;
-  }
-}
 
 @media screen and (max-width: 1024px) {
+
+  .home-page {
+    height: 1400px;
+  }
+
+  .navbar {
+    height: 120px;
+  }
+
+  .home-text {
+    justify-content: flex-start;
+    height: 80%;
+  }
 
   .anim-1 {
     font-size: 2.5rem;
@@ -131,6 +139,10 @@
 
 @media screen and (max-width: 769px) {
 
+  .home-page {
+    height: 1200px;
+  }
+
   .anim-1 {
     font-size: 2.2rem;
   }
@@ -147,6 +159,10 @@
 
 @media screen and (max-width: 576px) {
 
+  .home-page {
+    height: 1000px;
+  }
+
   .anim-1 {
     font-size: 1.8rem;
   }
@@ -162,6 +178,14 @@
 }
 
 @media screen and (max-width: 425px) {
+
+  .home-page {
+    height: 800px;
+  }
+
+  .navbar {
+    height: 100px;
+  }
 
   .anim-1 {
     font-size: 1.2rem;
