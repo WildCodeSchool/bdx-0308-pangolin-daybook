@@ -1,3 +1,7 @@
+.mobile {
+  display: none;
+}
+
 :host ::ng-deep .ui-carousel {
   height: 80%;
   width: 100%;
@@ -64,16 +68,24 @@
 }
 
 @media (max-width: 1024px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: flex;
+  }
+
   .date {
     font-size: 1rem;
   }
 
   .empty-daybook {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   :host ::ng-deep .ui-carousel-item .daybook-details {
-    height: 180px;
+    height: 150px;
   }
 }
 
