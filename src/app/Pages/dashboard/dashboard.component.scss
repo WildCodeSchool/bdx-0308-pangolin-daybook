@@ -1,9 +1,6 @@
-
 .dashboard-page {
   border-left:  5px solid #FA9E9D;
   border-right:  5px solid #FA9E9D;
-  display: flex;
-  flex-direction: column;
   margin-bottom: none;
   height: 100%;
 }
@@ -16,6 +13,14 @@
   display: flex;
   height: 90%;
   width: 100%;
+}
+
+.footer {
+  height: 15%;
+}
+
+.footer-mobile {
+  display: none;
 }
 
 .dashboard-left {
@@ -45,9 +50,9 @@
 }
 
 .dashboard-detail {
-  max-height: 100%;
   border-bottom: none;
 }
+
 .hide {
   display: none;
 }
@@ -126,8 +131,20 @@
 
 @media (max-width: 1024px) {
 
+  .footer-desktop {
+    display: none;
+  }
+
+  .footer-mobile {
+    display: block;
+  }
+
+  .dashboard-detail {
+    height: 95%;
+  }
+
   .navbar {
-    height: 16%;
+    height: 12%;
   }
 
   .dashboard-page {
@@ -156,6 +173,7 @@
   }
   .dashboard-right{
     width: inherit;
+    height: 100%;
   }
 }
 

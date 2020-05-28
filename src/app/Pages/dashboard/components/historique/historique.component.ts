@@ -13,19 +13,7 @@ export class HistoriqueComponent implements OnInit {
 
   @Input() weekDaybookList: Daybook[];
   @Output() daybookChosen = new EventEmitter<number>();
-responsiveOptions =
-[
-  {
-    breakpoint: '1500px',
-    numVisible: 3,
-    numScroll: 3,
-  },
-  {
-    breakpoint: '1024px',
-    numVisible: 2,
-    numScroll: 3,
-  }
-];
+responsiveOptions = [];
 
 constructor(public daybookService: DaybookService, public el: ElementRef, public zone: NgZone) {
   Carousel.prototype.changePageOnTouch = (e, diff) => {};
