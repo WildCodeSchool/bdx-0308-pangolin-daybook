@@ -137,11 +137,11 @@ hr {
 @media (max-width: 1024px) {
 
   .wcs h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .footer-content p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .footer-legal-mention {
@@ -149,11 +149,11 @@ hr {
   }
 
   .footer-legal-mention p {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 
   .footer-legal-mention a {
-    font-size: 0.7rem;
+    font-size: 1.2rem;
   }
 
   .social-media {
@@ -164,10 +164,6 @@ hr {
     padding: 8px;
     width: 35px;
   }
-
-}
-
-@media (max-width: 769px) {
 
   .footer-legal-mention {
     flex-direction: column;
@@ -180,6 +176,31 @@ hr {
   .footer-mobile {
     display: flex;
   }
+
+}
+
+@media (max-width: 769px) {
+
+  .wcs h3 {
+    font-size: 1.8rem;
+  }
+
+  .footer-content p {
+    font-size: 1.2rem;
+  }
+
+  .footer-legal-mention {
+    padding: 10px;
+  }
+
+  .footer-legal-mention p {
+    font-size: 0.9rem;
+  }
+
+  .footer-legal-mention a {
+    font-size: 0.9rem;
+  }
+
 }
 
 @media screen and (max-width: 576px) {
